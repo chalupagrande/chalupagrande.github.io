@@ -75,12 +75,14 @@ blockquote {
   color: rgba(244,244,244,0.5);
 }
 
-
-nav {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
+@media (min-width: 900px){
+  nav {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+  }
 }
+
 /* HOME */
 
 .portrait {
