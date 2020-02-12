@@ -52,10 +52,12 @@ blockquote {
   border-left: 3px solid grey;
   padding: 0.5rem;
 }
+.author:before {
+  content: '-';
+}
 
 .row {
-  max-width: 1020px;
-  margin: 0 auto;
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
 }
@@ -73,6 +75,12 @@ blockquote {
   color: rgba(244,244,244,0.5);
 }
 
+
+nav {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
 /* HOME */
 
 .portrait {
