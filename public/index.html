@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Jamie Skinner is a full stack developer from Austin Texas.
+    During his tenure at IBM Design he won two international design awards and worked on some of IBM's most high profile strategic projects.">
+  <title>Jamie's Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="intro">
+      <h1 class="title">Hi!</h1>
+      <h2 class="subtitle">I'm Jamie.</h2>
+    </div>
+    <p>Here is a picture of me.</p>
+    <div id="portrait" class="portrait">
+      <img class="cmyk cmyk-c" src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/c.png" alt="">
+      <img class="cmyk cmyk-m" src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/m.png" alt="">
+      <img class="cmyk cmyk-y" src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/y.png" alt="">
+      <img class="cmyk cmyk-k" src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/k.png" alt="">
+    </div>
+    <h6>Try hovering over/clicking it -- you: "oooooo"</h6>
+    <p>Alright, here is the deal: <strong>I am an award winning full stack software developer, designer and artist based
+        in
+        Austin Texas.</strong></p>
+    <p>You might be thinking...</p>
+    <blockquote>
+      Wow! That's really cool. Why does your website look like you made it in 1997?
+    </blockquote>
+
+    <p>
+      Well, its a vibe... The truth is, I tend to over engineer the sh*t our of things, so in order to ensure that this
+      actually saw the light of day rather than just sitting in a folder on my computer, I made a conscious effort to
+      make it dead simple. PLUS, simple sites are responsive, accessible and extremely performant by default!
+    </p>
+
+    <h1 class="subtitle"><a href="about.html">Click Here for more ABOUT ME!</a></h1>
+
+    <h1 class="subtitle">Work</h1>
+    <ul>
+      <li><a href="/work/bam.html">Bluemix Availability Monitoring</a></li>
+      <li><a href="/work/ibm-cloud-management.html">IBM Cloud Management</a></li>
+      <!-- <li><a href="/work/redhat-marketplace.html">Redhat Marketplace</a></li> -->
+      <li><a href="/work/ibm-cloud-private.html">IBM Cloud Private</a></li>
+    </ul>
+
+    <h1 class="subtitle">Personal Projects</h1>
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=GtpZDYSYy5s">An Augmented Reality Portrait - Documentary</a></li>
+      <li><a href="https://chalupagrande.github.io/sandbox/">Some Random Experiments</a></li>
+      <li><a href="https://codepen.io/chalupagrande">Codepen</a></li>
+      <li><a href="https://codesandbox.io/u/chalupagrande">Code Sandbox</a></li>
+      <li><a href="https://pippam-staging.herokuapp.com/">Personal Identity Profile - Smart Patient Academy</a></li>
+      <li><a href="https://nnrps.herokuapp.com/">Neural Net - Rock Paper Scissors</a></li>
+    </ul>
+
+    <h1 class="subtitle">Works In Progress</h1>
+    <ul>
+      <li>The Place is Right! - automated geocached telephone game show</li>
+      <li>AR Graffiti - augmented reality street art sticker series</li>
+      <li>Leaderboard - Noncooperative Behavior and Escalation Social Experiment</li>
+    </ul>
+
+    <p class="subdue">Type the Konami Code</p>
+  </div><!-- close wrapper -->
+
+  <script>
+    let isStretched = false
+    let portraitRoot = document.getElementById('portrait')
+    let children = [...portraitRoot.children]
+    portraitRoot.addEventListener('click', function () {
+      isStretched = !isStretched
+      if (isStretched) {
+        children.forEach((e) => e.classList.add('stretch'))
+      } else {
+        children.forEach((e) => e.classList.remove('stretch'))
+      }
+    })
+  </script>
+  <script src="scripts/cc.js"></script>
+</body>
+
+</html>
