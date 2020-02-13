@@ -31,7 +31,26 @@
     <div class="intro">
       <h1 class="title">Contact</h1>
     </div>
-    <p>if you know you know</p>
+    <p>Shoot me a message!</p>
+    <form class="contact-form" id="contact-form">
+      <label for="email">Your Email:</label>
+      <input id="email" type="email" cols="40" required />
+      <label for="message">Message:</label>
+      <textarea id="message" required></textarea>
+      <button type="submit">SEND!</button>
+    </form>
+
+    <script>
+      let form = document.getElementById('contact-form')
+      let email = document.getElementById('email')
+      let message = document.getElementById('message')
+      form.addEventListener('submit', (e) => {
+        e.preventDefault()
+
+        console.log(email.value, message.value)
+        alert("oops. I haven't wired this up yet. if you must get in contact my email is jamie@jamieskinner.me. gimmie like... a day and ill get this working... ")
+      })
+    </script>
 </body>
 
 </html>
