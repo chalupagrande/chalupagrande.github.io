@@ -35,22 +35,50 @@
     </div>
     <p>Shoot me a message!</p>
     <form class="contact-form" id="contact-form">
+      <label for="name">Your Name:</label>
+      <input id="name" type="text" name="name" placeholder="Jeff Bezos">
       <label for="email">Your Email:</label>
-      <input id="email" type="email" cols="40" required />
+      <input id="email" type="email" name="_replyto" placeholder="jeff@amazon.com">
+      <label for="subject">Subject:</label>
+      <input id="subject" type="subject" name="_replyto" placeholder="I need your help!">
       <label for="message">Message:</label>
-      <textarea id="message" required></textarea>
-      <button type="submit">SEND!</button>
+      <textarea id="message" name="message" placeholder="Please Jamie! We need you"></textarea>
+      <input type="hidden" name="_subject" value="Contact form submitted">
+      <input type="hidden" name="_after" value="https://chalupagrande.github.io/">
+      <input type="hidden" name="_honeypot" value="">
+      <input type="hidden" name="_confirmation" value="Message Sent">
+      <button type="submit">SEND</button>
     </form>
 
     <script>
       let form = document.getElementById('contact-form')
-      let email = document.getElementById('email')
-      let message = document.getElementById('message')
+
+
       form.addEventListener('submit', (e) => {
         e.preventDefault()
 
-        console.log(email.value, message.value)
-        alert("oops. I haven't wired this up yet. if you must get in contact my email is jamie@jamieskinner.me. gimmie like... a day and ill get this working... ")
+        let email = document.getElementById('email')
+        let message = document.getElementById('message')
+        let name = document.getElementById('name')
+        let subject = document.getElementById('subject')
+        let body = {
+          email: email.value,
+          _subject: subject.value,
+          _name: name.value,
+          message: message.value
+        }
+        console.log(body)
+        debugger
+        fetch('https://mailthis.to/jamie@jamieskinner.me', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: body
+        }).then(function (e) {
+          console.log(e)
+          window.open('https://mailthis.to/confirm')
+        }).catch((err) => {
+          console.log('error', err)
+        })
       })
     </script>
 </body>
