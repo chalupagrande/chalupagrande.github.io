@@ -3,6 +3,7 @@ const express = require('express')
 const path = require('path')
 const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser')
+const axios = require('axios')
 
 
 const app = express()
@@ -37,7 +38,7 @@ const emailDefaults = {
 const transporter = nodemailer.createTransport(smtpConfig, emailDefaults)
 
 
-app.post('/api/email', async (req, res) => {
+app.post('/api/email', verifyCaptcha, async (req, res) => {
   const {message, email, name, subject} = req.body
   try {
     let result = await transporter.sendMail({
@@ -54,6 +55,41 @@ app.post('/api/email', async (req, res) => {
   }
 })
 
+/**
+ * Verifies the vaptcha sent from the client. This ensures the route is
+ * not accessed by BOTS
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ */
+function verifyCaptcha(req, res, next) {
+  const { recaptcha } = req.body
+  try {
+    axios({
+      method: 'post',
+      url: `https://www.google.com/recaptcha/api/siteverify`,
+      params: {
+        secret: process.env.CAPTCHA_SECRET_KEY,
+        response: recaptcha,
+        remoteip: req.connection.remoteAddress
+      }
+    })
+      .then(({ status, data }) => {
+        console.log(data, status)
+        if (status === 200 && data.success)
+          next()
+        else {
+          console.log('recaptcha VALUE: ', data)
+          res.status(403).send({message: "invalid captcha", data})
+        }
+      })
+      .catch(err => {
+        res.status(500).send({message: 'error checking recpatcha', error: err})
+      })
+  } catch (err) {
+    res.status(403).send({message: "invalid captcha: no captcha present"})
+  }
+}
 
 function emailTemplate(name, subject, email, message) {
     return `

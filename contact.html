@@ -11,6 +11,7 @@
   <link rel="stylesheet" type="text/css" href="styles.css" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48698531-6"></script>
   <script src="scripts/googleAnalytics.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -44,6 +45,7 @@
       <label for="message">Message:</label>
       <textarea id="message" name="message" placeholder="Please Jamie! We need you"></textarea>
       <input type="hidden" name="_honeypot" value="">
+      <div class="g-recaptcha" data-sitekey="6Lf8z9sUAAAAAPsdlc7r1ULgGTKNPHf37cv-r3Gl"></div>
       <button type="submit">SEND</button>
     </form>
 
@@ -54,30 +56,41 @@
       form.addEventListener('submit', (e) => {
         e.preventDefault()
 
-        let email = sanitize(document.getElementById('email').value)
-        let message = sanitize(document.getElementById('message').value)
-        let name = sanitize(document.getElementById('name').value)
-        let subject = sanitize(document.getElementById('subject').value)
+        let emailElement = document.getElementById('email')
+        let messageElement = document.getElementById('message')
+        let nameElement = document.getElementById('name')
+        let subjectElement = document.getElementById('subject')
+        let recaptcha = grecaptcha.getResponse()
         let body = {
-          email: email,
-          subject: subject,
-          name: name,
-          message: message
+          email: sanitize(emailElement.value),
+          subject: sanitize(subjectElement.value),
+          name: sanitize(nameElement.value),
+          message: sanitize(messageElement.value),
+          recaptcha: recaptcha
         }
+
         console.log(body)
 
-        fetch('/api/email', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body)
-        }).then(function (e) {
-          alert('Message sent')
-        }).catch((err) => {
-          alert('OOPS! There was an error. ')
-          console.log('error', err)
-        })
+        if (!recaptcha) return alert('Please complete the recapthca');
+        else {
+          fetch('/api/email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+          }).then(function (e) {
+            alert('Message sent')
+            emailElement.value = ''
+            messageElement.value = ''
+            nameElement.value = ''
+            subjectElement.value = ''
+          }).catch((err) => {
+            alert('OOPS! There was an error. ')
+            console.log('error', err)
+          })
+        }
       })
 
+      // sanitize helper
       function sanitize(string) {
         const map = {
           '&': '&amp;',
