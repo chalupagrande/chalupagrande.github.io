@@ -40,13 +40,10 @@
       <label for="email">Your Email:</label>
       <input id="email" type="email" name="_replyto" placeholder="jeff@amazon.com">
       <label for="subject">Subject:</label>
-      <input id="subject" type="subject" name="_replyto" placeholder="I need your help!">
+      <input id="subject" type="subject" name="_replyto" placeholder="Help!">
       <label for="message">Message:</label>
       <textarea id="message" name="message" placeholder="Please Jamie! We need you"></textarea>
-      <input type="hidden" name="_subject" value="Contact form submitted">
-      <input type="hidden" name="_after" value="https://chalupagrande.github.io/">
       <input type="hidden" name="_honeypot" value="">
-      <input type="hidden" name="_confirmation" value="Message Sent">
       <button type="submit">SEND</button>
     </form>
 
@@ -57,29 +54,42 @@
       form.addEventListener('submit', (e) => {
         e.preventDefault()
 
-        let email = document.getElementById('email')
-        let message = document.getElementById('message')
-        let name = document.getElementById('name')
-        let subject = document.getElementById('subject')
+        let email = sanitize(document.getElementById('email').value)
+        let message = sanitize(document.getElementById('message').value)
+        let name = sanitize(document.getElementById('name').value)
+        let subject = sanitize(document.getElementById('subject').value)
         let body = {
-          email: email.value,
-          _subject: subject.value,
-          _name: name.value,
-          message: message.value
+          email: email,
+          subject: subject,
+          name: name,
+          message: message
         }
         console.log(body)
-        debugger
-        fetch('https://mailthis.to/jamie@jamieskinner.me', {
+
+        fetch('/api/email', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: body
+          body: JSON.stringify(body)
         }).then(function (e) {
-          console.log(e)
-          window.open('https://mailthis.to/confirm')
+          alert('Message sent')
         }).catch((err) => {
+          alert('OOPS! There was an error. ')
           console.log('error', err)
         })
       })
+
+      function sanitize(string) {
+        const map = {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#x27;',
+          "/": '&#x2F;',
+        };
+        const reg = /[&<>"'/]/ig;
+        return string.replace(reg, (match) => (map[match]));
+      }
     </script>
 </body>
 
