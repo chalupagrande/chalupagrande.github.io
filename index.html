@@ -87,6 +87,14 @@
     </ul>
 
     <p class="subdue">Type the Konami Code</p>
+
+    <div class="modal">
+      <h1>Hi. Thanks for visiting!</h1>
+      <p>This page has site has moved. I made some changes that I hope you will enjoy over at <a
+          href="http://chalupagrande.com">chalupagrande.com</a>.</p>
+      <strong>Thanks!</strong>
+    </div>
+    <div class="cover-all"></div>
   </div><!-- close wrapper -->
 
   <script>
@@ -100,6 +108,10 @@
       } else {
         children.forEach((e) => e.classList.remove('stretch'))
       }
+    })
+
+    window.addEventListener('scroll', () => {
+      window.scrollTo(0, 0)
     })
   </script>
   <script src="scripts/cc.js"></script>
