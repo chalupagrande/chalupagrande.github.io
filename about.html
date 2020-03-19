@@ -14,37 +14,65 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  <div id="wrapper">
     <nav class="navigation">
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/about.html">About</a></li>
         <li><a href="/contact.html">Contact</a></li>
         <li><a href="/faq.html">FAQs</a></li>
-        <li>Work</li>
-        <ul>
-          <li><a href="/work/bam.html">BAM</a></li>
-          <li><a href="/work/ibm-cloud-management.html">Cloud Management</a></li>
-          <li><a href="/work/ibm-cloud-private.html">Cloud Private</a></li>
-          <li><a href="/work/redhat-marketplace.html">Redhat Marketplace</a></li>
-        </ul>
+        <li><a href="/work">Work</a></li>
+        <li>
+          <input id="crazy-mode" type="checkbox" name="crazy">Make things weird
+        </li>
       </ul>
     </nav>
     <div class="intro">
       <h1 class="title">About Jamie</h1>
     </div>
-    <p>So I'm generally pretty bad at talking about myself. So here are some things people have said about me.</p>
-    <p>I'll finish this section up later... but I gotta go deploy this app that takes credit card payments from
-      strangers to fund my morbid curiosity about what the dumbest thing someone will buy is.</p>
+    <p>I know this site looks simple, and is complete unstyled, and yes. it is simple and completely unstyled. But don't
+      let that fool you, I am full stack developer and I pride myself on being able to build just about anything I set
+      my mind to. I have worked on many projects and with many technologies that would make this site look like a
+      petting zoo. (I'm not sure why I went with that analogy &#x1F937). Here are just a few:</p>
+    <h4>Technologies</h4>
+    <div class='row'>
+      <ul class="item">
+        <li>Javascript es2015 (Babel)</li>
+        <li>D3 (interactive graphs & maps)</li>
+        <li>ThreeJS & WebGl (3D animations in the browser)</li>
+        <li>Stripe (payment platform)</li>
+        <li>React & Vue (front end frameworks)</li>
+        <li>AFrame (VR/AR in the browser)</li>
+        <li>Wordpress & Strapi (CMS)</li>
+      </ul>
+      <ul class="item">
+        <li>Google Maps, Leaflet and Mapbox (Mapping Software)</li>
+        <li>React Native (native iOS and Andriod apps)</li>
+        <li>MongoDB, Neo4j, Redis, PostgreSQL (database)</li>
+        <li>Kubernetes & Docker (DEVOPS container-orchestration)</li>
+        <li>Tensorflow</li>
+        <li>AWS, Digital Ocean & Heroku (deployment)</li>
+        <li>Travis CI (continuous integration)</li>
+      </ul>
+      <ul class="item">
+        <li>Sketch & Adobe Suite (design)</li>
+        <li>Git & Bitbucket (version control)</li>
+        <li>Node & Express (server)</li>
+        <li>Passport, OAuth2.0 & Firebase (authentication)</li>
+        <li>AntD and Carbon Components (component library)</li>
+        <li>Yarn and NPM (package managers)</li>
+        <li>NextJS (server side rendering)</li>
+      </ul>
+    </div>
     <h1 class="subtitle">Testimonials & Accolades</h1>
     <blockquote>
       <p>Golden A'Design Award and Competition - 2018</p>
-      <img src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/bam/adesign.jpg"
+      <img class="img small" src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/bam/adesign.jpg"
         alt="a'design award">
     </blockquote>
     <blockquote>
       <p>Computex d&i Specialty Award - 2018</p>
-      <img src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/bam/computex.jpg"
+      <img class="img small" src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/bam/computex.jpg"
         alt="computex award">
     </blockquote>
     <blockquote><a href="https://en.wikipedia.org/wiki/You_%28Time_Person_of_the_Year%29">2006 Time Magazine's Person
@@ -57,7 +85,7 @@
       <div class="author">Mom</div>
     </blockquote>
 
-    <p></p>
+    <script src="./scripts/cc.js"></script>
 </body>
 
 </html>

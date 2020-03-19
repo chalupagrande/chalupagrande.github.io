@@ -11,7 +11,12 @@ body, html {
   font-family: Helvetica, sans-serif;
 }
 
-.wrapper {
+nav {
+  background-color: rgba(255,255,255,0.95);
+}
+
+#wrapper {
+  position:relative;
   padding: 0.5rem;
   width: 100%;
 }
@@ -57,14 +62,20 @@ blockquote {
 }
 
 .row {
-  max-width: 1200px;
+  max-width: 1000px;
   display: flex;
+  flex-flow: column;
   justify-content: space-between;
 }
 
 .row .item {
   padding: 0.5rem;
   flex: 1 1;
+}
+
+.img.small {
+  width: 300px;
+  height: auto;
 }
 
 .img.stretch {
@@ -80,6 +91,13 @@ blockquote {
     position: fixed;
     top: 1rem;
     right: 1rem;
+  }
+
+  .row {
+    max-width: 1200px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
   }
 }
 
