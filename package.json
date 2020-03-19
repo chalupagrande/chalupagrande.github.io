@@ -7,6 +7,10 @@
     "dev": "nodemon --watch public --watch server.js server.js",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chalupagrande/chalupagrande.github.io"
+  },
   "dependencies": {
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
