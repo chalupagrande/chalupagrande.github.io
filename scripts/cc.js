@@ -12,6 +12,7 @@ const gifLinks = [
   'https://www.cameronsworld.net/img/content/5/3.gif',
   'https://www.cameronsworld.net/img/content/2/9.gif',
   'https://www.cameronsworld.net/img/content/1/7.gif',
+  'https://media.giphy.com/media/AdlPELEyhgVu8/giphy.gif',
 ]
 
 let gifEls = []

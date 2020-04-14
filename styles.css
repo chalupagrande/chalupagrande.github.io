@@ -82,8 +82,8 @@ blockquote {
   width: 100%;
 }
 
-.subdue {
-  color: rgba(244,244,244,0.5);
+.small {
+  font-size: 0.8rem;
 }
 
 @media (min-width: 900px){
