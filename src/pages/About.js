@@ -1,4 +1,5 @@
 import React from 'react'
+import Emoji from '../components/Emoji'
 
 export function About(props) {
   return (
@@ -30,8 +31,8 @@ export function About(props) {
         full stack developer and I pride myself on being able to build just
         about anything I set my mind to. I have worked on many projects and with
         many technologies that would make this site look like a petting zoo.
-        (I'm not sure why I went with that analogy but... &#x1F937). Here are
-        just a few:
+        (I'm not sure why I went with that analogy but... <Emoji symbol="🤷" />
+        ). Here are just a few:
       </p>
       <h4>Technologies</h4>
       <div className="row">

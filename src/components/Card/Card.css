@@ -1,0 +1,17 @@
+.card {
+  max-width: 250px;
+  padding: 1rem;
+  border: 1px solid black;
+  margin: 1rem;
+  min-height: 450px;
+  max-height: 450px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+}

@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "name": "Commerotive Hand Made T-Shirt",
+      "price": 2000,
+      "image": "https://placehold.it/250x250"
+    },
+    {
+      "name": "A really nice hat",
+      "price": 40000,
+      "image": "https://placehold.it/250x250"
+    }
+  ]
+}

@@ -11,7 +11,15 @@ const port = process.env.PORT || 4000
 app.use(bodyParser.json())
 const buildPath = path.resolve('./build')
 
-const frontEndRoutes = ['/', '/about', '/faq', '/contact', '/work', '/work/*']
+const frontEndRoutes = [
+  '/',
+  '/about',
+  '/faq',
+  '/contact',
+  '/work',
+  '/work/*',
+  '/shop',
+]
 frontEndRoutes.forEach((r) => {
   app.use(r, express.static(buildPath))
 })

@@ -141,6 +141,18 @@ blockquote {
 
 
 /* BAM */
+.btn {
+  font-style: bold;
+  font-size: 18px;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: blue;
+  color: white;
+}
+
 
 
 /* CODE */
@@ -201,16 +213,6 @@ pre code {
   margin-top: 1rem;
 }
 
-.contact-form button {
-  margin-top: 12px;
-  background-color: blue;
-  color: white;
-  font-style: bold;
-  font-size: 24px;
-  height: 40px;
-  width: 100px;
-  cursor: pointer;
-}
 
 .modal {
   width: 90%;

@@ -9,6 +9,7 @@ const axios = require('axios')
  */
 function verifyCaptcha(req, res, next) {
   const { recaptcha } = req.body
+  console.log('RECAPTCHA', recaptcha)
   try {
     axios({
       method: 'post',

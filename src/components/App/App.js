@@ -11,6 +11,7 @@ function App() {
         <Page.Home path="/" />
         <Page.About path="/about" />
         <Page.FAQ path="/faq" />
+        <Page.Shop path="/shop" />
         <Page.Contact path="/contact" />
         <Page.Work path="/work" />
         <Page.Bam path="/work/bam" />

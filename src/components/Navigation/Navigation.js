@@ -18,6 +18,9 @@ export default function Nav(props) {
           <Link to="/faq">FAQs</Link>
         </li>
         <li>
+          <Link to="/shop">Shop</Link>
+        </li>
+        <li>
           <Link to="/work">Work</Link>
         </li>
       </ul>
