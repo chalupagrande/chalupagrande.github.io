@@ -1,14 +1,40 @@
 {
   "products": [
     {
-      "name": "Commerotive Hand Made T-Shirt",
-      "price": 2000,
-      "image": "https://placehold.it/250x250"
+      "sku": "sku-1",
+      "requiresShipping": true,
+      "name": "Commemorative Dance T-shirt",
+      "description": "That T-shirt we had in 2017",
+      "images": [
+        "https://images-na.ssl-images-amazon.com/images/I/61kVr0i%2BchL._AC_UX679_.jpg"
+      ],
+      "amount": 8000,
+      "currency": "usd",
+      "quantity": 1
     },
     {
+      "sku": "sku-2",
+      "requiresShipping": true,
       "name": "A really nice hat",
-      "price": 40000,
-      "image": "https://placehold.it/250x250"
+      "description": "This cool hat I have that is from Back to the Future II",
+      "images": [
+        "https://images-na.ssl-images-amazon.com/images/I/911tF5%2BtX%2BL._AC_SX679_.jpg"
+      ],
+      "amount": 33500,
+      "currency": "usd",
+      "quantity": 1
+    },
+    {
+      "sku": "sku-3",
+      "requiresShipping": false,
+      "name": "Proof I know what I'm doing",
+      "description": "Proof, at a premium. Since you doubt me.",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/ProofAug05.jpg/286px-ProofAug05.jpg"
+      ],
+      "amount": 500,
+      "currency": "usd",
+      "quantity": 1
     }
   ]
 }

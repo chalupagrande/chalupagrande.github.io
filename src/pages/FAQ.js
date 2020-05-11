@@ -48,6 +48,20 @@ export function FAQ(props) {
         </a>
         . It's goofy.
       </p>
+
+      <h4>What the hell is a chalupa?</h4>
+      <p>
+        Okay, so this one is kinda annoying. if you{' '}
+        <a href="https://lmgtfy.com/?q=chalupa+images">
+          Google Image search Chalupa
+        </a>
+        , you get a bunch of images that look like fried tacos... but here is
+        the thing. Growing up I always order Chalupas (from legit Tex-Mex
+        restraunts in South Central Texas) and I would receive a FLAT looking
+        taco. Basically, a hard shell with a bunch of meat and veggies on it.
+        Anyway, they're delicious and now I'm hungry and going to go make lunch.
+        This website is over-the-top enough anyway.
+      </p>
     </>
   )
 }

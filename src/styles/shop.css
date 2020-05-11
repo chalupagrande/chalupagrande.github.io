@@ -4,3 +4,58 @@
   width: 100%;
   padding: 1rem;
 }
+
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 500px;
+}
+
+.form__item {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.form__item input,
+.form__item select {
+  margin: 2px;
+  font-size: 18px;
+}
+
+label.checkbox {
+  display: flex;
+  align-items: center;;
+}
+
+.form__item input[type=checkbox] {
+  width: 2rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 2rem;
+  border: 0.1mm solid black;
+}
+
+.form__item input[type=checkbox]:checked {
+  background-color: black;
+}
+
+.form__item input[type=checkbox]:checked:after {
+  margin-left: 3mm;
+  margin-top: -0.4mm;
+  width: 3.5mm;
+  height: 7.5mm;
+  border: solid white;
+  border-width: 0 1mm 1mm 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: "";
+  display: inline-block;
+}
+
+
+.recaptcha {
+  margin-top: 0.5rem;
+}

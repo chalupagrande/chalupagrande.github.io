@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import axios from 'axios'
+import '../styles/contact.css'
 
 export function Contact(props) {
   let recaptchaRef = useRef(null)
@@ -93,6 +94,7 @@ export function Contact(props) {
           sitekey="6Lf8z9sUAAAAAPsdlc7r1ULgGTKNPHf37cv-r3Gl"
           onChange={verifyRecaptcha}
         />
+
         <button
           className="btn btn-primary"
           type="submit"

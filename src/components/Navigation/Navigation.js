@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from '@reach/router'
 
-export default function Nav(props) {
+export default function Nav() {
   return (
     <nav className="navigation">
       <ul>
@@ -12,6 +12,9 @@ export default function Nav(props) {
           <Link to="/about">About</Link>
         </li>
         <li>
+          <Link to="/work">Work</Link>
+        </li>
+        <li>
           <Link to="/contact">Contact</Link>
         </li>
         <li>
@@ -19,9 +22,6 @@ export default function Nav(props) {
         </li>
         <li>
           <Link to="/shop">Shop</Link>
-        </li>
-        <li>
-          <Link to="/work">Work</Link>
         </li>
       </ul>
     </nav>

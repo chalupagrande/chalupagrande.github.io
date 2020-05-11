@@ -1,17 +1,30 @@
 .card {
-  max-width: 250px;
+  width: 250px;
   padding: 1rem;
   border: 1px solid black;
   margin: 1rem;
-  min-height: 450px;
-  max-height: 450px;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
+  height: 450px;
+  position: relative
 }
 
 .card img {
   width: 100%;
   height: auto;
-  max-height: 250px;
+}
+
+.card__footer {
+  position: absolute;
+  bottom: 1rem;
+  background-color: white;
+}
+
+.card__footer__action {
+  display: flex;
+  align-items: center;
+}
+
+.card__footer__action > .card-action--added {
+  margin-left: 1rem;
+  font-weight: bold;
+  color: green;
 }
