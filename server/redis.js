@@ -5,7 +5,14 @@ const { promisify } = require('util')
  * setup redis
  */
 
-const client = redis.createClient()
+const redisConfig = {}
+
+// set up for production
+if (process.env.NODE_ENV === 'production') {
+  redisConfig.url = process.env.REDIS_URL
+}
+
+const client = redis.createClient(redisConfig)
 client.on('error', function (error) {
   console.error('REDIS ERROR', error)
 })
