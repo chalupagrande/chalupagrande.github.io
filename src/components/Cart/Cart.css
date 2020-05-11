@@ -1,0 +1,23 @@
+.cart-item {
+  display: flex;
+  max-height: 50px;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.cart-item img {
+  margin-right: 1rem;
+  max-width: 30px;
+  height: auto;
+}
+
+.cart-item .remove {
+  color: red;
+  opacity: 0;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.cart-item:hover .remove {
+  opacity: 1;
+}
