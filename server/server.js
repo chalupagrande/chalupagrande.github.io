@@ -25,7 +25,6 @@ const corsOptions = {
 
 if (isProduction) {
   corsOptions.origin = function (origin, callback) {
-    console.log('ORIGIN', origin)
     if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true)
     } else {

@@ -103,6 +103,17 @@ export function Checkout(props) {
         <h1 className="title">Checkout</h1>
       </div>
       <Cart />
+      {process.env.REACT_APP_STRIPE_STATUS === 'testing' && (
+        <p className="highlight">
+          <strong>IMPORTANT:</strong> This integration is currently in TESTING
+          mode. If you would like to test the integration without actually
+          spending any money, on the next page -- you can use the credit card
+          number <code>4242 4242 4242 4242</code>. Use this with{' '}
+          <strong>any CVC code</strong> and{' '}
+          <strong>any future data as the expiration</strong> and it will process
+          your request as if it was a real transaction.
+        </p>
+      )}
       {requiresShipping && (
         <p>
           NOTE: Items will only ship in the United States. Also shipping could
