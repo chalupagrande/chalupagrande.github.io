@@ -11,13 +11,27 @@ const path = require('path')
 const cors = require('cors')
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 const MyRedis = require('./redis')
+const whitelist = require('./whitelist')
 
 const app = express()
 const port = process.env.PORT || 4000
 
+// setup cors
+const isProduction = process.env.NODE_ENV === 'production'
 const corsOptions = {
   origin: true,
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+if (isProduction) {
+  corsOptions.origin = function (origin, callback) {
+    console.log('ORIGIN', origin)
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
 }
 
 /**
@@ -37,7 +51,7 @@ const frontEndRoutes = [
   '/contact',
   '/work',
   '/work/*',
-  '/shop',
+  '/shop/*',
 ]
 frontEndRoutes.forEach((r) => {
   app.use(r, express.static(buildPath))
