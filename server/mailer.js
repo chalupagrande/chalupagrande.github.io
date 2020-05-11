@@ -52,7 +52,7 @@ function purchaseEmailTemplate({ clientInfo, session }) {
 
     <h4>Hello ${clientInfo.name}</h4>
     <p>Thank you for your purchase! Here is your order information from chalupagrande.com</p>
-    <p>Order ID: <strong>${clientInfo.clientID}</strong> for <strong>${
+    <p>Order ID: <strong>${clientInfo.clientId}</strong> for <strong>${
     clientInfo.email
   }</strong></p>
     <h4>Items</h4>
