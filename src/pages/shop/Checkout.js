@@ -86,7 +86,7 @@ export function Checkout(props) {
       clearCart()
     } catch (err) {
       alert('OOPS! There was an error during checkout. Sorry. Try again later.')
-      recaptchaRef.current?.reset()
+      if (recaptchaRef.current) recaptchaRef.current.reset()
       console.log('Checkout ERROR', err)
     }
   }
