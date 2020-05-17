@@ -2,6 +2,7 @@ import React from 'react'
 import { Router } from '@reach/router'
 import * as Page from '../../pages'
 import Navigation from '../Navigation'
+import { PanelManager } from '../Panels'
 import { Provider } from '../../store'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div id="wrapper">
       <Provider>
         <Navigation />
+        <PanelManager />
         <Router>
           <Page.Home path="/" />
           <Page.About path="/about" />

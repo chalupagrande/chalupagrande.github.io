@@ -1,32 +1,66 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { loadStripe } from '@stripe/stripe-js'
 
-export const initialState = {
+const initialState = {
   cart: [],
   stripePromise: loadStripe('pk_test_tZ1UTEHPHFd9dsZzi03UyKNB'),
+  panels: ['manager'],
 }
-
 export const StoreContext = React.createContext(initialState)
-export const Provider = (props) => {
-  const [store, setStore] = useState(initialState)
+export class Provider extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = initialState
 
-  const updaters = {
-    addToCart: (item) => {
-      setStore({ ...store, cart: [...store.cart, item] })
-    },
-    removeItem: (item) => {
-      let cartDupe = [...store.cart]
-      cartDupe = cartDupe.filter((el) => el.sku !== item.sku)
-      setStore({ ...store, cart: cartDupe })
-    },
-    clearCart: () => {
-      setStore({ ...store, cart: [] })
-    },
+    this.updaters = {
+      addToCart: (item) => {
+        const store = this.state
+        this.setState({ ...store, cart: [...store.cart, item] })
+      },
+      removeItem: (item) => {
+        const store = this.state
+        let cartDupe = [...store.cart]
+        cartDupe = cartDupe.filter((el) => el.sku !== item.sku)
+        this.setState({ ...store, cart: cartDupe })
+      },
+      clearCart: () => {
+        const store = this.state
+        this.setState({ ...store, cart: [] })
+      },
+      togglePanel: (name, open) => {
+        const store = this.state
+        const panelName = name.toLowerCase()
+        if (open) {
+          // check if it exists then add it
+          if (store.panels.indexOf(panelName) >= 0) return
+          this.setState({ ...store, panels: [...store.panels, panelName] })
+        } else {
+          // remove it from panels array
+          let temp = [...store.panels]
+          temp.splice(store.panels.indexOf(panelName), 1)
+          this.setState({
+            ...store,
+            panels: temp,
+          })
+        }
+      },
+      clearPanels: () => {
+        const store = this.state
+        this.setState({
+          ...store,
+          panels: [],
+        })
+      },
+    }
   }
 
-  return (
-    <StoreContext.Provider value={{ store, updaters }}>
-      {props.children}
-    </StoreContext.Provider>
-  )
+  render() {
+    return (
+      <StoreContext.Provider
+        value={{ store: this.state, updaters: this.updaters }}
+      >
+        {this.props.children}
+      </StoreContext.Provider>
+    )
+  }
 }

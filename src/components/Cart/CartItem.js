@@ -3,7 +3,6 @@ import { StoreContext } from '../../store'
 
 export function CartItem(props) {
   const {
-    store: { cart },
     updaters: { removeItem },
   } = useContext(StoreContext)
   function remove() {

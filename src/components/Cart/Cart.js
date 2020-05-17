@@ -6,7 +6,6 @@ import './Cart.css'
 export function Cart() {
   const {
     store: { cart },
-    updaters: { clearCart },
   } = useContext(StoreContext)
 
   const items = cart.map((e) => <CartItem key={e.sku} {...e} />)

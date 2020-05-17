@@ -3,7 +3,7 @@ import ReCAPTCHA from 'react-google-recaptcha'
 import axios from 'axios'
 import '../styles/contact.css'
 
-export function Contact(props) {
+export function Contact() {
   let recaptchaRef = useRef(null)
   const initialState = {
     name: '',
@@ -32,7 +32,7 @@ export function Contact(props) {
     e.preventDefault()
     try {
       console.log(state)
-      let r = await axios({
+      await axios({
         method: 'post',
         url: '/api/email',
         data: state,

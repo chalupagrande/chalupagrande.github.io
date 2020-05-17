@@ -79,7 +79,7 @@ export function Checkout(props) {
 
       //redirect to checkout page with stripe
       const stripe = await stripePromise
-      const { error } = await stripe.redirectToCheckout({
+      await stripe.redirectToCheckout({
         sessionId: session.id,
       })
 

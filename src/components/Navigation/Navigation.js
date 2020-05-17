@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from '@reach/router'
+import { StoreContext } from '../../store'
 
 export default function Nav() {
+  const {
+    store: { panels },
+    updaters: { togglePanel, clearPanels },
+  } = useContext(StoreContext)
+
+  const showingPanels = panels.length > 0
+
+  function showPanelList() {
+    togglePanel('manager', true)
+  }
+
+  function clear() {
+    clearPanels()
+  }
+
   return (
     <nav className="navigation">
       <ul>
@@ -22,6 +38,11 @@ export default function Nav() {
         </li>
         <li>
           <Link to="/shop">Shop</Link>
+        </li>
+        <li>
+          <div onClick={showingPanels ? clear : showPanelList}>
+            {showingPanels ? 'Clear Windows' : 'Show Windows'}
+          </div>
         </li>
       </ul>
     </nav>
