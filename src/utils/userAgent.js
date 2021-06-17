@@ -1,3 +1,4 @@
+/* eslint-disable */
 export function mobileCheck() {
   let check = false
   ;(function (a) {

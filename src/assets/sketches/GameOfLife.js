@@ -35,9 +35,9 @@ export default function GameOfLife(props) {
       for (let col = 0; col < rows; col++) {
         let val = grid[row][col]
         let sum = getNeighbors(grid, row, col)
-        if (val == 0 && sum == 3) {
+        if (val === 0 && sum === 3) {
           next[row][col] = 1
-        } else if (val == 1 && (sum < 2 || sum > 3)) {
+        } else if (val === 1 && (sum < 2 || sum > 3)) {
           next[row][col] = 0
         } else {
           next[row][col] = val

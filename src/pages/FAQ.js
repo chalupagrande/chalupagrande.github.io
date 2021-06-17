@@ -34,8 +34,9 @@ export function FAQ(props) {
 
       <h4>Are you available to work on my project?</h4>
       <p>
-        Dunno! Shoot me an email using the <a href="contact.html">contact</a>{' '}
-        form and I'll get back to you as soon as I can!
+        Dunno! Shoot me an email using the{' '}
+        <a href="https://etcetera.cr">contact</a> form and I'll get back to you
+        as soon as I can!
       </p>
 
       <h4>What sort of art do you do?</h4>
