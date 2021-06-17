@@ -13,7 +13,14 @@ export function FAQ(props) {
         has a different nickname for me. The one I like the most is Chalupa
         Grande.
       </p>
-
+      <h4>Something is broken. Why don't you fix it (updated 6/17/21)</h4>
+      <p>
+        I think we can both tell that this website is largely a joke. I don't
+        want to spend more time on it than is absolutely necessary. It was also
+        originally built like 3 years ago, and then refactored to be less
+        annoyingly minimalist 2 years ago... and you know what i dont need to
+        explain myself. I'll get to it eventually.
+      </p>
       <h4>
         Why does this site look so dumb if you're so good at all this stuff?
       </h4>
