@@ -5,8 +5,8 @@ import SnakeGame2 from '../../../assets/sketches/SnakeGame2'
 
 function SnakePanel(props) {
   const pos = {
-    x: random(0, window.innerWidth - 200),
-    y: random(0, window.innerHeight - 100),
+    x: 40,
+    y: 40,
   }
   return (
     <Panel

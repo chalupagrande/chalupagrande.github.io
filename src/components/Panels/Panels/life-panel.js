@@ -5,8 +5,8 @@ import GameOfLife from '../../../assets/sketches/GameOfLife'
 
 function DotsPanel(props) {
   const pos = {
-    x: random(0, window.innerWidth - 200),
-    y: random(0, window.innerHeight - 100),
+    x: 30,
+    y: 30,
   }
   return (
     <Panel

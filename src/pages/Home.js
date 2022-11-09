@@ -51,10 +51,9 @@ export function Home(props) {
 
       <p>
         Anyway, the less time I spend convincing you that I am actually good at
-        my job, the more time I can spend on
-        <strong>your cool project!</strong> Got an idea for an app, website,
-        weird installation, street art mural or skatepark? Shoot it my way and
-        let's get this thing started!
+        my job, the more time I can spend on <strong>your cool project!</strong>{' '}
+        Got an idea for an app, website, weird installation, street art mural or
+        skatepark? Shoot it my way and let's get this thing started!
       </p>
     </>
   )

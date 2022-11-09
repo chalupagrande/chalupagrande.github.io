@@ -6,8 +6,8 @@ import { mobileCheck } from '../../../utils/userAgent'
 function WordPanel(props) {
   const { togglePanel } = props
   const pos = {
-    x: random(0, window.innerWidth - 200),
-    y: random(0, window.innerHeight - 100),
+    x: window.innerWidth - 250,
+    y: 250,
   }
 
   const isMobile = mobileCheck()
@@ -32,6 +32,9 @@ function WordPanel(props) {
           </li>
           <li className="panel-name" onClick={() => togglePanel('life', true)}>
             Game of Life
+          </li>
+          <li className="panel-name" onClick={() => togglePanel('music', true)}>
+            Music
           </li>
           {!isMobile && (
             <li

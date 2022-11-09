@@ -50,9 +50,8 @@ export default function SnakeGame2(props) {
 
     p5.noStroke()
     snakePos.forEach((pos, i) => {
-      p5.fill('rgba(0,255,0, 0.25)')
-      if (i === 0) p5.circle(pos.x * scl + scl / 2, pos.y * scl + scl / 2, scl)
-      else p5.rect(pos.x * scl, pos.y * scl, scl, scl)
+      p5.fill('black')
+      p5.rect(pos.x * scl, pos.y * scl, scl, scl)
     })
 
     p5.fill(255, 0, 0)

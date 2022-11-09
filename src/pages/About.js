@@ -24,6 +24,9 @@ export function About(props) {
         <li>
           <a href="https://codesandbox.io/u/chalupagrande">CodeSandbox</a>
         </li>
+        <li>
+          <a href="https://giphy.com/channel/chalupagrande">Giphy</a>
+        </li>
       </ul>
       <p>
         I know this site looks simple, and is completely unstyled, and yes. it

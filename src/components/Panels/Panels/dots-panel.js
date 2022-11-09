@@ -5,8 +5,8 @@ import Dots from '../../../assets/sketches/Dots'
 
 function DotsPanel(props) {
   const pos = {
-    x: random(0, window.innerWidth - 200),
-    y: random(0, window.innerHeight - 100),
+    x: 10,
+    y: 10,
   }
   return (
     <Panel

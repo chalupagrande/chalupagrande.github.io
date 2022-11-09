@@ -4,8 +4,8 @@ import { random } from '../../../utils/math'
 
 function IntroPanel(props) {
   const pos = {
-    x: random(0, window.innerWidth - 200),
-    y: random(0, window.innerHeight - 100),
+    x: window.innerWidth - 200,
+    y: 100,
   }
   return (
     <Panel

@@ -70,6 +70,18 @@ export function FAQ(props) {
         Anyway, they're delicious and now I'm hungry and going to go make lunch.
         This website is over-the-top enough anyway.
       </p>
+      <h4>What is your favorite Gif</h4>
+      <iframe
+        src="https://giphy.com/embed/jsl5nGb3JxRvrJoaHF"
+        width="480"
+        height="318"
+        frameBorder="0"
+        className="giphy-embed"
+        allowFullScreen
+      ></iframe>
+      <p>
+        <a href="https://giphy.com/gifs/jsl5nGb3JxRvrJoaHF">via GIPHY</a>
+      </p>
     </>
   )
 }

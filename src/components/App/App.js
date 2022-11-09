@@ -23,6 +23,7 @@ function App() {
           <Page.Legal path="/legal" />
           <Page.Work path="/work" />
           <Page.Bam path="/work/bam" />
+          <Page.ShareGro path="/work/sharegro" />
           <Page.LoveLetters path="/work/love-letters" />
           <Page.IBMCloudApplicationMonitoring path="/work/icam" />
           <Page.IBMCloudPak path="/work/ibm-cloud-pak" />
