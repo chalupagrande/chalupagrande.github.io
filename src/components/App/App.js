@@ -13,6 +13,7 @@ function App() {
         <PanelManager />
         <Router>
           <Page.Home path="/" />
+          <Page.East path="/east" />
           <Page.About path="/about" />
           <Page.FAQ path="/faq" />
           <Page.Shop path="/shop" />
@@ -30,6 +31,7 @@ function App() {
           <Page.RedhatMarketplace path="/work/redhat-marketplace" />
           <Page.Sparts path="/work/sparts" />
           <Page.Underground path="/work/underground" />
+
           <Page.NotFound default />
         </Router>
       </Provider>

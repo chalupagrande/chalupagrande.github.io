@@ -51,6 +51,7 @@ const frontEndRoutes = [
   '/work',
   '/work/*',
   '/shop/*',
+  '/east'
 ]
 frontEndRoutes.forEach((r) => {
   app.use(r, express.static(buildPath))
