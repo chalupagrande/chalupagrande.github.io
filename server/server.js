@@ -72,13 +72,13 @@ app.get('/api/rsvp', async (req, res) => {
 })
 
 app.post('/api/rsvp', async (req, res) => {
-  const { name, personCount } = req.body
+  const { name, rsvpCount, canMakeIt } = req.body
   try {
     let rsvps = await MyRedis.getAsync("rsvp")
     console.log({ rsvps })
     rsvps = rsvps ? JSON.parse(rsvps).rsvps : []
 
-    const data = { rsvps: [...rsvps, { name, personCount }] }
+    const data = { rsvps: [...rsvps, { name, rsvpCount, canMakeIt }] }
     await MyRedis.setAsync(
       "rsvp",
       JSON.stringify(data)
