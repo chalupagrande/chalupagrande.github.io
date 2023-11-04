@@ -61,6 +61,33 @@ frontEndRoutes.forEach((r) => {
  * API
  */
 
+app.get('/api/rsvp', verifyCaptcha, async (req, res) => {
+  try {
+    const rsvps = await MyRedis.getAsync("rsvp")
+    res.status(200).send({ message: 'rsvps', data: rsvps })
+  } catch (err) {
+    console.log('ERROR', err)
+    res.status(500).send({ message: 'Error getting RSVPs', err })
+  }
+})
+
+app.post('/api/rsvp', verifyCaptcha, async (req, res) => {
+  const { name, personCount } = req.body
+  try {
+    const rsvps = await MyRedis.getAsync("rsvp")
+    const data = { rsvps: [...rsvps, { name, personCount }] }
+    await MyRedis.setAsync(
+      "rsvp",
+      JSON.stringify(data)
+    )
+
+    res.status(200).send(data)
+  } catch (err) {
+    console.log('ERROR', err)
+    res.status(500).send({ message: 'Error setting RSVP', err })
+  }
+})
+
 app.post('/api/email', verifyCaptcha, async (req, res) => {
   const { message, email, name, subject } = req.body
   try {

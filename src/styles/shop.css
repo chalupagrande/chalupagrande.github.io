@@ -17,18 +17,32 @@
   flex-flow: column nowrap;
 }
 
+.form__item--row {
+  margin-top: 0.5rem;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.form__item--row>* {
+  margin: 0 0.5rem;
+}
+
 .form__item input,
-.form__item select {
+.form__item select,
+.form__item--row input,
+.form__item--row select {
   margin: 2px;
   font-size: 18px;
 }
 
 label.checkbox {
   display: flex;
-  align-items: center;;
+  align-items: center;
+  ;
 }
 
-.form__item input[type=checkbox] {
+.form__item input[type=checkbox],
+.form__item--row input[type=checkbox] {
   width: 2rem;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -36,11 +50,13 @@ label.checkbox {
   border: 0.1mm solid black;
 }
 
-.form__item input[type=checkbox]:checked {
+.form__item input[type=checkbox]:checked,
+.form__item--row input[type=checkbox]:checked {
   background-color: black;
 }
 
-.form__item input[type=checkbox]:checked:after {
+.form__item input[type=checkbox]:checked:after,
+.form__item--row input[type=checkbox]:checked:after {
   margin-left: 3mm;
   margin-top: -0.4mm;
   width: 3.5mm;
