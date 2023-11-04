@@ -1,11 +1,14 @@
 import React from 'react'
 import { useLocation } from '@reach/router'
 import axios from 'axios'
+import ls from 'local-storage'
 
 export function East(props) {
+    const hasRSVPd = ls.get("rsvp")
     const [name, setName] = React.useState('')
     const [rsvpCount, setRSVPCount] = React.useState(1)
     const [canMakeIt, setCanMakeIt] = React.useState(false)
+    const [submitted, setSubmitted] = React.useState(hasRSVPd)
 
     const location = useLocation()
     const partyInvite = location.search.includes('party=true')
@@ -24,9 +27,15 @@ export function East(props) {
 
     async function handleSubmit(e) {
         e.preventDefault()
+        setSubmitted(true)
+        ls.set("rsvp", "true")
         try {
             const data = { name, rsvpCount, canMakeIt }
-            const response = await axios.post('/api/rsvp', data)
+            const response = await axios({
+                method: 'post',
+                url: '/api/rsvp',
+                data: { name, canMakeIt, rsvpCount }
+            })
             console.log(response)
             if (canMakeIt) {
                 alert("GREAT! I'm excited. See you there")
@@ -104,7 +113,7 @@ export function East(props) {
                             </>
                             }
                         </div>
-                        <button>Submit</button>
+                        <button disabled={submitted}>{submitted ? "Thanks for RSVPing" : "Submit"}</button>
                     </form>
 
                 </div>}

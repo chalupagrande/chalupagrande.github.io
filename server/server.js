@@ -61,7 +61,7 @@ frontEndRoutes.forEach((r) => {
  * API
  */
 
-app.get('/api/rsvp', verifyCaptcha, async (req, res) => {
+app.get('/api/rsvp', async (req, res) => {
   try {
     const rsvps = await MyRedis.getAsync("rsvp")
     res.status(200).send({ message: 'rsvps', data: rsvps })
@@ -71,10 +71,13 @@ app.get('/api/rsvp', verifyCaptcha, async (req, res) => {
   }
 })
 
-app.post('/api/rsvp', verifyCaptcha, async (req, res) => {
+app.post('/api/rsvp', async (req, res) => {
   const { name, personCount } = req.body
   try {
-    const rsvps = await MyRedis.getAsync("rsvp")
+    let rsvps = await MyRedis.getAsync("rsvp")
+    console.log({ rsvps })
+    rsvps = rsvps ? JSON.parse(rsvps).rsvps : []
+
     const data = { rsvps: [...rsvps, { name, personCount }] }
     await MyRedis.setAsync(
       "rsvp",
