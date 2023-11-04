@@ -55,7 +55,7 @@ export function East(props) {
                 <h2 className='subtitle'>East Austin Studio Tour (#549)</h2>
 
             </div>
-            <img className="img medium" src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/mac.jpg"></img>
+            <img className="img small" src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/mac.jpg"></img>
             <div style={{ margin: '1rem' }}>
                 <p>Hey! I'm opening up my house for East Austin Studio Tour where I'll be showing my art. I've never done anything like this before, but I've been working hard on a lot of new pieces and would love for you to come check them out! So swing by! Here are the details:</p>
                 <ul>
@@ -69,6 +69,15 @@ export function East(props) {
                         <li>In my backyard!</li>
                         <li><strong><a href="https://maps.app.goo.gl/dsdJUEetSWt1mdYZ7">1110 Mason Ave. Austin Tx. 78721</a></strong></li>
                     </ul></li>
+                    <li>What:
+                        <ul>
+                            <li>Art!</li>
+                            <li>Paintings of Rappers!</li>
+                            <li>Abstract paintings!</li>
+                            <li>This weird 3D photobooth thing!</li>
+                            <li>Maybe some other stuff if I can finish it in time!</li>
+                        </ul>
+                    </li>
                 </ul>
 
                 <br />
