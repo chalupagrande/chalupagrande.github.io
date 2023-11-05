@@ -51,7 +51,7 @@ export function East(props) {
     return (
         <>
             <div className="intro">
-                <h1 className="title">🎉 Your invited!! 🎉</h1>
+                <h1 className="title">🎉 You're invited!! 🎉</h1>
                 <h2 className='subtitle'>East Austin Studio Tour (#549)</h2>
 
             </div>
