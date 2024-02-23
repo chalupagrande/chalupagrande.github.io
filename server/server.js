@@ -51,7 +51,7 @@ const frontEndRoutes = [
   '/work',
   '/work/*',
   '/shop/*',
-  '/east'
+  '/east',
 ]
 frontEndRoutes.forEach((r) => {
   app.use(r, express.static(buildPath))
@@ -61,33 +61,51 @@ frontEndRoutes.forEach((r) => {
  * API
  */
 
-app.get('/api/rsvp', async (req, res) => {
+app.get('/s/:urlCode', async (req, res) => {
+  const { urlCode } = req.params
+  console.log("URL CODE", urlCode)
   try {
-    const rsvps = await MyRedis.getAsync("rsvp")
-    res.status(200).send({ message: 'rsvps', data: rsvps })
+    const urlData = await MyRedis.getAsync(urlCode)
+    if (urlData === null) {
+      res.send("URL Not Found")
+      return
+    }
+    const recordParsed = JSON.parse(urlData)
+    console.log('URL DATA', recordParsed)
+    res.redirect(302, recordParsed.destination)
   } catch (err) {
     console.log('ERROR', err)
-    res.status(500).send({ message: 'Error getting RSVPs', err })
+    res.status(500).send({ message: 'Error getting URL Data', err })
   }
 })
 
-app.post('/api/rsvp', async (req, res) => {
-  const { name, rsvpCount, canMakeIt } = req.body
+app.post('/api/url-short', async (req, res) => {
+  const { vanity, destination, force } = req.body
   try {
-    let rsvps = await MyRedis.getAsync("rsvp")
-    console.log({ rsvps })
-    rsvps = rsvps ? JSON.parse(rsvps).rsvps : []
-
-    const data = { rsvps: [...rsvps, { name, rsvpCount, canMakeIt }] }
+    if (vanity) {
+      const vanityData = await MyRedis.getAsync(vanity)
+      console.log(vanityData)
+      if (vanityData && !force) {
+        res.send("Vanity already exists")
+        return
+      } else {
+        await MyRedis.setAsync(
+          vanity,
+          JSON.stringify({ destination, created: new Date() })
+        )
+        res.status(200).send({ code: vanity, shortUrl: `https://etc.cr/s/${vanity}`, destinationUrl: destination })
+        return
+      }
+    }
+    const shortCode = Math.random().toString(36).substring(2, 15)
     await MyRedis.setAsync(
-      "rsvp",
-      JSON.stringify(data)
+      shortCode,
+      JSON.stringify({ destination, created: new Date() })
     )
-
-    res.status(200).send(data)
+    res.status(200).send({ code: vanity, url: `etc.cr/s/${shortCode}`, destinationUrl: destination })
   } catch (err) {
     console.log('ERROR', err)
-    res.status(500).send({ message: 'Error setting RSVP', err })
+    res.status(500).send({ message: 'Error setting ShortCode', err })
   }
 })
 
@@ -165,6 +183,8 @@ app.post('/api/payment/webhook', async (req, res) => {
   // Return a response to acknowledge receipt of the event
   res.json({ received: true })
 })
+
+
 
 /**
  * LISTEN
