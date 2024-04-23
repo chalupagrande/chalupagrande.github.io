@@ -1,4 +1,7 @@
-require('dotenv').config()
+const path = require('path')
+require('dotenv').config({
+  path: path.resolve(__dirname, '../.env'),
+})
 const express = require('express')
 const bodyParser = require('body-parser')
 const { verifyCaptcha } = require('./middleware')
@@ -7,9 +10,10 @@ const {
   emailTemplate,
   purchaseEmailTemplate,
 } = require('./mailer')
-const path = require('path')
+
 const cors = require('cors')
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+console.log('STRIPE', process.env.STRIPE_SECRET_KEY)
 const MyRedis = require('./redis')
 const whitelist = require('./whitelist')
 
@@ -127,6 +131,7 @@ app.post('/api/email', verifyCaptcha, async (req, res) => {
 })
 
 app.post('/api/payment', verifyCaptcha, async (req, res) => {
+
   try {
     const { cart, clientInfo } = req.body
     // set info in redis.

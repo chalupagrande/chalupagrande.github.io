@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../../store'
+import Carousel from '../Coursel'
 import './Card.css'
 
 export default function Card(props) {
@@ -16,9 +17,7 @@ export default function Card(props) {
 
   return (
     <div className="card">
-      <div className="card__header">
-        <img src={props.images[0]} alt={props.title} />
-      </div>
+      <Carousel images={props.images} />
       <div className="card__footer">
         <h4>{props.name}</h4>
         <p>

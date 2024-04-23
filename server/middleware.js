@@ -13,6 +13,9 @@ function verifyCaptcha(req, res, next) {
     axios({
       method: 'post',
       url: `https://www.google.com/recaptcha/api/siteverify`,
+      Headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
       params: {
         secret: process.env.CAPTCHA_SECRET_KEY,
         response: recaptcha,

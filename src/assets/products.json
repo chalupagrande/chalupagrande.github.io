@@ -1,38 +1,14 @@
 {
   "products": [
     {
-      "sku": "sku-1",
+      "sku": "sku-4",
       "requiresShipping": true,
-      "name": "Commemorative Dance T-shirt",
-      "description": "That T-shirt we had in 2017",
+      "name": "\"Stuck\" print. 2024",
+      "description": "Did some experiments with ASCII art, and decided to make prints of this one",
       "images": [
-        "https://images-na.ssl-images-amazon.com/images/I/61kVr0i%2BchL._AC_UX679_.jpg"
+        "https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/skull-detailed-smaller.png"
       ],
-      "amount": 8000,
-      "currency": "usd",
-      "quantity": 1
-    },
-    {
-      "sku": "sku-2",
-      "requiresShipping": true,
-      "name": "A really nice hat",
-      "description": "This cool hat I have that is from Back to the Future II",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/I/911tF5%2BtX%2BL._AC_SX679_.jpg"
-      ],
-      "amount": 33500,
-      "currency": "usd",
-      "quantity": 1
-    },
-    {
-      "sku": "sku-3",
-      "requiresShipping": false,
-      "name": "Proof I know what I'm doing",
-      "description": "Proof, at a premium. Since you doubt me.",
-      "images": [
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/ProofAug05.jpg/286px-ProofAug05.jpg"
-      ],
-      "amount": 500,
+      "amount": 2500,
       "currency": "usd",
       "quantity": 1
     }
