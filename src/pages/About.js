@@ -16,7 +16,7 @@ export function About(props) {
           <a href="https://www.linkedin.com/in/chalupagrande/">LinkedIn</a>
         </li>
         <li>
-          <a href="https://www.instagram.com/thesuperuser/">Instagram</a>
+          <a href="https://www.instagram.com/sr.chalupagrande/">Instagram</a>
         </li>
         <li>
           <a href="https://codepen.io/chalupagrande">CodePen</a>

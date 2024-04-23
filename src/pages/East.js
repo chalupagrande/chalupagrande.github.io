@@ -27,6 +27,9 @@ export function East(props) {
 
     async function handleSubmit(e) {
         e.preventDefault()
+        alert("RSVPs are closed. Sorry!")
+        return
+        // blocking this behavior
         setSubmitted(true)
         ls.set("rsvp", "true")
         try {
