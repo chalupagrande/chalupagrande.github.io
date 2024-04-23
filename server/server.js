@@ -13,7 +13,6 @@ const {
 
 const cors = require('cors')
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
-console.log('STRIPE', process.env.STRIPE_SECRET_KEY)
 const MyRedis = require('./redis')
 const whitelist = require('./whitelist')
 
