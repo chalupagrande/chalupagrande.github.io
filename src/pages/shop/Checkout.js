@@ -79,6 +79,8 @@ export function Checkout(props) {
 
       //redirect to checkout page with stripe
       const stripe = await stripePromise
+
+      // YOU ARE HERE 04/22/2024
       await stripe.redirectToCheckout({
         sessionId: session.id,
       })
@@ -116,10 +118,7 @@ export function Checkout(props) {
       )}
       {requiresShipping && (
         <p>
-          NOTE: Items will only ship in the United States. Also shipping could
-          take a while because I'm literally going to order it from Amazon and
-          then ship it to you. So, you know... that could take a while. But
-          isn't this entire WORKING SHOP EXPERIENCE COOL AS HELL?!{' '}
+          NOTE: Items will only ship in the United States.
         </p>
       )}
       <h3>Shipping Address.</h3>
