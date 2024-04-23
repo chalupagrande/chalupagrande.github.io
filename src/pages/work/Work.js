@@ -216,7 +216,7 @@ export function Work(props) {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.instagram.com/thesuperuser/"
+            href="https://www.instagram.com/sr.chalupagrande/"
           >
             Instagram
           </a>
