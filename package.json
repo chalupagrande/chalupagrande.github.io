@@ -25,7 +25,7 @@
     "react-resizable": "^1.10.1",
     "react-scripts": "3.4.1",
     "redis": "^3.0.2",
-    "stripe": "^8.50.0"
+    "stripe": "^15.3.0"
   },
   "scripts": {
     "start": "node server/server.js",
