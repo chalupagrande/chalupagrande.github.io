@@ -12,7 +12,7 @@ const {
 } = require('./mailer')
 
 const cors = require('cors')
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY_TEST)
 const MyRedis = require('./redis')
 const whitelist = require('./whitelist')
 
@@ -55,6 +55,8 @@ const frontEndRoutes = [
   '/work/*',
   '/shop/*',
   '/east',
+  '/shop',
+  '/shop/checkout'
 ]
 frontEndRoutes.forEach((r) => {
   app.use(r, express.static(buildPath))
@@ -135,20 +137,32 @@ app.post('/api/payment', verifyCaptcha, async (req, res) => {
     const { cart, clientInfo } = req.body
     // set info in redis.
 
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      line_items: cart,
-      customer_email: clientInfo.email,
-      success_url: `${process.env.HOME_URL}/shop/success`,
-      cancel_url: `${process.env.HOME_URL}/shop/cancel`,
-    })
+    const totalAmountOwed = cart.reduce((a, el) => a + el.amount, 0)
+    console.log('CLIENT INFO', clientInfo, cart)
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: totalAmountOwed,
+      currency: 'usd',
+      automatic_payment_methods: {
+        enabled: true,
+      },
+    });
 
-    await MyRedis.setAsync(
-      session.id,
-      JSON.stringify({ ...clientInfo, processed: false })
-    )
+    console.log("PAYMENT INTENT", paymentIntent)
 
-    res.status(200).send({ message: 'Session created', data: { session } })
+    // const session = await stripe.checkout.sessions.create({
+    //   payment_method_types: ['card'],
+    //   line_items: cart,
+    //   customer_email: clientInfo.email,
+    //   success_url: `${process.env.HOME_URL}/shop/success`,
+    //   cancel_url: `${process.env.HOME_URL}/shop/cancel`,
+    // })
+
+    // await MyRedis.setAsync(
+    //   session.id,
+    //   JSON.stringify({ ...clientInfo, processed: false })
+    // )
+
+    res.status(200).send({ message: 'Session created', data: { "jamie": 1 } })
   } catch (err) {
     console.log('ERROR CREATING SESSION', err)
     res.status(500).send({ message: 'Error creating session', err })

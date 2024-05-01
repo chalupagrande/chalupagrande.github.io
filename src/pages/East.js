@@ -30,25 +30,25 @@ export function East(props) {
         alert("RSVPs are closed. Sorry!")
         return
         // blocking this behavior
-        setSubmitted(true)
-        ls.set("rsvp", "true")
-        try {
-            const data = { name, rsvpCount, canMakeIt }
-            const response = await axios({
-                method: 'post',
-                url: '/api/rsvp',
-                data: { name, canMakeIt, rsvpCount }
-            })
-            console.log(response)
-            if (canMakeIt) {
-                alert("GREAT! I'm excited. See you there")
-            } else {
-                alert("Booooooo, you suck.")
-            }
-        } catch (err) {
-            console.log(err)
-            alert("whoops! something went wrong.")
-        }
+        // setSubmitted(true)
+        // ls.set("rsvp", "true")
+        // try {
+        //     const data = { name, rsvpCount, canMakeIt }
+        //     const response = await axios({
+        //         method: 'post',
+        //         url: '/api/rsvp',
+        //         data: { name, canMakeIt, rsvpCount }
+        //     })
+        //     console.log(response)
+        //     if (canMakeIt) {
+        //         alert("GREAT! I'm excited. See you there")
+        //     } else {
+        //         alert("Booooooo, you suck.")
+        //     }
+        // } catch (err) {
+        //     console.log(err)
+        //     alert("whoops! something went wrong.")
+        // }
     }
 
     return (

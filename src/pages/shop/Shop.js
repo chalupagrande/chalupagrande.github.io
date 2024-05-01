@@ -19,10 +19,7 @@ export function Shop() {
         <h1 className="title">Shop</h1>
         <p>Buy cool Jamie Skinner merchandise for you and your family!</p>
       </div>
-      <h1 className="center">The store is being updated! </h1>
-      <h3 className="center">Please check back later.</h3>
-      <p>Updated: (as of 4/25/24)</p>
-      {/* <div className="shop-items">{shopItems}</div>
+      <div className="shop-items">{shopItems}</div>
       {!!cart.length && (
         <>
           <Cart />
@@ -30,7 +27,7 @@ export function Shop() {
             <button className="btn btn-primary">Checkout</button>
           </Link>
         </>
-      )} */}
+      )}
     </>
   )
 }

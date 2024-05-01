@@ -212,7 +212,7 @@ export function Checkout(props) {
               onChange={handleChange}
             />
             I have read and agree to the things in:{' '}
-            <Link to="/legal">Legal</Link>
+            <Link to="legal">Legal</Link>
           </label>
         </div>
         <ReCAPTCHA
@@ -222,7 +222,7 @@ export function Checkout(props) {
           onChange={verifyRecaptcha}
         />
         <button
-          htmltype="submit"
+          type="submit"
           className="btn btn-primary"
           disabled={cart.length === 0}
         >
