@@ -13,6 +13,11 @@ There is an error in the deprecated shopping experience. HERE:
       })
 ```
 
+### WHat you were working on: (05/21/24)
+Trying to upgrade all packages. Check out branch `updated-packages`. Dokku machine does not like it though. 
+
+
+
 #### Notes for Development:
 ```
 # starting redis

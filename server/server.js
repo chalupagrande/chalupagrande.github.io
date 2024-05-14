@@ -117,11 +117,11 @@ app.post('/api/url-short', async (req, res) => {
 app.post('/api/email', verifyCaptcha, async (req, res) => {
   const { message, email, name, subject } = req.body
   try {
-    let result = await transporter.sendMail({
+    let result = await transporter.send({
       from: process.env.EMAIL_USERNAME,
       to: process.env.EMAIL_USERNAME,
       subject: `NEW MESSAGE: ${name}`,
-      html: emailTemplate(name, subject, email, message),
+      html: `<p>${message}</p><p>From: ${email}</p>`,
     })
 
     res.status(200).send({ message: 'Message Sent', data: result })
@@ -180,7 +180,7 @@ app.post('/api/payment/webhook', async (req, res) => {
     const clientInfo = JSON.parse(await MyRedis.getAsync(session.id))
     console.log({ clientInfo, session })
     // send client reciept
-    let result1 = await transporter.sendMail({
+    let result1 = await transporter.send({
       from: process.env.EMAIL_USERNAME,
       to: clientInfo.email,
       subject: `Purchase Receipt from Chalupagrande.com`,
@@ -188,12 +188,13 @@ app.post('/api/payment/webhook', async (req, res) => {
     })
 
     // send myself a reciept
-    let result2 = await transporter.sendMail({
+    let result2 = await transporter.send({
       from: process.env.EMAIL_USERNAME,
       to: process.env.EMAIL_USERNAME,
       subject: `Purchase Receipt from Chalupagrande.com`,
       html: purchaseEmailTemplate({ clientInfo, session }),
     })
+
     const isDeleted = await MyRedis.delAsync(session.id)
     console.log('DELETED?', isDeleted)
   }

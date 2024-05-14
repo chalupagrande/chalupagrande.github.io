@@ -31,7 +31,7 @@ export default function Nav() {
           <Link to="/work">Work</Link>
         </li>
         <li>
-          <a href="https://etcetera.cr">Contact</a>
+          <Link to="/contact">Contact</Link>
         </li>
         <li>
           <Link to="/faq">FAQs</Link>
