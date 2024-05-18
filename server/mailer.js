@@ -6,7 +6,6 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY)
  */
 
 
-
 function emailTemplate(name, subject, email, message) {
   return `
     <!DOCTYPE html>

@@ -10,6 +10,8 @@ const {
   emailTemplate,
   purchaseEmailTemplate,
 } = require('./mailer')
+const sgMail = require('@sendgrid/mail')
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 const cors = require('cors')
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY_TEST)
@@ -121,9 +123,9 @@ app.post('/api/email', verifyCaptcha, async (req, res) => {
       from: process.env.EMAIL_USERNAME,
       to: process.env.EMAIL_USERNAME,
       subject: `NEW MESSAGE: ${name}`,
-      html: `<p>${message}</p><p>From: ${email}</p>`,
+      html: emailTemplate(name, subject, email, message)
     })
-
+    console.log("sendgrid results: ", result)
     res.status(200).send({ message: 'Message Sent', data: result })
   } catch (err) {
     console.log('ERROR', err)
