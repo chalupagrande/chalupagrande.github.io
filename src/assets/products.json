@@ -3,7 +3,7 @@
     {
       "sku": "sku-4",
       "requiresShipping": true,
-      "name": "\"Stuck\" print. 2024",
+      "name": "\"ASCII Skull\" print. 2024",
       "description": "Did some experiments with ASCII art, and decided to make prints of this one",
       "images": [
         "https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/skull-detailed-smaller.png"
@@ -11,6 +11,19 @@
       "amount": 2500,
       "currency": "usd",
       "quantity": 1
+    },
+    {
+      "sku": "sku-1",
+      "requiresShipping": true,
+      "name": "\"ASCII Skull\" print. 2024",
+      "description": "Did some experiments with ASCII art, and decided to make prints of this one",
+      "images": [
+        "https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/skull-detailed-smaller.png"
+      ],
+      "amount": 2500,
+      "currency": "usd",
+      "quantity": 1,
+      "minimumQuantity": 1
     }
   ]
 }

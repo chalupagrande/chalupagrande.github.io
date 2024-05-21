@@ -58,7 +58,8 @@ const frontEndRoutes = [
   '/shop/*',
   '/east',
   '/shop',
-  '/shop/checkout'
+  '/shop/checkout',
+  '/short',
 ]
 frontEndRoutes.forEach((r) => {
   app.use(r, express.static(buildPath))
@@ -93,7 +94,7 @@ app.post('/api/url-short', async (req, res) => {
       const vanityData = await MyRedis.getAsync(vanity)
       console.log(vanityData)
       if (vanityData && !force) {
-        res.send("Vanity already exists")
+        res.send({ message: "Vanity already exists" })
         return
       } else {
         await MyRedis.setAsync(

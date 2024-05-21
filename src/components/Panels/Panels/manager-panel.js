@@ -36,12 +36,6 @@ function WordPanel(props) {
           <li className="panel-name" onClick={() => togglePanel('music', true)}>
             Music
           </li>
-          <li className="panel-name" onClick={() => {
-            alert("Redirecting to Leaderboard.etc.cr")
-            window.location.href = 'https://leaderboard.etc.cr'
-          }}>
-            Leaderboard
-          </li>
           {!isMobile && (
             <li
               className="panel-name"

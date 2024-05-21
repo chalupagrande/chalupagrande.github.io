@@ -1,8 +1,11 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -12,19 +15,21 @@ body, html {
 }
 
 nav {
-  background-color: rgba(255,255,255,0.95);
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 #wrapper {
-  position:relative;
+  position: relative;
   padding: 0.5rem;
   width: 100%;
 }
 
-a, a:visited {
+a,
+a:visited {
   color: blue;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: line-through;
 }
@@ -37,6 +42,7 @@ a:hover {
   margin-bottom: 0;
   text-decoration: underline;
 }
+
 .intro .subtitle {
   margin-top: 0;
   font-size: 3.4rem;
@@ -45,6 +51,7 @@ a:hover {
 .subtitle {
   font-size: 1.5rem;
 }
+
 p {
   max-width: 600px;
 }
@@ -57,8 +64,13 @@ blockquote {
   border-left: 3px solid grey;
   padding: 0.5rem;
 }
+
 .author:before {
   content: '-';
+}
+
+.form {
+  max-width: 600px;
 }
 
 .row {
@@ -71,6 +83,18 @@ blockquote {
 .row .item {
   padding: 0.5rem;
   flex: 1 1;
+}
+
+.col {
+  display: flex;
+  flex-flow: column;
+
+}
+
+.col .item {
+  display: flex;
+  flex-flow: row;
+  padding: 0.5rem;
 }
 
 .img.small {
@@ -104,7 +128,7 @@ blockquote {
   font-weight: bold;
 }
 
-@media (min-width: 900px){
+@media (min-width: 900px) {
   nav {
     position: fixed;
     top: 1rem;
@@ -134,14 +158,17 @@ blockquote {
   mix-blend-mode: multiply;
   transition: margin-left 0.4s;
 }
+
 .portrait .cmyk.stretch.cmyk-m,
 .portrait:hover .cmyk.cmyk-m {
   margin-left: 100px;
 }
+
 .portrait .cmyk.stretch.cmyk-y,
 .portrait:hover .cmyk.cmyk-y {
   margin-left: 200px;
 }
+
 .portrait .cmyk.stretch.cmyk-k,
 .portrait:hover .cmyk.cmyk-k {
   margin-left: 300px;
@@ -213,7 +240,7 @@ pre code {
   z-index: 10;
   height: auto;
   transform: translate(-50%, -50%);
-  background-color: rgb(250,250,250);
+  background-color: rgb(250, 250, 250);
   padding: 1rem;
 }
 
@@ -224,5 +251,5 @@ pre code {
   width: 100vw;
   height: 100vh;
   z-index: 9;
-  background-color: rgba(0,0,0, 0.3)
+  background-color: rgba(0, 0, 0, 0.3)
 }

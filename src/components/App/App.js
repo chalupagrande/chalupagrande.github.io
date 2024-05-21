@@ -17,6 +17,7 @@ function App() {
           <Page.About path="/about" />
           <Page.FAQ path="/faq" />
           <Page.Shop path="/shop" />
+          <Page.Short path="/short" />
           <Page.Checkout path="/shop/checkout" />
           <Page.Success path="/shop/success" />
           <Page.Cancel path="/shop/canceled" />

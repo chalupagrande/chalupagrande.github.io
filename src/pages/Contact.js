@@ -24,7 +24,6 @@ export function Contact() {
   }
 
   function verifyRecaptcha(e) {
-    console.log('VERIFYING')
     setState({ ...state, recaptcha: e })
   }
 
@@ -38,11 +37,11 @@ export function Contact() {
         data: state,
       })
       alert('Message Sent')
-      setState({ ...initialState, submitted: true })
+      setState({ submitted: true })
     } catch (err) {
       alert('Oops! There was an error sending your message')
-      console.log('Error', err)
       setState({ ...initialState, submitted: false })
+      console.log('Error', err)
     }
   }
 
@@ -61,6 +60,7 @@ export function Contact() {
           placeholder="Jeff Bezos"
           onChange={handleChange}
           value={state.name}
+          disabled={state.submitted}
         />
         <label htmlFor="email">Your Email:</label>
         <input
@@ -70,6 +70,7 @@ export function Contact() {
           placeholder="jeff@amazon.com"
           onChange={handleChange}
           value={state.email}
+          disabled={state.submitted}
         />
         <label htmlFor="subject">Subject:</label>
         <input
@@ -79,6 +80,7 @@ export function Contact() {
           placeholder="Help!"
           onChange={handleChange}
           value={state.subject}
+          disabled={state.submitted}
         />
         <label htmlFor="message">Message:</label>
         <textarea
@@ -87,6 +89,7 @@ export function Contact() {
           placeholder="Please Jamie! We need you"
           onChange={handleChange}
           value={state.message}
+          disabled={state.submitted}
         ></textarea>
         <ReCAPTCHA
           className="recaptcha"
