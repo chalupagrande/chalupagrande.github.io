@@ -1,5 +1,4 @@
 const redis = require('redis')
-const { promisify } = require('util')
 
 /**
  * setup redis
@@ -7,13 +6,14 @@ const { promisify } = require('util')
 
 const redisConfig = {}
 
+console.log(process.env.REDIS_URL)
 // set up for production
 if (process.env.NODE_ENV === 'production') {
   redisConfig.url = process.env.REDIS_URL
 }
 
 const client = redis.createClient(redisConfig)
-client.on('error', function (error) {
+client.on('error', (error) => {
   console.error('REDIS ERROR', error)
 })
 
@@ -28,12 +28,6 @@ client.on('end', () => {
   console.log('Connection ENDED with REDIS')
 })
 
-const getAsync = promisify(client.get).bind(client)
-const setAsync = promisify(client.set).bind(client)
-const delAsync = promisify(client.del).bind(client)
+client.connect()
 
-module.exports = {
-  getAsync,
-  setAsync,
-  delAsync,
-}
+module.exports = client

@@ -73,7 +73,7 @@ app.get('/s/:urlCode', async (req, res) => {
   const { urlCode } = req.params
   console.log("URL CODE", urlCode)
   try {
-    const urlData = await MyRedis.getAsync(urlCode)
+    const urlData = await MyRedis.get(urlCode)
     if (urlData === null) {
       res.send("URL Not Found")
       return
@@ -87,30 +87,30 @@ app.get('/s/:urlCode', async (req, res) => {
   }
 })
 
-app.post('/api/url-short', async (req, res) => {
+app.post('/api/url-shortener', async (req, res) => {
   const { vanity, destination, force } = req.body
   try {
     if (vanity) {
-      const vanityData = await MyRedis.getAsync(vanity)
+      const vanityData = await MyRedis.get(vanity)
       console.log(vanityData)
       if (vanityData && !force) {
         res.send({ message: "Vanity already exists" })
         return
       } else {
-        await MyRedis.setAsync(
+        await MyRedis.set(
           vanity,
           JSON.stringify({ destination, created: new Date() })
         )
-        res.status(200).send({ code: vanity, shortUrl: `https://etc.cr/s/${vanity}`, destinationUrl: destination })
+        res.status(200).send({ message: "Success", code: vanity, shortUrl: `https://etc.cr/s/${vanity}`, destinationUrl: destination })
         return
       }
     }
     const shortCode = Math.random().toString(36).substring(2, 15)
-    await MyRedis.setAsync(
+    await MyRedis.set(
       shortCode,
       JSON.stringify({ destination, created: new Date() })
     )
-    res.status(200).send({ code: vanity, url: `etc.cr/s/${shortCode}`, destinationUrl: destination })
+    res.status(200).send({ message: "Success", code: vanity, url: `etc.cr/s/${shortCode}`, destinationUrl: destination })
   } catch (err) {
     console.log('ERROR', err)
     res.status(500).send({ message: 'Error setting ShortCode', err })
@@ -160,7 +160,7 @@ app.post('/api/payment', verifyCaptcha, async (req, res) => {
     //   cancel_url: `${process.env.HOME_URL}/shop/cancel`,
     // })
 
-    // await MyRedis.setAsync(
+    // await MyRedis.set(
     //   session.id,
     //   JSON.stringify({ ...clientInfo, processed: false })
     // )
@@ -180,7 +180,7 @@ app.post('/api/payment/webhook', async (req, res) => {
     const session = event.data.object
 
     // Fulfill the purchase...
-    const clientInfo = JSON.parse(await MyRedis.getAsync(session.id))
+    const clientInfo = JSON.parse(await MyRedis.get(session.id))
     console.log({ clientInfo, session })
     // send client reciept
     let result1 = await transporter.send({
@@ -198,7 +198,7 @@ app.post('/api/payment/webhook', async (req, res) => {
       html: purchaseEmailTemplate({ clientInfo, session }),
     })
 
-    const isDeleted = await MyRedis.delAsync(session.id)
+    const isDeleted = await MyRedis.del(session.id)
     console.log('DELETED?', isDeleted)
   }
 

@@ -1,22 +1,30 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import axios from 'axios'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 export function Short(props) {
-  const handleSubmit = async (e) => {
+  let recaptchaRef = useRef(null)
+  const [state, setState] = useState({
+    vanity: '',
+    destination: '',
+    force: false,
+    recaptcha: '',
+    submitted: false
+  })
+
+  function verifyRecaptcha(e) {
+    setState({ ...state, recaptcha: e })
+  }
+
+  async function handleSubmit(e) {
     e.preventDefault()
-    const vanity = e.target.vanity.value
-    const destination = e.target.url.value
-    const force = e.target.force.checked
-
-
-    console.log(vanity, destination, force)
+    const { vanity, destination, force, recaptcha } = state
     try {
       const response = await axios({
         method: 'post',
-        url: '/api/url-short',
-        data: { vanity, destination, force },
+        url: '/api/url-shortener',
+        data: { vanity, destination, force, recaptcha },
       })
-      console.log(response)
 
       alert(response.message)
     } catch (err) {
@@ -25,27 +33,40 @@ export function Short(props) {
     }
   }
 
+  function handleChange(e) {
+    let id = e.target.id
+    let newState = { ...state }
+    newState[id] = e.target.type === 'checkbox' ? e.target.checked : e.target.value
+    setState(newState)
+  }
+
   return (
     <>
       <div className="intro">
-        <h1 className="title">Shortener</h1>
+        <h1 className="title">URL Shortener</h1>
       </div>
 
       <p>Shorten your URLs here!</p>
       <form className="col form" onSubmit={handleSubmit}>
         <div className="col item">
-          <label htmlFor="url">Vanity:</label>
-          <input id="vanity" type="text" name="vanity" placeholder="example" />
+          <label htmlFor="vanity">Vanity:</label>
+          <input id="vanity" type="text" name="vanity" onChange={handleChange} placeholder="example" value={state.vanity} />
         </div>
         <div className="col item">
-          <label htmlFor="url">URL:</label>
-          <input id="url" type="text" name="url" placeholder="https://example.com" />
+          <label htmlFor="destination">URL:</label>
+          <input id="destination" type="text" name="destination" onChange={handleChange} placeholder="https://example.com" value={state.destination} />
         </div>
         <div className="col item">
           <label htmlFor="force">Force:</label>
-          <input type="checkbox" id="force" name="force" />
+          <input type="checkbox" id="force" name="force" onChange={handleChange} checked={state.force} />
         </div>
-        <button type="submit">Shorten</button>
+        <ReCAPTCHA
+          className="recaptcha"
+          ref={recaptchaRef}
+          sitekey="6Lf8z9sUAAAAAPsdlc7r1ULgGTKNPHf37cv-r3Gl"
+          onChange={verifyRecaptcha}
+        />
+        <button className="btn btn-primary" type="submit">Shorten</button>
       </form>
     </>
   )
