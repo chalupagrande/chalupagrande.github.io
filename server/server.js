@@ -17,6 +17,7 @@ const cors = require('cors')
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY_TEST)
 const MyRedis = require('./redis')
 const whitelist = require('./whitelist')
+const twilio = require('twilio')
 
 const app = express()
 const port = process.env.PORT || 4000
@@ -205,6 +206,35 @@ app.post('/api/payment/webhook', async (req, res) => {
   // Return a response to acknowledge receipt of the event
   res.json({ received: true })
 })
+
+// Route to handle incoming calls
+app.post('/answer', (req, res) => {
+  const response = new twilio.twiml.VoiceResponse();
+
+  // Play the pre-recorded MP3 message
+  response.play('https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/audio/call-answer.mp3');
+
+  // Record the user's response
+  response.record({
+    maxLength: 60,
+    action: '/handle-recording'
+  });
+
+  // End the call after recording
+  response.hangup();
+
+  res.type('text/xml');
+  res.send(response.toString());
+});
+
+// Route to handle the recording callback
+app.post('/handle-recording', (req, res) => {
+  const recordingUrl = req.body.RecordingUrl;
+  console.log(`Recording URL: ${recordingUrl}`);
+
+  res.type('text/xml');
+  res.send('<Response></Response>');
+});
 
 
 
