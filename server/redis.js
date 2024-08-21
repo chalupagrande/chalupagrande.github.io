@@ -6,7 +6,7 @@ const redis = require('redis')
 
 const redisConfig = {}
 
-console.log(process.env.REDIS_URL)
+console.log("REDIS URL", process.env.REDIS_URL)
 // set up for production
 if (process.env.NODE_ENV === 'production') {
   redisConfig.url = process.env.REDIS_URL
@@ -21,6 +21,7 @@ client.on('ready', () => {
   console.log('REDIS IS READY')
 })
 client.on('reconnecting', () => {
+  console.log("REDIS URL", process.env.REDIS_URL)
   console.log('Reconnecting to REDIS')
 })
 

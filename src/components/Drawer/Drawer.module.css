@@ -1,0 +1,41 @@
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.drawer-header h2 {
+  margin: 0;
+}
+
+.drawer-header button {
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.drawer.left {
+  left: -300px;
+  transform: translateX(-100%);
+}
+
+.drawer.right {
+  right: -300px;
+  transform: translateX(100%);
+}
+
+.drawer-content {
+  padding: 20px;
+}

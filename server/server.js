@@ -61,6 +61,7 @@ const frontEndRoutes = [
   '/shop',
   '/shop/checkout',
   '/short',
+  '/rhonda',
 ]
 frontEndRoutes.forEach((r) => {
   app.use(r, express.static(buildPath))
