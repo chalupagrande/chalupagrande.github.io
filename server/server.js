@@ -14,10 +14,10 @@ const sgMail = require('@sendgrid/mail')
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 const cors = require('cors')
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY_TEST)
-const MyRedis = require('./redis')
+// const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY_TEST)
+// const MyRedis = require('./redis')
 const whitelist = require('./whitelist')
-const twilio = require('twilio')
+// const twilio = require('twilio')
 
 const app = express()
 const port = process.env.PORT || 4000
@@ -71,53 +71,53 @@ frontEndRoutes.forEach((r) => {
  * API
  */
 
-app.get('/s/:urlCode', async (req, res) => {
-  const { urlCode } = req.params
-  console.log("URL CODE", urlCode)
-  try {
-    const urlData = await MyRedis.get(urlCode)
-    if (urlData === null) {
-      res.send("URL Not Found")
-      return
-    }
-    const recordParsed = JSON.parse(urlData)
-    console.log('URL DATA', recordParsed)
-    res.redirect(302, recordParsed.destination)
-  } catch (err) {
-    console.log('ERROR', err)
-    res.status(500).send({ message: 'Error getting URL Data', err })
-  }
-})
+// app.get('/s/:urlCode', async (req, res) => {
+//   const { urlCode } = req.params
+//   console.log("URL CODE", urlCode)
+//   try {
+//     const urlData = await MyRedis.get(urlCode)
+//     if (urlData === null) {
+//       res.send("URL Not Found")
+//       return
+//     }
+//     const recordParsed = JSON.parse(urlData)
+//     console.log('URL DATA', recordParsed)
+//     res.redirect(302, recordParsed.destination)
+//   } catch (err) {
+//     console.log('ERROR', err)
+//     res.status(500).send({ message: 'Error getting URL Data', err })
+//   }
+// })
 
-app.post('/api/url-shortener', async (req, res) => {
-  const { vanity, destination, force } = req.body
-  try {
-    if (vanity) {
-      const vanityData = await MyRedis.get(vanity)
-      console.log(vanityData)
-      if (vanityData && !force) {
-        res.send({ message: "Vanity already exists" })
-        return
-      } else {
-        await MyRedis.set(
-          vanity,
-          JSON.stringify({ destination, created: new Date() })
-        )
-        res.status(200).send({ message: "Success", code: vanity, shortUrl: `https://etc.cr/s/${vanity}`, destinationUrl: destination })
-        return
-      }
-    }
-    const shortCode = Math.random().toString(36).substring(2, 15)
-    await MyRedis.set(
-      shortCode,
-      JSON.stringify({ destination, created: new Date() })
-    )
-    res.status(200).send({ message: "Success", code: vanity, url: `etc.cr/s/${shortCode}`, destinationUrl: destination })
-  } catch (err) {
-    console.log('ERROR', err)
-    res.status(500).send({ message: 'Error setting ShortCode', err })
-  }
-})
+// app.post('/api/url-shortener', async (req, res) => {
+//   const { vanity, destination, force } = req.body
+//   try {
+//     if (vanity) {
+//       const vanityData = await MyRedis.get(vanity)
+//       console.log(vanityData)
+//       if (vanityData && !force) {
+//         res.send({ message: "Vanity already exists" })
+//         return
+//       } else {
+//         await MyRedis.set(
+//           vanity,
+//           JSON.stringify({ destination, created: new Date() })
+//         )
+//         res.status(200).send({ message: "Success", code: vanity, shortUrl: `https://etc.cr/s/${vanity}`, destinationUrl: destination })
+//         return
+//       }
+//     }
+//     const shortCode = Math.random().toString(36).substring(2, 15)
+//     await MyRedis.set(
+//       shortCode,
+//       JSON.stringify({ destination, created: new Date() })
+//     )
+//     res.status(200).send({ message: "Success", code: vanity, url: `etc.cr/s/${shortCode}`, destinationUrl: destination })
+//   } catch (err) {
+//     console.log('ERROR', err)
+//     res.status(500).send({ message: 'Error setting ShortCode', err })
+//   }
+// })
 
 app.post('/api/email', verifyCaptcha, async (req, res) => {
   const { message, email, name, subject } = req.body
@@ -136,77 +136,77 @@ app.post('/api/email', verifyCaptcha, async (req, res) => {
   }
 })
 
-app.post('/api/payment', verifyCaptcha, async (req, res) => {
+// app.post('/api/payment', verifyCaptcha, async (req, res) => {
 
-  try {
-    const { cart, clientInfo } = req.body
-    // set info in redis.
+//   try {
+//     const { cart, clientInfo } = req.body
+//     // set info in redis.
 
-    const totalAmountOwed = cart.reduce((a, el) => a + el.amount, 0)
-    console.log('CLIENT INFO', clientInfo, cart)
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: totalAmountOwed,
-      currency: 'usd',
-      automatic_payment_methods: {
-        enabled: true,
-      },
-    });
+//     const totalAmountOwed = cart.reduce((a, el) => a + el.amount, 0)
+//     console.log('CLIENT INFO', clientInfo, cart)
+//     const paymentIntent = await stripe.paymentIntents.create({
+//       amount: totalAmountOwed,
+//       currency: 'usd',
+//       automatic_payment_methods: {
+//         enabled: true,
+//       },
+//     });
 
-    console.log("PAYMENT INTENT", paymentIntent)
+//     console.log("PAYMENT INTENT", paymentIntent)
 
-    // const session = await stripe.checkout.sessions.create({
-    //   payment_method_types: ['card'],
-    //   line_items: cart,
-    //   customer_email: clientInfo.email,
-    //   success_url: `${process.env.HOME_URL}/shop/success`,
-    //   cancel_url: `${process.env.HOME_URL}/shop/cancel`,
-    // })
+//     // const session = await stripe.checkout.sessions.create({
+//     //   payment_method_types: ['card'],
+//     //   line_items: cart,
+//     //   customer_email: clientInfo.email,
+//     //   success_url: `${process.env.HOME_URL}/shop/success`,
+//     //   cancel_url: `${process.env.HOME_URL}/shop/cancel`,
+//     // })
 
-    // await MyRedis.set(
-    //   session.id,
-    //   JSON.stringify({ ...clientInfo, processed: false })
-    // )
+//     // await MyRedis.set(
+//     //   session.id,
+//     //   JSON.stringify({ ...clientInfo, processed: false })
+//     // )
 
-    res.status(200).send({ message: 'Session created', data: { "jamie": 1 } })
-  } catch (err) {
-    console.log('ERROR CREATING SESSION', err)
-    res.status(500).send({ message: 'Error creating session', err })
-  }
-})
+//     res.status(200).send({ message: 'Session created', data: { "jamie": 1 } })
+//   } catch (err) {
+//     console.log('ERROR CREATING SESSION', err)
+//     res.status(500).send({ message: 'Error creating session', err })
+//   }
+// })
 
-app.post('/api/payment/webhook', async (req, res) => {
-  let event = req.body
+// app.post('/api/payment/webhook', async (req, res) => {
+//   let event = req.body
 
-  // Handle the checkout.session.completed event
-  if (event.type === 'checkout.session.completed') {
-    const session = event.data.object
+//   // Handle the checkout.session.completed event
+//   if (event.type === 'checkout.session.completed') {
+//     const session = event.data.object
 
-    // Fulfill the purchase...
-    const clientInfo = JSON.parse(await MyRedis.get(session.id))
-    console.log({ clientInfo, session })
-    // send client reciept
-    let result1 = await transporter.send({
-      from: process.env.EMAIL_USERNAME,
-      to: clientInfo.email,
-      subject: `Purchase Receipt from Chalupagrande.com`,
-      html: purchaseEmailTemplate({ clientInfo, session }),
-    })
+//     // Fulfill the purchase...
+//     const clientInfo = JSON.parse(await MyRedis.get(session.id))
+//     console.log({ clientInfo, session })
+//     // send client reciept
+//     let result1 = await transporter.send({
+//       from: process.env.EMAIL_USERNAME,
+//       to: clientInfo.email,
+//       subject: `Purchase Receipt from Chalupagrande.com`,
+//       html: purchaseEmailTemplate({ clientInfo, session }),
+//     })
 
-    // send myself a reciept
-    let result2 = await transporter.send({
-      from: process.env.EMAIL_USERNAME,
-      to: process.env.EMAIL_USERNAME,
-      subject: `Purchase Receipt from Chalupagrande.com`,
-      html: purchaseEmailTemplate({ clientInfo, session }),
-    })
+//     // send myself a reciept
+//     let result2 = await transporter.send({
+//       from: process.env.EMAIL_USERNAME,
+//       to: process.env.EMAIL_USERNAME,
+//       subject: `Purchase Receipt from Chalupagrande.com`,
+//       html: purchaseEmailTemplate({ clientInfo, session }),
+//     })
 
-    const isDeleted = await MyRedis.del(session.id)
-    console.log('DELETED?', isDeleted)
-  }
+//     const isDeleted = await MyRedis.del(session.id)
+//     console.log('DELETED?', isDeleted)
+//   }
 
-  // Return a response to acknowledge receipt of the event
-  res.json({ received: true })
-})
+//   // Return a response to acknowledge receipt of the event
+//   res.json({ received: true })
+// })
 
 // // Route to handle incoming calls
 // app.post('/answer', (req, res) => {
@@ -228,14 +228,14 @@ app.post('/api/payment/webhook', async (req, res) => {
 //   res.send(response.toString());
 // });
 
-// Route to handle the recording callback
-app.post('/handle-recording', (req, res) => {
-  const recordingUrl = req.body.RecordingUrl;
-  console.log(`Recording URL: ${recordingUrl}`);
+// // Route to handle the recording callback
+// app.post('/handle-recording', (req, res) => {
+//   const recordingUrl = req.body.RecordingUrl;
+//   console.log(`Recording URL: ${recordingUrl}`);
 
-  res.type('text/xml');
-  res.send('<Response></Response>');
-});
+//   res.type('text/xml');
+//   res.send('<Response></Response>');
+// });
 
 
 
