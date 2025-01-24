@@ -17,7 +17,7 @@ export function Work(props) {
             Tradeblock.us
           </a>
         </li>
-        <li>
+        {/* <li>
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -25,11 +25,11 @@ export function Work(props) {
           >
             Etcetera
           </a>
-        </li>
+        </li> */}
         <li>
           <Link to="/work/sharegro">ShareGro</Link>
         </li>
-        <li>
+        {/* <li>
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -37,12 +37,12 @@ export function Work(props) {
           >
             FixFake
           </a>
-        </li>
+        </li> */}
         <li>
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://sudo-portfolio-space.sfo2.digitaloceanspaces.com/video/astley.mp4"
+            href="/video/astley.mp4"
           >
             Secret government contract I can't talk about
           </a>{' '}
@@ -57,9 +57,7 @@ export function Work(props) {
             JohnTrainum.com (producer)
           </a>
         </li>
-        <li>
-          <Link to="/work/love-letters">Love Letters</Link>
-        </li>
+
         <li>
           <Link to="/work/bam">Bluemix Availability Monitoring</Link>
         </li>
@@ -96,7 +94,7 @@ export function Work(props) {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://sudo-portfolio-space.sfo2.digitaloceanspaces.com/video/processing-kinect-demo.m4v"
+            href="/video/processing-kinect-demo.m4v"
           >
             Live 3D Pointcloud
           </a>
@@ -111,13 +109,7 @@ export function Work(props) {
           </a>
         </li>
         <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://chalupagrande.github.io/didthelonghornswin/"
-          >
-            DidTheLonghornsWin.com
-          </a>
+          <Link to="/work/love-letters">Love Letters</Link>
         </li>
         <li>
           <a

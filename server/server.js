@@ -208,25 +208,25 @@ app.post('/api/payment/webhook', async (req, res) => {
   res.json({ received: true })
 })
 
-// Route to handle incoming calls
-app.post('/answer', (req, res) => {
-  const response = new twilio.twiml.VoiceResponse();
+// // Route to handle incoming calls
+// app.post('/answer', (req, res) => {
+//   const response = new twilio.twiml.VoiceResponse();
 
-  // Play the pre-recorded MP3 message
-  response.play('https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/audio/call-answer.mp3');
+//   // Play the pre-recorded MP3 message
+//   response.play('https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/audio/call-answer.mp3');
 
-  // Record the user's response
-  response.record({
-    maxLength: 60,
-    action: '/handle-recording'
-  });
+//   // Record the user's response
+//   response.record({
+//     maxLength: 60,
+//     action: '/handle-recording'
+//   });
 
-  // End the call after recording
-  response.hangup();
+//   // End the call after recording
+//   response.hangup();
 
-  res.type('text/xml');
-  res.send(response.toString());
-});
+//   res.type('text/xml');
+//   res.send(response.toString());
+// });
 
 // Route to handle the recording callback
 app.post('/handle-recording', (req, res) => {

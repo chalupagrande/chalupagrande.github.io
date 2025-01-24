@@ -15,9 +15,9 @@ function MusicPanel(props) {
       resizable={false}
       defaultPosition={pos}
     >
-      <video autoPlay loop>
+      <video autoPlay loop width="500" height="500">
         <source
-          src="https://sudo-portfolio-space.sfo2.digitaloceanspaces.com/video/astley.mp4"
+          src="/video/astley.mp4"
           type="video/mp4"
         ></source>
       </video>

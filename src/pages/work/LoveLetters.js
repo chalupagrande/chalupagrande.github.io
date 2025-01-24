@@ -29,7 +29,7 @@ export function LoveLetters(props) {
       <h4>Screenshot:</h4>
       <img
         className="img medium"
-        src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/love-letters.png"
+        src="/images/love-letters.png"
         alt="love letters screenshot"
       />
       <h3>Overview</h3>
@@ -59,9 +59,6 @@ export function LoveLetters(props) {
         spot. The effect being a world wide collaborative collage of the "love
         letters" we were writing to each other.{' '}
       </p>
-      <h3>
-        <a href="https://love-letters.us/">Live Site here</a>
-      </h3>
       <h3>Addendum</h3>
       <p>
         Additionally, since I built this site for non-technical users, I also

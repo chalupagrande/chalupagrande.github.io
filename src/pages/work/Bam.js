@@ -65,7 +65,7 @@ export function Bam(props) {
       <h3>Demo Video</h3>
       <video width="600" height="400" controls>
         <source
-          src="https://sudo-portfolio-space.sfo2.digitaloceanspaces.com/video/BAM-guide-video.mp4"
+          src="/video/BAM-guide-video.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.

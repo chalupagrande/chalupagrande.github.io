@@ -11,22 +11,22 @@ export function Home(props) {
       <div id="portrait" className="portrait">
         <img
           className="cmyk cmyk-c"
-          src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/c.png"
+          src="/images/c.png"
           alt=""
         />
         <img
           className="cmyk cmyk-m"
-          src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/m.png"
+          src="/images/m.png"
           alt=""
         />
         <img
           className="cmyk cmyk-y"
-          src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/y.png"
+          src="/images/y.png"
           alt=""
         />
         <img
           className="cmyk cmyk-k"
-          src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/k.png"
+          src="/images/k.png"
           alt=""
         />
       </div>

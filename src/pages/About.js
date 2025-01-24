@@ -10,6 +10,9 @@ export function About(props) {
       <p>Here are a couple links you can use to get to know me</p>
       <ul>
         <li>
+          <a href="/resume2025.pdf">Curriculum Vitae</a>
+        </li>
+        <li>
           <a href="https://github.com/chalupagrande">Github</a>
         </li>
         <li>
@@ -72,7 +75,7 @@ export function About(props) {
         <p>Golden A'Design Award and Competition - 2018</p>
         <img
           className="img small"
-          src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/bam/adesign.jpg"
+          src="/images/adesign.jpg"
           alt="a'design award"
         />
       </blockquote>
@@ -80,7 +83,7 @@ export function About(props) {
         <p>Computex d&amp;i Specialty Award - 2018</p>
         <img
           className="img small"
-          src="https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/images/bam/computex.jpg"
+          src="/images/computex.jpg"
           alt="computex award"
         />
       </blockquote>
@@ -166,16 +169,8 @@ export function About(props) {
         This website is over-the-top enough anyway.
       </p>
       <h4>What is your favorite Gif</h4>
-      <iframe
-        src="https://giphy.com/embed/jsl5nGb3JxRvrJoaHF"
-        width="480"
-        height="318"
-        frameBorder="0"
-        className="giphy-embed"
-        allowFullScreen
-      ></iframe>
       <p>
-        <a href="https://giphy.com/gifs/jsl5nGb3JxRvrJoaHF">via GIPHY</a>
+        <img src="/images/dance.gif" />
       </p>
 
     </>

@@ -26,7 +26,7 @@ export function IBMCloudPak(props) {
       </div>
       <img
         className="img stretch"
-        src="https://sudo-portfolio-space.sfo2.digitaloceanspaces.com/images/cloud-private/cp-whiteboard.png"
+        src="/images/cp-whiteboard.png"
         alt="whiteboard"
       />
 

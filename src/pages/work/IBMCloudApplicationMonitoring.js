@@ -34,7 +34,7 @@ export function IBMCloudApplicationMonitoring() {
       <img
         className="img"
         width="400"
-        src="https://sudo-portfolio-space.sfo2.digitaloceanspaces.com/images/cloud-management/legacy.jpg"
+        src="/images/legacy.jpg"
         alt="legacy"
       />
 

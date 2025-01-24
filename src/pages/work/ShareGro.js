@@ -24,7 +24,7 @@ export function ShareGro(props) {
 
       <img
         className="img small"
-        src="https://sudo-portfolio-space.sfo2.digitaloceanspaces.com/images/sharegro.png"
+        src="/images/sharegro.svg"
         alt="whiteboard"
       />
       <div>
