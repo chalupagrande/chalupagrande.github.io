@@ -11,22 +11,22 @@ export function Home(props) {
       <div id="portrait" className="portrait">
         <img
           className="cmyk cmyk-c"
-          src="/images/c.png"
+          src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/c.png"
           alt=""
         />
         <img
           className="cmyk cmyk-m"
-          src="/images/m.png"
+          src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/m.png"
           alt=""
         />
         <img
           className="cmyk cmyk-y"
-          src="/images/y.png"
+          src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/y.png"
           alt=""
         />
         <img
           className="cmyk cmyk-k"
-          src="/images/k.png"
+          src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/k.png"
           alt=""
         />
       </div>

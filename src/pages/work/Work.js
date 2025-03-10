@@ -42,7 +42,7 @@ export function Work(props) {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="/video/astley.mp4"
+            href="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/video/astley.mp4"
           >
             Secret government contract I can't talk about
           </a>{' '}
@@ -94,7 +94,7 @@ export function Work(props) {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="/video/processing-kinect-demo.m4v"
+            href="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/video/processing-kinect-demo.m4v"
           >
             Live 3D Pointcloud
           </a>

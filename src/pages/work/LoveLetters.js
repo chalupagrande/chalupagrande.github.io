@@ -29,7 +29,7 @@ export function LoveLetters(props) {
       <h4>Screenshot:</h4>
       <img
         className="img medium"
-        src="/images/love-letters.png"
+        src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/love-letters.png"
         alt="love letters screenshot"
       />
       <h3>Overview</h3>

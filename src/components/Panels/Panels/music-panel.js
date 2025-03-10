@@ -17,7 +17,7 @@ function MusicPanel(props) {
     >
       <video autoPlay loop width="500" height="500">
         <source
-          src="/video/astley.mp4"
+          src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/video/astley.mp4"
           type="video/mp4"
         ></source>
       </video>

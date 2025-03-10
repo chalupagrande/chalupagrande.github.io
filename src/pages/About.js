@@ -10,7 +10,7 @@ export function About(props) {
       <p>Here are a couple links you can use to get to know me</p>
       <ul>
         <li>
-          <a href="/resume2025.pdf">Curriculum Vitae</a>
+          <a href="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/docs/resume2025.pdf">Curriculum Vitae</a>
         </li>
         <li>
           <a href="https://github.com/chalupagrande">Github</a>
@@ -75,7 +75,7 @@ export function About(props) {
         <p>Golden A'Design Award and Competition - 2018</p>
         <img
           className="img small"
-          src="/images/adesign.jpg"
+          src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/adesign.jpg"
           alt="a'design award"
         />
       </blockquote>
@@ -83,7 +83,7 @@ export function About(props) {
         <p>Computex d&amp;i Specialty Award - 2018</p>
         <img
           className="img small"
-          src="/images/computex.jpg"
+          src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/computex.jpg"
           alt="computex award"
         />
       </blockquote>
@@ -170,7 +170,7 @@ export function About(props) {
       </p>
       <h4>What is your favorite Gif</h4>
       <p>
-        <img src="/images/dance.gif" />
+        <img src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/dance.gif" />
       </p>
 
     </>

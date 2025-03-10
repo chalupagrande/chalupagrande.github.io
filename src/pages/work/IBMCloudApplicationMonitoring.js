@@ -34,7 +34,7 @@ export function IBMCloudApplicationMonitoring() {
       <img
         className="img"
         width="400"
-        src="/images/legacy.jpg"
+        src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/legacy.jpg"
         alt="legacy"
       />
 

@@ -26,7 +26,7 @@ export function IBMCloudPak(props) {
       </div>
       <img
         className="img stretch"
-        src="/images/cp-whiteboard.png"
+        src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/cp-whiteboard.png"
         alt="whiteboard"
       />
 

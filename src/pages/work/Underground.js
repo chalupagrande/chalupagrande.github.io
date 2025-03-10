@@ -37,7 +37,7 @@ export function Underground(props) {
       <h3>Demo Video</h3>
       <video width="600" height="400" controls>
         <source
-          src="/video/ugbp.mp4"
+          src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/video/ugbp.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
