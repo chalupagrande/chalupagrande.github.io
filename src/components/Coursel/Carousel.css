@@ -1,51 +1,51 @@
 .carousel__wrapper {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    overflow: hidden;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 280px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .carousel__arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .carousel__image {
-    position: absolute;
-    display: block;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-    opacity: 0;
+  position: absolute;
+  display: block;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0;
 }
 
 .carousel__controls {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 20px;
-    font-size: 24px;
-    z-index: 999;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  font-size: 24px;
+  z-index: 999;
 }
 
 .carousel__arrow--left {
-    left: 0;
+  left: 0;
 }
 
 .carousel__arrow--right {
-    right: 0;
+  right: 0;
 }
 
 .carousel__image--active {
-    opacity: 1;
-    transition: opacity 0.5s;
-    z-index: 100;
+  opacity: 1;
+  transition: opacity 0.5s;
+  z-index: 100;
 }

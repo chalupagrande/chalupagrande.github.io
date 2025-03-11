@@ -2,28 +2,15 @@
   "products": [
     {
       "sku": "sku-4",
-      "requiresShipping": true,
-      "name": "\"ASCII Skull\" print. 2024",
-      "description": "Did some experiments with ASCII art, and decided to make prints of this one",
+      "requiresShipping": false,
+      "name": "Custom Arcade Cabinet",
+      "description": "A completely custom built arcade cabinet with 4700+ games",
       "images": [
-        "https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/skull-detailed-smaller.png"
+        "https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/arcade.png"
       ],
-      "amount": 2500,
+      "amount": 50000,
       "currency": "usd",
       "quantity": 1
-    },
-    {
-      "sku": "sku-1",
-      "requiresShipping": true,
-      "name": "\"ASCII Skull\" print. 2024",
-      "description": "Did some experiments with ASCII art, and decided to make prints of this one",
-      "images": [
-        "https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/skull-detailed-smaller.png"
-      ],
-      "amount": 2500,
-      "currency": "usd",
-      "quantity": 1,
-      "minimumQuantity": 1
     }
   ]
 }

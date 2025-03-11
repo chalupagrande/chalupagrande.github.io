@@ -62,6 +62,7 @@ const frontEndRoutes = [
   '/shop/checkout',
   '/short',
   '/rhonda',
+  "/legal"
 ]
 frontEndRoutes.forEach((r) => {
   app.use(r, express.static(buildPath))
@@ -137,7 +138,6 @@ app.post('/api/email', verifyCaptcha, async (req, res) => {
 })
 
 // app.post('/api/payment', verifyCaptcha, async (req, res) => {
-
 //   try {
 //     const { cart, clientInfo } = req.body
 //     // set info in redis.
@@ -154,18 +154,18 @@ app.post('/api/email', verifyCaptcha, async (req, res) => {
 
 //     console.log("PAYMENT INTENT", paymentIntent)
 
-//     // const session = await stripe.checkout.sessions.create({
-//     //   payment_method_types: ['card'],
-//     //   line_items: cart,
-//     //   customer_email: clientInfo.email,
-//     //   success_url: `${process.env.HOME_URL}/shop/success`,
-//     //   cancel_url: `${process.env.HOME_URL}/shop/cancel`,
-//     // })
+//     const session = await stripe.checkout.sessions.create({
+//       payment_method_types: ['card'],
+//       line_items: cart,
+//       customer_email: clientInfo.email,
+//       success_url: `${process.env.HOME_URL}/shop/success`,
+//       cancel_url: `${process.env.HOME_URL}/shop/cancel`,
+//     })
 
-//     // await MyRedis.set(
-//     //   session.id,
-//     //   JSON.stringify({ ...clientInfo, processed: false })
-//     // )
+//     await MyRedis.set(
+//       session.id,
+//       JSON.stringify({ ...clientInfo, processed: false })
+//     )
 
 //     res.status(200).send({ message: 'Session created', data: { "jamie": 1 } })
 //   } catch (err) {
@@ -207,35 +207,6 @@ app.post('/api/email', verifyCaptcha, async (req, res) => {
 //   // Return a response to acknowledge receipt of the event
 //   res.json({ received: true })
 // })
-
-// // Route to handle incoming calls
-// app.post('/answer', (req, res) => {
-//   const response = new twilio.twiml.VoiceResponse();
-
-//   // Play the pre-recorded MP3 message
-//   response.play('https://sudo-portfolio-space.sfo2.cdn.digitaloceanspaces.com/audio/call-answer.mp3');
-
-//   // Record the user's response
-//   response.record({
-//     maxLength: 60,
-//     action: '/handle-recording'
-//   });
-
-//   // End the call after recording
-//   response.hangup();
-
-//   res.type('text/xml');
-//   res.send(response.toString());
-// });
-
-// // Route to handle the recording callback
-// app.post('/handle-recording', (req, res) => {
-//   const recordingUrl = req.body.RecordingUrl;
-//   console.log(`Recording URL: ${recordingUrl}`);
-
-//   res.type('text/xml');
-//   res.send('<Response></Response>');
-// });
 
 
 

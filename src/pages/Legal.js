@@ -40,14 +40,11 @@ export function Legal(props) {
         </p>
         <h3>Shipping</h3>
         <p>
-          Because of the nature of this store, and the fact that, as I said, I
-          don't actually want to have any merchandise,{' '}
-          <strong>Shipping could take a long time.</strong> I am literally going
-          to go on Amazon.com and order the same thing, and then ship it to you.
-          These items on Amazon will undoubtedly be cheaper than if you buy them
-          here. The store is all pretty much a joke. But, if you want to pay me
-          to order something from Amazon and then ship it to you, you know,
-          thats kinda up to you.
+          If I am going to ship something to you. It might take a while. Please contact me for details about shipping. I will do my best to get it to you as soon as possible.
+        </p>
+        <h3>Pick up</h3>
+        <p>
+          I'm not just going to give out my address on here... so contact me via the contact page and we can arrange a pick up.
         </p>
       </div>
     </>
