@@ -129,7 +129,6 @@ app.post('/api/email', verifyCaptcha, async (req, res) => {
       subject: `NEW MESSAGE: ${name}`,
       html: emailTemplate(name, subject, email, message)
     })
-    console.log("sendgrid results: ", result)
     res.status(200).send({ message: 'Message Sent', data: result })
   } catch (err) {
     console.log('ERROR', err)
