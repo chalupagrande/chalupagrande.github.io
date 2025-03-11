@@ -103,5 +103,6 @@
 }
 
 .panel--focused {
+  position: relative;
   z-index: 1100;
 }
