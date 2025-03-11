@@ -8,6 +8,8 @@ export function About(props) {
       <div className="intro">
         <h1 className="title">About Jamie</h1>
       </div>
+
+      <p></p>
       <p>Here are a couple links you can use to get to know me</p>
       <ul>
         <li>

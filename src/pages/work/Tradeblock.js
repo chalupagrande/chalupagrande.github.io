@@ -25,57 +25,18 @@ export function Tradeblock(props) {
           <p>
             <a href="https://tradeblock.us">Tradeblock.us</a> - an app for sneaker heads - by sneaker heads.
           </p>
+        </div>
+        <div className="item">
+          <h3>Role</h3>
+          <h4>Senior/Lead Fullstack Software Engineer (engineer hire #2)</h4>
+
           <p>
             Platforms exist for the purchase of used shoes - where collectors can send their shoes to be validated by a 3rd party and then sold on their behalf. However this is not the way that these collectors work. They are typically going shoe for shoe. My Union LA x Air Jordan 4 Retro 'Guava Ice' (size 10) for your Air Jordan 4 Retro 'Purple Metallic' (size 10.5). This skips the middle step, and provides a lot more potential upside for the collectors.
           </p>
         </div>
-        <div className="item">
-          <h3>Role</h3>
-          <p>Senior/Lead Fullstack Software Engineer (engineer #4)</p>
-        </div>
       </div>
       <h3>Overview</h3>
-      <p>
-        Developers enjoy coding. Testing and monitoring their apps is tedious
-        and boring and often left too late in the lifecycle. Further, existing
-        IBM monitoring tools had a steep learning curve and focused on
-        data-dumping and letting users figure things out.
-      </p>
-      <p>
-        Focusing on synthetic monitoring, the simulation of end-users going
-        through an interface, we built a cloud service that allowed users to
-        test their apps, web pages and APIs from different geolocations with no
-        setup.
-      </p>
-      <p>
-        Throughout the research process it became clear that users wanted a
-        quick overview of existing problems while pointing them in the right
-        direction. Our goal was to answer the question: is there anything wrong
-        and what do I need to do about it? Hence, we established a clear
-        hierarchy to provide crucial data at first glance and more information
-        at the users request.
-      </p>
-      <p>
-        Our design was a hierarchical concept, inspired by TV’s
-        picture-in-picture concept (if you’re old enough) allowed users to
-        compare the performance across metrics while maintaining focus on
-        primary data. Below, a view of all application tests and downtime
-        metrics.
-      </p>
-      <a href="https://idesignawards.com/winners/zoom.php?eid=9-16286-18">
-        IDA Award
-      </a>
-      <h3>Demo Video</h3>
-      <video width="600" height="400" controls>
-        <source
-          src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/video/BAM-guide-video.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
-      <p>
-        There is a lot more to talk about here, but I'll get to that later.{' '}
-      </p>
+      <p>More to come...</p>
     </>
   )
 }
