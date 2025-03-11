@@ -11,7 +11,7 @@ function AboutPanel(props) {
     <Panel
       key={props.index}
       title={'About'}
-      size={{ width: 300, height: 300 }}
+      size={{ width: 300, height: 500 }}
       resizable={true}
       defaultPosition={pos}
     >

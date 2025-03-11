@@ -30,6 +30,7 @@ export function Panel(props) {
   }
 
   function handleFocus() {
+    console.log("testing")
     focusPanel(title)
   }
 
@@ -37,21 +38,57 @@ export function Panel(props) {
   // TODO: Refactor this to be more DRY
   if (props.resizable) {
     return (
-      <Draggable
-        handle=".panel__header__drag-area"
-        defaultPosition={defaultPosition}
-        nodeRef={panelRef}
-        onStop={onStop}
-      >
-        <Resizable
-          resizeHandles={['se']}
-          onResize={handleResize}
-          handle={<span className="panel__resize-handle" />}
-          {...size}
+      <div className={`${panelFocused === title.toLowerCase() ? 'panel--focused' : ''}`}>
+        <Draggable
+          handle=".panel__header__drag-area"
+          defaultPosition={defaultPosition}
+          nodeRef={panelRef}
+          onStop={onStop}
+        >
+          <Resizable
+            resizeHandles={['se']}
+            onResize={handleResize}
+            handle={<span className="panel__resize-handle" />}
+            {...size}
+          >
+            <div
+              className="panel"
+              style={{ ...size, background: bgColor }}
+              ref={panelRef}
+            >
+
+              <header className="panel__header">
+                <div className="panel__header__drag-area" onClick={handleFocus}>
+                  <div className="panel__header__title">{title}</div>
+                  <PanelHeaderSpacer />
+                </div>
+                <div className="panel__header__controls">
+                  <div className="panel__controls__close" onClick={handleClose}>
+                    <span>X</span>
+                  </div>
+                </div>
+              </header>
+              <div className="panel__content" style={{ padding: pd }}>
+                {children}
+              </div>
+              <div className="panel__footer" onClick={handleFocus} />
+            </div>
+          </Resizable>
+        </Draggable>
+      </div >
+    )
+  } else {
+    return (
+      <div className={`${panelFocused === title.toLowerCase() ? 'panel--focused' : ''}`}>
+        <Draggable
+          nodeRef={panelRef}
+          handle=".panel__header__drag-area"
+          defaultPosition={defaultPosition}
+          onStop={onStop}
         >
           <div
-            className={`panel ${panelFocused === title.toLowerCase() ? 'panel--focused' : ''}`}
-            style={{ ...size, background: bgColor }}
+            className="panel"
+            style={{ ...props.size, background: bgColor }}
             ref={panelRef}
           >
             <header className="panel__header">
@@ -70,39 +107,8 @@ export function Panel(props) {
             </div>
             <div className="panel__footer" onClick={handleFocus} />
           </div>
-        </Resizable>
-      </Draggable>
-    )
-  } else {
-    return (
-      <Draggable
-        nodeRef={panelRef}
-        handle=".panel__header__drag-area"
-        defaultPosition={defaultPosition}
-        onStop={onStop}
-      >
-        <div
-          className="panel"
-          style={{ ...props.size, background: bgColor }}
-          ref={panelRef}
-        >
-          <header className="panel__header">
-            <div className="panel__header__drag-area">
-              <div className="panel__header__title">{title}</div>
-              <PanelHeaderSpacer />
-            </div>
-            <div className="panel__header__controls">
-              <div className="panel__controls__close" onClick={handleClose}>
-                <span>X</span>
-              </div>
-            </div>
-          </header>
-          <div className="panel__content" style={{ padding: pd }}>
-            {children}
-          </div>
-          <div className="panel__footer" />
-        </div>
-      </Draggable>
+        </Draggable>
+      </div >
     )
   }
 }
