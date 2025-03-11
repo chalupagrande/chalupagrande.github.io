@@ -1,9 +1,9 @@
 import React from 'react'
-import { loadStripe } from '@stripe/stripe-js'
+// import { loadStripe } from '@stripe/stripe-js'
 
 const initialState = {
   cart: [],
-  stripePromise: loadStripe('pk_test_tZ1UTEHPHFd9dsZzi03UyKNB'),
+  // stripePromise: loadStripe('pk_test_tZ1UTEHPHFd9dsZzi03UyKNB'),
   panels: ['manager'],
   panelFocused: "manager"
 }

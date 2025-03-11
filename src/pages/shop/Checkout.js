@@ -10,7 +10,7 @@ import { StoreContext } from '../../store'
 export function Checkout(props) {
   let recaptchaRef = useRef(null)
   const {
-    store: { cart, stripePromise },
+    store: { cart, /* stripePromise */ },
     updaters: { clearCart },
   } = useContext(StoreContext)
 
@@ -50,6 +50,7 @@ export function Checkout(props) {
 
   async function checkout(e) {
     e.preventDefault()
+    return alert("Checkout is disabled for now. Please check back later.")
     try {
       // clear sku because Stripe doesnt like extra parameters
       const line_items = cart.map((el) => {
@@ -77,13 +78,13 @@ export function Checkout(props) {
         sessionId: session.id,
       })
 
-      //redirect to checkout page with stripe
-      const stripe = await stripePromise
+      // //redirect to checkout page with stripe
+      // const stripe = await stripePromise
 
-      // YOU ARE HERE 04/22/2024
-      await stripe.redirectToCheckout({
-        sessionId: session.id,
-      })
+      // // YOU ARE HERE 04/22/2024
+      // await stripe.redirectToCheckout({
+      //   sessionId: session.id,
+      // })
 
       clearCart()
     } catch (err) {
