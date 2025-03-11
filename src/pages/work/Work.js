@@ -9,13 +9,9 @@ export function Work(props) {
       </div>
       <ul>
         <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://tradeblock.us"
-          >
+          <Link to="/work/tradeblock">
             Tradeblock.us
-          </a>
+          </Link>
         </li>
         {/* <li>
           <a

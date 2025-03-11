@@ -1,3 +1,4 @@
+import { Link } from '@reach/router'
 import React from 'react'
 
 export function FAQ(props) {
@@ -13,10 +14,10 @@ export function FAQ(props) {
         has a different nickname for me. The one I like the most is Chalupa
         Grande.
       </p>
-      <h4>Something is broken. Why don't you fix it (updated 6/17/21)</h4>
+      <h4>Something is broken. Why don't you fix it</h4>
       <p>
         I think we can both tell that this website is largely a joke. I don't
-        want to spend more time on it than is absolutely necessary. It was also
+        want to spend more time on self promotion than is absolutely necessary. It was also
         originally built like 3 years ago, and then refactored to be less
         annoyingly minimalist 2 years ago... and you know what i dont need to
         explain myself. I'll get to it eventually.
@@ -31,7 +32,7 @@ export function FAQ(props) {
 
       <h4>What web technologies are you familiar with?</h4>
       <p>
-        javascript, html5, css3, babel, webpack, gulp, react, redux, carbon
+        typescript, javascript, html5, css3, babel, webpack, gulp, react, redux, carbon
         components, vue, nextjs, git, mongoDB, neo4j,cypher, stripe, twilio,
         apollo, grapql, tensorflowjs, lerna, node, express, mongoose, eslint,
         prettier, jest, threejs, passport, antd design system, scss, yarn,
@@ -42,7 +43,7 @@ export function FAQ(props) {
       <h4>Are you available to work on my project?</h4>
       <p>
         Dunno! Shoot me an email using the{' '}
-        <a href="https://etcetera.cr">contact</a> form and I'll get back to you
+        <Link to="/contact">contact</Link> form and I'll get back to you
         as soon as I can!
       </p>
 
@@ -70,18 +71,7 @@ export function FAQ(props) {
         Anyway, they're delicious and now I'm hungry and going to go make lunch.
         This website is over-the-top enough anyway.
       </p>
-      <h4>What is your favorite Gif</h4>
-      <iframe
-        src="https://giphy.com/embed/jsl5nGb3JxRvrJoaHF"
-        width="480"
-        height="318"
-        frameBorder="0"
-        className="giphy-embed"
-        allowFullScreen
-      ></iframe>
-      <p>
-        <a href="https://giphy.com/gifs/jsl5nGb3JxRvrJoaHF">via GIPHY</a>
-      </p>
+      <img src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/dance.gif" />
     </>
   )
 }
