@@ -25,7 +25,7 @@ export default function Nav() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <a onClick={() => togglePanel("About", true)}>About</a>
+          <Link to="/about">About</Link>
         </li>
         <li>
           <Link to="/work">Work</Link>
