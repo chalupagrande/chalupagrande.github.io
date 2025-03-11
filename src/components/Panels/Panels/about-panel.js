@@ -1,8 +1,8 @@
 import React from 'react'
 import { Panel } from '../Panel'
-import Dots from '../../../assets/sketches/Dots'
+import { About } from '../../../pages/About'
 
-function DotsPanel(props) {
+function AboutPanel(props) {
   const pos = {
     x: 10,
     y: 10,
@@ -10,14 +10,14 @@ function DotsPanel(props) {
   return (
     <Panel
       key={props.index}
-      title={'Dots'}
+      title={'About'}
       size={{ width: 300, height: 300 }}
-      resizable={false}
+      resizable={true}
       defaultPosition={pos}
     >
-      <Dots width={300} height={270} />
+      <About />
     </Panel>
   )
 }
 
-export default DotsPanel
+export default AboutPanel

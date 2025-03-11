@@ -5,6 +5,7 @@ const initialState = {
   cart: [],
   stripePromise: loadStripe('pk_test_tZ1UTEHPHFd9dsZzi03UyKNB'),
   panels: ['manager'],
+  panelFocused: "manager"
 }
 export const StoreContext = React.createContext(initialState)
 export class Provider extends React.Component {
@@ -43,6 +44,12 @@ export class Provider extends React.Component {
             panels: temp,
           })
         }
+      },
+      focusPanel: (name) => {
+        const store = this.state
+        const panelName = name.toLowerCase()
+        console.log("focusing", panelName)
+        this.setState({ ...store, panelFocused: panelName })
       },
       clearPanels: () => {
         const store = this.state

@@ -7,7 +7,8 @@ import './Panel.css'
 export function Panel(props) {
   const panelRef = useRef(null)
   const {
-    updaters: { togglePanel },
+    updaters: { togglePanel, focusPanel },
+    store: { panelFocused },
   } = useContext(StoreContext)
   const { defaultPosition, title, children, background, padding } = props
   let [size, setSize] = useState({ width: 200, height: 200 })
@@ -20,6 +21,7 @@ export function Panel(props) {
   }
 
   function handleClose() {
+    console.log('closing')
     togglePanel(title, false)
   }
 
@@ -27,6 +29,11 @@ export function Panel(props) {
     console.log(a.x)
   }
 
+  function handleFocus() {
+    focusPanel(title)
+  }
+
+  console.log(panelFocused)
   // TODO: Refactor this to be more DRY
   if (props.resizable) {
     return (
@@ -43,12 +50,12 @@ export function Panel(props) {
           {...size}
         >
           <div
-            className="panel"
+            className={`panel ${panelFocused === title.toLowerCase() ? 'panel--focused' : ''}`}
             style={{ ...size, background: bgColor }}
             ref={panelRef}
           >
             <header className="panel__header">
-              <div className="panel__header__drag-area">
+              <div className="panel__header__drag-area" onClick={handleFocus}>
                 <div className="panel__header__title">{title}</div>
                 <PanelHeaderSpacer />
               </div>
@@ -61,7 +68,7 @@ export function Panel(props) {
             <div className="panel__content" style={{ padding: pd }}>
               {children}
             </div>
-            <div className="panel__footer" />
+            <div className="panel__footer" onClick={handleFocus} />
           </div>
         </Resizable>
       </Draggable>
