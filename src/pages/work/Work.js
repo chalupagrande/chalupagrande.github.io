@@ -209,24 +209,6 @@ export function Work(props) {
             Instagram
           </a>
         </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://codepen.io/chalupagrande"
-          >
-            CodePen
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://codesandbox.io/u/chalupagrande"
-          >
-            CodeSandbox
-          </a>
-        </li>
       </ul>
     </>
   )

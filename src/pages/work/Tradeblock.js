@@ -7,10 +7,6 @@ export function Tradeblock(props) {
         <h1 className="title">Tradeblock</h1>
         <h2 className="subtitle">Sneaker Trading Platform</h2>
       </div>
-
-      <h3 className="highlight">
-        My team and I won two international design awards for this!
-      </h3>
       <div>
         <div className="item">
           <h3>Challenge</h3>
@@ -21,10 +17,13 @@ export function Tradeblock(props) {
           </p>
         </div>
         <div className="item">
+
           <h3>Outcome</h3>
           <p>
             <a href="https://tradeblock.us">Tradeblock.us</a> - an app for sneaker heads - by sneaker heads.
           </p>
+          <img className="img small" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/tradeblock-dashboard.jpg" alt="Tradeblock Sneaker Trading Platform" width="200" />
+
         </div>
         <div className="item">
           <h3>Role</h3>
