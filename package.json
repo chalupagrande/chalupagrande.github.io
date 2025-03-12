@@ -2,10 +2,6 @@
   "name": "minimalist-react-portfolio",
   "version": "1.1.0",
   "private": true,
-  "engines": {
-    "node": "18.20.7",
-    "npm": "10.8.2"
-  },
   "dependencies": {
     "@reach/router": "^1.3.3",
     "@sendgrid/mail": "^8.1.4",
