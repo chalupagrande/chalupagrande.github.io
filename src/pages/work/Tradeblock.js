@@ -35,8 +35,7 @@ export function Tradeblock(props) {
         </div>
         <div className="item">
           <h3>My Contribution - Part 1</h3>
-          <h3>Role</h3>
-          <h4>Senior/Lead Fullstack Software Engineer (engineer hire #2)</h4>
+          <h3>Role - Contractor</h3>
           <p>
             I worked at tradeblock first as a contractor. They had spun up a working v1 where users were able to send trade offers to each other. My Union LA x Air Jordan 4 Retro 'Guava Ice' (size 10) for your Air Jordan 4 Retro 'Purple Metallic' (size 10.5). Once accepted by both sides the shoes would be shipped to a Tradeblock warehouse in Houston, where our shoe experts would validate if the shoes were authentic. Then, if everything went smoothly, the shoes would then be shipped to their respective new owners.
           </p>
@@ -59,14 +58,38 @@ export function Tradeblock(props) {
           <p>
             I used NextJS to spin up a rapid prototype that interfaced with our existing GraphQL backend (which lived on a service called 8Base) and AntD as my component library.
           </p>
-          <h3>Technologies</h3>
-          <ul>
-            <li>Typescript</li>
-            <li>NextJS</li>
-            <li>GraphQL</li>
-            <li>AntD</li>
-          </ul>
         </div>
+
+        <div className="item">
+          <h3>My Contribution - Part 2</h3>
+          <h3>Role - Senior/Lead Fullstack Software Engineer (engineer hire #2)</h3>
+          <p>
+            After a successful launch of the admin portal, I came onto the team full time as a Senior Engineer. One of my first tasks after joining was to optimize the searching capabilities of the app. The original implementation of the search would call our graphql api and search through over 100,000 shoes in the database, joining a number of different tables in order to construct the full picture presented to the front end. While this worked, it was becoming increasingly more inefficient as our catalog grew and our user base scaled.
+          </p>
+          <p>
+            In order to address these problems I explored a number of different solutions, and landed on an elastic search shoe catalog. This would abstract the shoe records into a flat json object and index key fields to allow for extremely rapid searches. In addition to researching, designing and building the elastic search, I also implemented a logstash pipeline to ingest new records and ensure that our database and the elastic search instance were in sync.
+          </p>
+        </div>
+
+        <div className="item">
+          <h3>My Contribution - Part 3</h3>
+          <h3>Role - Product/Engineer</h3>
+          <p>
+            Our next major challenge we faced was scaling our offerings. Up until this point, users were only able to trade with 1 specific other collector. So in order to get a trade completed, a user would have to find a specific shoe they wanted, find the collectors that had that shoe, and then offer each one of those collectors a trade, cross referencing the shoes that those potential trade partners wanted with the users own catalog. As you can imagine this was an unnecessary sticking point for most users, and a clear opportunity for optimization.
+          </p>
+          <p>
+            In order to solve this problem, my team and I conceived of "Public Offers" — where a user could put up a potential trade they were willing to make (ie: the shoes I'm willing to trade away for the shoes I want). These offers could then be browsed by all users and fulfilled, or they could be converted/edited into a 1x1 offer.
+          </p>
+        </div>
+
+
+        <h3>Technologies</h3>
+        <ul>
+          <li>Typescript</li>
+          <li>NextJS</li>
+          <li>GraphQL</li>
+          <li>AntD</li>
+        </ul>
       </div>
     </>
   )
