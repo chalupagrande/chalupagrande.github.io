@@ -22,9 +22,9 @@ export function Work(props) {
             Etcetera
           </a>
         </li> */}
-        <li>
+        {/* <li>
           <Link to="/work/sharegro">ShareGro</Link>
-        </li>
+        </li> */}
         {/* <li>
           <a
             target="_blank"
