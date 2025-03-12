@@ -47,16 +47,16 @@ export function ReelGolf(props) {
           </li>
         </ul>
 
+        <video width="600" controls>
+          <source src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/video/Tony_Giovannoli.mp4" type="video/mp4" />
+        </video>
+
         <h3>My Contribution</h3>
         <h3>Role - Product Owner/Technical Project Manager</h3>
 
         <p>
           My role with this client was less technical, and more product focused. I functioned as the single point of contact between the (stakeholders) and the technical team. I managed the direction of the project while also writing technical tickets, fielded implementation concerns from the technical team, and interfaced with the design team to reach our desired goals.
         </p>
-
-        <video width="600" controls>
-          <source src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/video/Tony_Giovannoli.mp4" type="video/mp4" />
-        </video>
 
         <h3>Role - Engineer</h3>
         <p>
