@@ -35,6 +35,30 @@
       "amount": 500,
       "currency": "usd",
       "quantity": 1
+    },
+    {
+      "sku": "sku-7",
+      "requiresShipping": true,
+      "name": "Tupac Painting",
+      "description": "4ft x 4ft all spray paint on wood - contact for prints",
+      "images": [
+        "https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/tupac-print.png"
+      ],
+      "amount": 500000,
+      "currency": "usd",
+      "quantity": 1
+    },
+    {
+      "sku": "sku-7",
+      "requiresShipping": true,
+      "name": "Biggie Painting",
+      "description": "4ft x 4ft all spray paint on wood - contact for prints",
+      "images": [
+        "https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/biggie.png"
+      ],
+      "amount": 500000,
+      "currency": "usd",
+      "quantity": 1
     }
   ]
 }

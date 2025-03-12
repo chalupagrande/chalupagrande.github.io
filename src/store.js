@@ -1,9 +1,12 @@
 import React from 'react'
 // import { loadStripe } from '@stripe/stripe-js'
+import { mobileCheck } from './utils/userAgent'
+
 
 const initialState = {
   cart: [],
   // stripePromise: loadStripe('pk_test_tZ1UTEHPHFd9dsZzi03UyKNB'),
+  showNormalNavigation: true,
   panels: ['manager'],
   panelFocused: "manager"
 }

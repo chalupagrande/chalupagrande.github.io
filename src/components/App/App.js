@@ -13,6 +13,7 @@ function App() {
         <PanelManager />
         <Router>
           <Page.Home path="/" />
+          <Page.Home path="/home" />
           <Page.About path="/about" />
           <Page.FAQ path="/faq" />
           <Page.Shop path="/shop" />

@@ -1,24 +1,24 @@
 import React from 'react'
 import { Panel } from '../Panel'
-import { About } from '../../../pages/About'
+import { Work } from '../../../pages/work/Work'
 
-function AboutPanel(props) {
+function WorkPanel(props) {
   const pos = {
-    x: 10,
+    x: 30,
     y: 10,
   }
   return (
     <Panel
       key={props.index}
-      title={'About'}
-      size={{ width: 300, height: 500 }}
+      title={'Work'}
+      size={{ width: 500, height: 500 }}
       resizable={true}
       defaultPosition={pos}
       padding={"0.5rem"}
     >
-      <About />
+      <Work />
     </Panel>
   )
 }
 
-export default AboutPanel
+export default WorkPanel

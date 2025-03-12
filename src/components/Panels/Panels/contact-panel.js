@@ -14,6 +14,7 @@ function ContactPanel(props) {
       size={{ width: 300, height: 300 }}
       resizable={true}
       defaultPosition={pos}
+      padding={"0.5rem"}
     >
       <Contact />
     </Panel>

@@ -4,7 +4,7 @@ import { StoreContext } from '../../store'
 
 export default function Nav() {
   const {
-    store: { panels },
+    store: { panels, showNormalNavigation },
     updaters: { togglePanel, clearPanels },
   } = useContext(StoreContext)
 
@@ -17,6 +17,8 @@ export default function Nav() {
   function clear() {
     clearPanels()
   }
+
+  if (!showNormalNavigation) return <></>
 
   return (
     <nav className="navigation">

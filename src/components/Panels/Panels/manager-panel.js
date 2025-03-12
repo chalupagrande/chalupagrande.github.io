@@ -15,7 +15,7 @@ function WordPanel(props) {
     <Panel
       key={props.index}
       title={'Manager'}
-      size={{ width: 200, height: 100 }}
+      size={{ width: 200, height: 200 }}
       resizable={true}
       background={true}
       defaultPosition={pos}

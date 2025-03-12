@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef } from 'react'
+import React, { useState, useContext, useRef, useEffect } from 'react'
 import Draggable from 'react-draggable'
 import { Resizable } from 'react-resizable'
 import { StoreContext } from '../../store'
@@ -10,8 +10,8 @@ export function Panel(props) {
     updaters: { togglePanel, focusPanel },
     store: { panelFocused },
   } = useContext(StoreContext)
-  const { defaultPosition, title, children, background, padding } = props
-  let [size, setSize] = useState({ width: 200, height: 200 })
+  const { defaultPosition, title, children, background, padding, size: defaultSize } = props
+  let [size, setSize] = useState(defaultSize || { width: 200, height: 200 })
 
   let bgColor = typeof background === 'boolean' ? '#ffffff' : background
   let pd = typeof padding === 'boolean' && !!padding ? '0.25rem' : padding
@@ -21,7 +21,6 @@ export function Panel(props) {
   }
 
   function handleClose() {
-    console.log('closing')
     togglePanel(title, false)
   }
 
@@ -30,12 +29,14 @@ export function Panel(props) {
   }
 
   function handleFocus() {
-    console.log("testing")
     focusPanel(title)
   }
 
-  console.log(panelFocused)
-  // TODO: Refactor this to be more DRY
+  useEffect(() => {
+    setSize(defaultSize)
+  }, [defaultSize])
+
+
   if (props.resizable) {
     return (
       <div className={`${panelFocused === title.toLowerCase() ? 'panel--focused' : ''}`}>
@@ -68,7 +69,7 @@ export function Panel(props) {
                   </div>
                 </div>
               </header>
-              <div className="panel__content" style={{ padding: pd }}>
+              <div className="panel__content" style={{ padding: pd }} onClick={handleFocus}>
                 {children}
               </div>
               <div className="panel__footer" onClick={handleFocus} />
@@ -85,6 +86,7 @@ export function Panel(props) {
           handle=".panel__header__drag-area"
           defaultPosition={defaultPosition}
           onStop={onStop}
+          {...size}
         >
           <div
             className="panel"
@@ -102,7 +104,7 @@ export function Panel(props) {
                 </div>
               </div>
             </header>
-            <div className="panel__content" style={{ padding: pd }}>
+            <div className="panel__content" style={{ padding: pd }} onClick={handleFocus}>
               {children}
             </div>
             <div className="panel__footer" onClick={handleFocus} />
