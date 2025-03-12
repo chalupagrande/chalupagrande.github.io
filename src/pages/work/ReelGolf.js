@@ -23,7 +23,7 @@ export function ReelGolf(props) {
         </p>
         <h3>The Product</h3>
         <p>
-          When golfers arrived at a golf hole enabled with ReelGolf, they would have the opportunity to scan a QR Code taking them to the web application experience. The'd be able to login/sign up and choose from several different products that ReelGolf provided (depending on the partnership with the golf course).
+          When golfers arrive at a golf hole enabled with ReelGolf, they would have the opportunity to scan a QR Code taking them to the web application experience. The'd be able to login/sign up and choose from several different products that ReelGolf provided (depending on the partnership with the golf course).
         </p>
 
         <ul>
@@ -60,10 +60,10 @@ export function ReelGolf(props) {
 
         <h3>Role - Engineer</h3>
         <p>
-          Despite my product focus, I did do some significant engineering as well. I was responsible for understanding and educating the rest of the technical team on camera operations and api. We used specialized 4K security cameras to capture and triangulate the position of the golf balls. In order to do that, we had to understand deeply the capabilities and limitations of the camera and its API.
+          Despite my product focus, I did do some significant engineering as well. I was responsible for understanding and educating the rest of the technical team on camera operations and api. We used specialized 4K security cameras to capture and triangulate the position of the golf balls. In order to do that, we had to deeply understand the capabilities and limitations of the camera and its API.
         </p>
         <p>
-          Part of my engineering initiatives, I built a suite of tools to pan, tilt and zoom the cameras where we needed as well as correct for image distortion. I spent many hours out in the field, installing, testing and refining our algorithms. In addition to the cameras own interface, we had to know the precise location of the cameras in order to accurately triangulate the ball position. I worked with other engineers to develop a cost effective GPS system that could be used at golf courses to determine the installation location of the cameras.
+          Part of my engineering initiatives, I built a suite of tools to pan, tilt and zoom the cameras where we needed as well as correct for image distortion. I spent many hours out in the field, installing, testing and refining our algorithms. In addition to the camera's own interface, we had to know the precise location of the cameras in order to accurately triangulate the ball position. I worked with other engineers to develop a cost effective GPS system that could be used at golf courses to determine the installation location of the cameras.
         </p>
       </div>
     </>

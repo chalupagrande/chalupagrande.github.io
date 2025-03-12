@@ -53,8 +53,8 @@ export function Bam(props) {
         at the users request.
       </p>
       <p>
-        Our design was a hierarchical concept, inspired by TV’s
-        picture-in-picture concept (if you’re old enough) allowed users to
+        Our design was a hierarchical concept, inspired by TV's
+        picture-in-picture concept (if you're old enough) allowed users to
         compare the performance across metrics while maintaining focus on
         primary data. Below, a view of all application tests and downtime
         metrics.
