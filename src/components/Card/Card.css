@@ -1,21 +1,37 @@
 .card {
   width: 250px;
-  padding: 1rem;
   border: 1px solid black;
   margin: 1rem;
   height: 450px;
-  position: relative
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
 }
 
 .card img {
   width: 100%;
   height: auto;
+  margin: 0.5rem;
+  position: relative;
+}
+
+.card__price {
+  font-size: 0.8rem;
+}
+
+.card__description {
+  font-size: 0.6rem;
+}
+
+.card__title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
 }
 
 .card__footer {
-  position: absolute;
-  bottom: 1rem;
   background-color: white;
+  padding: 0.5rem;
 }
 
 .card__footer__action {
@@ -23,7 +39,7 @@
   align-items: center;
 }
 
-.card__footer__action > .card-action--added {
+.card__footer__action>.card-action--added {
   margin-left: 1rem;
   font-weight: bold;
   color: green;

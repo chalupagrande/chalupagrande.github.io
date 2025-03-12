@@ -19,8 +19,9 @@ export default function Card(props) {
     <div className="card">
       <Carousel images={props.images} />
       <div className="card__footer">
-        <h4>{props.name}</h4>
-        <p>
+        <h5 className="card__title">{props.name}</h5>
+        <p className="card__description">{props.description}</p>
+        <p className="card__price">
           Price: <strong>${(props.amount / 100).toFixed(2)}</strong>
         </p>
         <div className="card__footer__action">
