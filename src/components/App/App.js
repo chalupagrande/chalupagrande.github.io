@@ -33,6 +33,7 @@ function App() {
           <Page.RedhatMarketplace path="/work/redhat-marketplace" />
           <Page.Sparts path="/work/sparts" />
           <Page.Underground path="/work/underground" />
+          <Page.ReelGolf path="/work/reelgolf" />
           <Page.Rhonda path="/rhonda" />
 
           <Page.NotFound default />

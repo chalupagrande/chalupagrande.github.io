@@ -9,6 +9,11 @@ export function Work(props) {
       </div>
       <ul>
         <li>
+          <Link to="/work/reelgolf">
+            ReelGolf
+          </Link>
+        </li>
+        <li>
           <Link to="/work/tradeblock">
             Tradeblock.us
           </Link>

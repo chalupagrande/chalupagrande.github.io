@@ -69,7 +69,7 @@ export function Panel(props) {
                   </div>
                 </div>
               </header>
-              <div className="panel__content" style={{ padding: pd }} onClick={handleFocus}>
+              <div className="panel__content" style={{ padding: pd }}>
                 {children}
               </div>
               <div className="panel__footer" onClick={handleFocus} />
@@ -104,7 +104,7 @@ export function Panel(props) {
                 </div>
               </div>
             </header>
-            <div className="panel__content" style={{ padding: pd }} onClick={handleFocus}>
+            <div className="panel__content" style={{ padding: pd }}>
               {children}
             </div>
             <div className="panel__footer" onClick={handleFocus} />
