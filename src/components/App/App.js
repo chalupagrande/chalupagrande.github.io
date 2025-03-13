@@ -12,7 +12,7 @@ function App() {
         <Navigation />
         <PanelManager />
         <Router>
-          <Page.Home path="/" />
+          <Page.Desktop path="/" />
           <Page.Home path="/home" />
           <Page.About path="/about" />
           <Page.FAQ path="/faq" />

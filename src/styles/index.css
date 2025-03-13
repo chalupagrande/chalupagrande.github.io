@@ -23,7 +23,6 @@ nav {
 
 #wrapper {
   position: relative;
-  padding: 0.5rem;
   width: 100%;
 }
 
@@ -91,8 +90,7 @@ blockquote {
 .row {
   max-width: 1000px;
   display: flex;
-  flex-flow: column;
-  justify-content: space-between;
+  flex-flow: row;
 }
 
 .row .item {
@@ -110,6 +108,11 @@ blockquote {
   display: flex;
   flex-flow: row;
   padding: 0.5rem;
+}
+
+.img.xs {
+  width: 200px;
+  height: auto;
 }
 
 .img.small {
@@ -158,6 +161,49 @@ blockquote {
   }
 }
 
+
+/* DESKTOP */
+.desktop>.icon {
+  margin: 1rem;
+}
+
+.toolbar {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(87, 87, 87);
+  color: rgb(224, 224, 224);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 0 0.3rem;
+}
+
+.toolbar__icon {
+  width: 2rem;
+  margin-right: 0.5rem;
+}
+
+
+.icon {
+  width: 3rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon__image {
+  width: 3rem;
+}
+
+.icon__text {
+  font-size: 0.8rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
 /* HOME */
 
 .portrait {
@@ -187,6 +233,21 @@ blockquote {
 .portrait .cmyk.stretch.cmyk-k,
 .portrait:hover .cmyk.cmyk-k {
   margin-left: 300px;
+}
+
+/* ABOUT */
+.blurb {
+  display: flex wrap;
+}
+
+.blurb__image {
+  margin: 0.5rem;
+  width: 200px;
+  height: 209px;
+}
+
+.blurb__text {
+  min-width: 300px;
 }
 
 

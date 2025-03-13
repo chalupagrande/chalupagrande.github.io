@@ -47,16 +47,16 @@ export function Short(props) {
       </div>
 
       <p>Shorten your URLs here!</p>
-      <form className="col form" onSubmit={handleSubmit}>
-        <div className="col item">
+      <form className="row form" onSubmit={handleSubmit}>
+        <div className="row item">
           <label htmlFor="vanity">Vanity:</label>
           <input id="vanity" type="text" name="vanity" onChange={handleChange} placeholder="example" value={state.vanity} />
         </div>
-        <div className="col item">
+        <div className="row item">
           <label htmlFor="destination">URL:</label>
           <input id="destination" type="text" name="destination" onChange={handleChange} placeholder="https://example.com" value={state.destination} />
         </div>
-        <div className="col item">
+        <div className="row item">
           <label htmlFor="force">Force:</label>
           <input type="checkbox" id="force" name="force" onChange={handleChange} checked={state.force} />
         </div>

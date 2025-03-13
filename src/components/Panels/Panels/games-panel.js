@@ -14,10 +14,11 @@ function WordPanel(props) {
   return (
     <Panel
       key={props.index}
-      title={'Manager'}
+      title={'Games'}
       size={{ width: 200, height: 200 }}
       resizable={true}
       background={true}
+      padding={true}
       defaultPosition={pos}
     >
       <>

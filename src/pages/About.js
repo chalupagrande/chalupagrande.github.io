@@ -9,8 +9,20 @@ export function About(props) {
         <h1 className="title">About Jamie</h1>
       </div>
 
-      <p></p>
-      <p>Here are a couple links you can use to get to know me</p>
+      <div className="blurb">
+        <img className="blurb__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/me-amys.png" alt="Jamie" />
+        <div className="blurb__text">
+          <h4>oh Hi!</h4>
+          <p>
+            So you're probably like -- "who is this dude?" And then you clicked on the <strong>"About"</strong> section, and here you are! Now you're reading this! Isn't that crazy that I knew that? I'm really intuitive.
+          </p>
+          <p>Well... since you were wondering, let me tell you a little bit about myself.</p>
+          <p>I am a creative solvem probler. Thats what I really love </p>
+        </div>
+      </div>
+
+      <hr />
+      <p className="small">Here are a couple links you can use to get to know me</p>
       <ul>
         <li>
           <a href="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/docs/resume2025.pdf">Curriculum Vitae</a>
@@ -24,25 +36,8 @@ export function About(props) {
         <li>
           <a href="https://www.instagram.com/sr.chalupagrande/">Instagram</a>
         </li>
-        <li>
-          <a href="https://codepen.io/chalupagrande">CodePen</a>
-        </li>
-        <li>
-          <a href="https://codesandbox.io/u/chalupagrande">CodeSandbox</a>
-        </li>
-        <li>
-          <a href="https://giphy.com/channel/chalupagrande">Giphy</a>
-        </li>
       </ul>
-      <p>
-        I know this site looks simple, and is completely unstyled, and yes. it
-        is simple and completely unstyled. But don't let that fool you, I am a
-        full stack developer and I pride myself on being able to build just
-        about anything I set my mind to. I have worked on many projects and with
-        many technologies that would make this site look like a petting zoo.
-        (I'm not sure why I went with that analogy but... <Emoji symbol="🤷" />
-        ). Check out my <Link to="/work">Work section</Link> to see those projects.
-      </p>
+      <hr />
       <h2 className="subtitle">Testimonials &amp; Accolades</h2>
       <blockquote>
         <p>Golden A'Design Award and Competition - 2018</p>

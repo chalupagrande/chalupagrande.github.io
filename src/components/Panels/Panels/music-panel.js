@@ -10,17 +10,12 @@ function MusicPanel(props) {
     <Panel
       key={props.index}
       title={'Rick Roll'}
-      size={{ width: 500, height: 500 }}
+      size={{ width: 560, height: 350 }}
       padding={false}
       resizable={false}
       defaultPosition={pos}
     >
-      <video autoPlay loop width="500" height="500">
-        <source
-          src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/video/astley.mp4"
-          type="video/mp4"
-        ></source>
-      </video>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Rd9w-SYiLN4?si=bv4oPh4v2hKnkRQY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </Panel>
   )
 }

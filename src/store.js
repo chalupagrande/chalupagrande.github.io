@@ -2,14 +2,17 @@ import React from 'react'
 // import { loadStripe } from '@stripe/stripe-js'
 import { mobileCheck } from './utils/userAgent'
 
-
+// const isMobile = mobileCheck()
+const isMobile = true
 const initialState = {
   cart: [],
   // stripePromise: loadStripe('pk_test_tZ1UTEHPHFd9dsZzi03UyKNB'),
-  showNormalNavigation: true,
-  panels: ['manager'],
-  panelFocused: "manager"
+  isDesktopMode: !isMobile,
+  panels: [isMobile ? 'games' : "home"],
+  panelFocused: isMobile ? 'games' : "home"
 }
+
+
 export const StoreContext = React.createContext(initialState)
 export class Provider extends React.Component {
   constructor(props) {
