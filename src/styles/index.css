@@ -170,14 +170,16 @@ blockquote {
 .toolbar {
   width: 100%;
   height: 30px;
-  background-color: rgb(87, 87, 87);
-  color: rgb(224, 224, 224);
+  /* background-color: rgb(8, 12, 140); */
+  background-color: white;
+  color: black;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   padding: 0 0.3rem;
+  cursor: default;
 }
 
 .toolbar__icon {
@@ -243,7 +245,7 @@ blockquote {
 .blurb__image {
   margin: 0.5rem;
   width: 200px;
-  height: 209px;
+  height: 175px;
 }
 
 .blurb__text {

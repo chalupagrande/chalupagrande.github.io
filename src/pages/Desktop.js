@@ -11,7 +11,7 @@ export function Desktop(props) {
   return (
     <div className="desktop">
       <div className="toolbar">
-        <img className="toolbar__icon" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/chalupa.png" width="30" />
+        <img className="toolbar__icon" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/chalupa-bw.png" width="30" />
         <div>Chalupa.os</div>
       </div>
       <div className="icon" onClick={() => togglePanel('Home', true)}>

@@ -2,14 +2,14 @@ import React from 'react'
 // import { loadStripe } from '@stripe/stripe-js'
 import { mobileCheck } from './utils/userAgent'
 
-// const isMobile = mobileCheck()
-const isMobile = true
+const isMobile = mobileCheck()
+// const isMobile = true
 const initialState = {
   cart: [],
   // stripePromise: loadStripe('pk_test_tZ1UTEHPHFd9dsZzi03UyKNB'),
   isDesktopMode: !isMobile,
-  panels: [isMobile ? 'games' : "home"],
-  panelFocused: isMobile ? 'games' : "home"
+  panels: [isMobile ? 'games' : "about"],
+  panelFocused: isMobile ? 'games' : "about"
 }
 
 
@@ -40,7 +40,7 @@ export class Provider extends React.Component {
         if (open) {
           // check if it exists then add it
           if (store.panels.indexOf(panelName) >= 0) return
-          this.setState({ ...store, panels: [...store.panels, panelName] })
+          this.setState({ ...store, panels: [...store.panels, panelName], panelFocused: panelName })
         } else {
           // remove it from panels array
           let temp = [...store.panels]

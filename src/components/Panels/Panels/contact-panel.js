@@ -4,14 +4,14 @@ import { Contact } from '../../../pages/Contact'
 
 function ContactPanel(props) {
   const pos = {
-    x: 10,
-    y: 10,
+    x: 35,
+    y: 90,
   }
   return (
     <Panel
       key={props.index}
       title={'Contact'}
-      size={{ width: 300, height: 300 }}
+      size={{ width: 500, height: 500 }}
       resizable={true}
       defaultPosition={pos}
       padding={"0.5rem"}
