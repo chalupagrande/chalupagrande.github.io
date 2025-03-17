@@ -10,6 +10,7 @@ export function Shop() {
   const { products } = Products
   const {
     store: { cart },
+    updaters: { togglePanel }
   } = useContext(StoreContext)
   const shopItems = products.map((e) => <Card key={e.sku} {...e} />)
 
@@ -23,9 +24,9 @@ export function Shop() {
       {!!cart.length && (
         <>
           <Cart />
-          <Link to="/shop/checkout">
+          <a onClick={() => togglePanel("Checkout", true)}>
             <button className="btn btn-primary">Checkout</button>
-          </Link>
+          </a>
         </>
       )}
     </>

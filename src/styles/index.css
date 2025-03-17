@@ -185,9 +185,17 @@ blockquote {
   font-weight: bold;
   display: flex;
   flex-flow: row nowrap;
+  justify-content: space-between;
   align-items: center;
   padding: 0 0.3rem;
   cursor: default;
+}
+
+.toolbar__section {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-right: 1rem;
 }
 
 .toolbar__icon {

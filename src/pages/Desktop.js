@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../store'
+import Clock from '../components/Clock/Clock'
 
 
 export function Desktop(props) {
@@ -11,8 +12,12 @@ export function Desktop(props) {
   return (
     <>
       <div className="toolbar">
-        <img className="toolbar__icon" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/chalupa-bw.png" width="30" />
-        <div>Chalupa.os</div>
+        <div className="toolbar__section">
+          <img className="toolbar__icon" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/chalupa-bw.png" width="30" />
+          <div>Chalupa.os</div>
+        </div>
+
+        <Clock />
       </div>
       <div className="desktop">
 
@@ -26,7 +31,7 @@ export function Desktop(props) {
           <div className="icon__text">About</div>
         </div>
         <div className="icon" onClick={() => togglePanel('Work', true)}>
-          <img className="icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/spreadsheet_program.png" width="50" />
+          <img className="icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/workspace.png" width="50" />
           <div className="icon__text">Work</div>
         </div>
         <div className="icon" onClick={() => togglePanel('FAQ', true)}>
@@ -48,6 +53,10 @@ export function Desktop(props) {
         <div className="icon" onClick={() => togglePanel('Shop', true)}>
           <img className="icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/paint.png" width="50" />
           <div className="icon__text">Shop</div>
+        </div>
+        <div className="icon" onClick={() => togglePanel('Junk', true)}>
+          <img className="icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/recycle_bin_full.png" width="50" />
+          <div className="icon__text">Junk</div>
         </div>
       </div>
     </>

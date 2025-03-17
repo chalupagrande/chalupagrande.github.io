@@ -117,81 +117,10 @@ export function Work(props) {
             An Augmented Reality Portrait - Documentary
           </a>
         </li>
-        <li>
+        {/* <li>
           <Link to="/work/love-letters">Love Letters</Link>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://chalupagrande.github.io/trollscripts/views/phonenumbers.html"
-          >
-            Phone Number Madness
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://nnrps.herokuapp.com/"
-          >
-            Neural Net - Rock Paper Scissors
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.youtube.com/watch?v=vgjkYxa8W0E"
-          >
-            Priority Mail Sticker Animation
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://chalupagrande.github.io/sandbox/views/skull.html"
-          >
-            3D Skull (ThreeJS)
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://chalupagrande.github.io/sandbox/views/labryinth.html"
-          >
-            Mutating Labyrinth (using SVG stroke)
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://chalupagrande.github.io/sandbox/views/colors.html"
-          >
-            CSS Blendmodes demo
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://chalupagrande.github.io/sandbox/views/tiles.html"
-          >
-            Animating Tiles (GSAP)
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://chalupagrande.github.io/sandbox/views/portrait.html"
-          >
-            Self Portrait with Tile Animation
-          </a>
-        </li>
+        </li> */}
+
       </ul>
       <p>Social Links</p>
       <ul>

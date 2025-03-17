@@ -11,7 +11,7 @@ export function Checkout(props) {
   let recaptchaRef = useRef(null)
   const {
     store: { cart, /* stripePromise */ },
-    updaters: { clearCart },
+    updaters: { clearCart, togglePanel },
   } = useContext(StoreContext)
 
   const requiresShipping = cart.reduce(
@@ -213,7 +213,7 @@ export function Checkout(props) {
               onChange={handleChange}
             />
             I have read and agree to the things in:{' '}
-            <Link to="/legal">Legal</Link>
+            <a onClick={() => togglePanel("Legal", true)}>Legal</a>
           </label>
         </div>
         <ReCAPTCHA

@@ -46,6 +46,8 @@ export function Legal(props) {
         <p>
           I'm not just going to give out my address on here... so contact me via the contact page and we can arrange a pick up.
         </p>
+
+        <p>And this is all super legally binding and whatever ™℠®©</p>
       </div>
     </>
   )
