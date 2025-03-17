@@ -10,7 +10,11 @@ export function Panel(props) {
     updaters: { togglePanel, focusPanel },
     store: { panelFocused },
   } = useContext(StoreContext)
+
+
   const { defaultPosition, title, children, background, padding, size: defaultSize } = props
+  const [position, setPosition] = useState({ x: defaultPosition.x, y: defaultPosition.y })
+
   let [size, setSize] = useState(defaultSize || { width: 200, height: 200 })
 
   let bgColor = typeof background === 'boolean' ? '#ffffff' : background
@@ -24,12 +28,14 @@ export function Panel(props) {
     togglePanel(title, false)
   }
 
-  function onStop(e, a) {
-    console.log(a.x, a.y)
-  }
 
   function handleFocus() {
     focusPanel(title)
+  }
+
+  function handleExpand() {
+    setSize({ width: window.innerWidth, height: window.innerHeight - 30 })
+    setPosition({ x: 0, y: 30 })
   }
 
   useEffect(() => {
@@ -37,14 +43,14 @@ export function Panel(props) {
   }, [defaultSize])
 
 
+
   if (props.resizable) {
     return (
       <div className={`${panelFocused === title.toLowerCase() ? 'panel--focused' : ''}`}>
         <Draggable
           handle=".panel__header__drag-area"
-          defaultPosition={defaultPosition}
           nodeRef={panelRef}
-          onStop={onStop}
+          position={position}
         >
           <Resizable
             resizeHandles={['se']}
@@ -59,15 +65,20 @@ export function Panel(props) {
             >
 
               <header className="panel__header">
+                <div className="panel__header__controls">
+                  <div className="panel__controls--close" onClick={handleClose}>
+                    <span>X</span>
+                  </div>
+                  <div className="panel__controls--expand" onClick={handleExpand}>
+                    <span>{"[]"}</span>
+                  </div>
+
+                </div>
                 <div className="panel__header__drag-area" onClick={handleFocus}>
                   <div className="panel__header__title">{title}</div>
                   <PanelHeaderSpacer />
                 </div>
-                <div className="panel__header__controls">
-                  <div className="panel__controls__close" onClick={handleClose}>
-                    <span>X</span>
-                  </div>
-                </div>
+
               </header>
               <div className="panel__content" style={{ padding: pd }}>
                 {children}
@@ -84,8 +95,7 @@ export function Panel(props) {
         <Draggable
           nodeRef={panelRef}
           handle=".panel__header__drag-area"
-          defaultPosition={defaultPosition}
-          onStop={onStop}
+          position={position}
           {...size}
         >
           <div

@@ -17,8 +17,20 @@ export function About(props) {
             So you're probably like -- "who is this dude?" And then you clicked on the <strong>"About"</strong> section, and here you are! Now you're reading this! Isn't that crazy that I knew that? I'm really intuitive.
           </p>
           <p>Well... since you were wondering, let me tell you a little bit about myself.</p>
-          <p><strong>I am a creative solvem probler.</strong> Thats what I really love. And I'm good at it too.</p>
-          <p>I started as a </p>
+          <p><strong>I am a creative solvem probler.</strong> That's what I really love. And I'm good at it too.</p>
+          <h5>Background</h5>
+          <p>
+            I started as a painter, graduating college with a Studio Art degree. Making a living right out of college as a fine artist was a bit more difficult than Basquiat made it seem. So painting turned into design. I started working with a couple of small clients designing their brand guidelines and websites. Through this journey, I quickly fell in love with the web and its idiosyncrasies. So I taught myself the basics of web development.
+          </p>
+          <p>
+            I wanted to go deeper though. Computer science was so fascinating to me! So I attended a “coding bootcamp” called MakerSquare (I think they have been acquired since?) where I truly became a Software Engineer. It was one of the most fascinating and intense learning experiences of my life.
+          </p>
+          <p>
+            After the camp, I got my job at IBM as a Front End Engineer. It was here that I returned to my roots as a designer and attended their 3 month intensive design camp where we learned how to execute design and design strategy at scale. From there we were deployed into our teams. Consisting of a lead designer, a design researcher, a visual designer, a user experience designer and a front end engineer (me). It was in this highly skilled team that we led the design strategy for a number of IBM products.
+          </p>
+          <p>
+            Essentially our process was to ideate, design, build, test with users and repeat.
+          </p>
         </div>
       </div>
 

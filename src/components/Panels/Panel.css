@@ -67,7 +67,33 @@
   -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
 
-.panel__controls__close {
+.panel__header__controls {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.panel__header__controls>div {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.3rem;
+}
+
+/* .panel__controls--expand {
+  position: relative;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.panel__controls--close {
   position: relative;
   width: 20px;
   height: 20px;
@@ -75,13 +101,12 @@
   cursor: pointer;
 }
 
-.panel__controls__close>span {
-
+.panel__controls--close>span {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 .panel__resize-handle {
   position: absolute;
