@@ -9,7 +9,7 @@ function App() {
   return (
     <div id="wrapper">
       <Provider>
-        <Navigation />
+        {/* <Navigation /> */}
         <PanelManager />
         <Router>
           <Page.Desktop path="/" />
@@ -38,6 +38,7 @@ function App() {
 
           <Page.NotFound default />
         </Router>
+
       </Provider>
     </div>
   )

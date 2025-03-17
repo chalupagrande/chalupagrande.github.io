@@ -163,6 +163,14 @@ blockquote {
 
 
 /* DESKTOP */
+.desktop {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 30px);
+}
+
 .desktop>.icon {
   margin: 1rem;
 }

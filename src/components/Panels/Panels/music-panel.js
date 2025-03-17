@@ -12,7 +12,7 @@ function MusicPanel(props) {
   return (
     <Panel
       key={props.index}
-      title={'Rick Roll'}
+      title={'Tunez'}
       size={{ width: 560, height: 350 }}
       padding={false}
       resizable={false}
