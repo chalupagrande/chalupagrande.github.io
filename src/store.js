@@ -4,7 +4,8 @@ import { mobileCheck } from './utils/userAgent'
 import ls from 'local-storage'
 
 const isMobile = mobileCheck()
-const desiredPanels = ls.get('panels') || ['about']
+const lastLoadedPanels = ls.get('panels')
+const desiredPanels = !lastLoadedPanels || Array.isArray(lastLoadedPanels) && lastLoadedPanels.length === 0 ? ['about'] : lastLoadedPanels
 const panelFocused = ls.get('panelFocused') || desiredPanels[0]
 // const isMobile = true
 const initialState = {

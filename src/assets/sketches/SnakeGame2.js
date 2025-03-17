@@ -16,14 +16,15 @@ export default function SnakeGame2(props) {
     p5.createCanvas(canvasSize, canvasSize).parent(canvasParentRef)
     p5.keyPressed = (e) => {
       e.preventDefault()
+      const fuckery = score >= 21 ? -1 : 1
       if (p5.keyCode === p5.LEFT_ARROW) {
-        snake.setHeading(-1, 0)
+        snake.setHeading(-1 * fuckery, 0)
       } else if (p5.keyCode === p5.RIGHT_ARROW) {
-        snake.setHeading(1, 0)
+        snake.setHeading(1 * fuckery, 0)
       } else if (p5.keyCode === p5.UP_ARROW) {
-        snake.setHeading(0, -1)
+        snake.setHeading(0, -1 * fuckery)
       } else if (p5.keyCode === p5.DOWN_ARROW) {
-        snake.setHeading(0, 1)
+        snake.setHeading(0, 1 * fuckery)
       }
     }
     game = new Game(p5, boardSize, boardSize)

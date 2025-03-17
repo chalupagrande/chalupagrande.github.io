@@ -20,17 +20,19 @@ export function About(props) {
           <p><strong>I am a creative solvem probler.</strong> That's what I really love. And I'm good at it too.</p>
           <h5>Background</h5>
           <p>
-            I started as a painter, graduating college with a Studio Art degree. Making a living right out of college as a fine artist was a bit more difficult than Basquiat made it seem. So painting turned into design. I started working with a couple of small clients designing their brand guidelines and websites. Through this journey, I quickly fell in love with the web and its idiosyncrasies. So I taught myself the basics of web development.
+            I'm a skater punk at heart, and I just want to build cool stuff. When I was 16, the thing I wanted to build was a skatepark. <a target="_blank" rel="noreferrer" href="https://www.spaskateparks.com/projects/new-braunfels-texas-jaws-skatepark/">So, I raised $500,000 for an all concrete, free-to-the-public, world class skatepark in my hometown of New Braunfels TX.</a> Tony Hawk (ever heard of him) gave me $25,000 towards this initiative &mdash; the highest award his foundation gives.
           </p>
           <p>
-            I wanted to go deeper though. Computer science was so fascinating to me! So I attended a “coding bootcamp” called MakerSquare (I think they have been acquired since?) where I truly became a Software Engineer. It was one of the most fascinating and intense learning experiences of my life.
+            In college I really just wanted to make art. So I made art. Got my major in it too. For my senior thesis I put together a city wide tour of installations and paintings that explored memetics and the power of replication.
           </p>
           <p>
-            After the camp, I got my job at IBM as a Front End Engineer. It was here that I returned to my roots as a designer and attended their 3 month intensive design camp where we learned how to execute design and design strategy at scale. From there we were deployed into our teams. Consisting of a lead designer, a design researcher, a visual designer, a user experience designer and a front end engineer (me). It was in this highly skilled team that we led the design strategy for a number of IBM products.
+            Everybody asks, how did you go from getting your degree in Studio Art to being a Software Engineer? And I always say the same thing: Painting became Design. Design became Web Design. Web Design became Web Development. Web Development became Software Engineering. It's the same process really, just different tools. Figure out what you want to say, figure out the best way to say it, try a few things, and re-evaluate.
           </p>
           <p>
-            Essentially our process was to ideate, design, build, test with users and repeat.
+            After some schooling, I started working at IBM Design, which really codified this notion for me. There I worked with a number of diverse creative teams and built some really cool software. Even won awards for it. But, there was one thing that IBM wasn't so good at &mdash; figuring out what to say.
           </p>
+          <p>So here I am. Out in the world now &mdash; helping people figure out what they want to say. So… </p>
+          <p>What do you wanna say?</p>
         </div>
       </div>
 

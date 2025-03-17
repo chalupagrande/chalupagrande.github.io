@@ -19,18 +19,22 @@ export function FAQ(props) {
         Grande.
       </p>
 
+      <h4>I'm a recruiter for a very serious role. Why is this site kinda trash? Is this a joke to you?</h4>
+      <p>
+        Yeah, kinda. Listen, I'm very serious about doing good work. But not all good work has to be so serious. I think we can both tell this site is largely a joke. And I could build it a whole lot better. But frankly I really don't want to spend any more time on self promotion than is absolutely necessary. I'm sure you're probably bored at looking at stale resumes and cover letters all day. So why don't you sit back, relax. Play some snake. You can tell your boss you're doing research.
+      </p>
+      <p>But if you don't make it past 25, you have to hire me. Deal?</p>
+
       <h4>Something is broken. Why don't you fix it</h4>
       <p>
-        I think we can both tell that this website is largely a joke. I don't
-        want to spend more time on self promotion than is absolutely necessary. It was also
-        originally built like 3 years ago, and then refactored to be less
-        annoyingly minimalist 2 years ago... and you know what i dont need to
+        I originally built like 6 years ago, and then refactored to be less
+        annoyingly minimalist 4 years ago... and you know what i dont need to
         explain myself. I'll get to it eventually.
       </p>
 
       <h4>What technologies are you familiar with?</h4>
       <p>
-        oh man... too many to list. I mostly write in Typescript, but im not too bad at Python. Here are some technologies you might be interested in: React, NextJS, React Native, GraphQL, Docker, BullMQ, Redis, Postgres, MongoDB, Stripe, d3, ThreeJS... I can keep going.
+        ah geez... too many to list. I mostly write in Typescript, but im not too bad at Python. Here are some technologies you might be interested in: React, NextJS, React Native, GraphQL, Docker, BullMQ, Redis, Postgres, MongoDB, Stripe, d3, ThreeJS... I can keep going.
       </p>
 
       <h4>Are you available to work on my project?</h4>
@@ -54,6 +58,11 @@ export function FAQ(props) {
       <h4>What the hell is a chalupa?</h4>
       <p>
         Its like a fried taco I guess.
+      </p>
+
+      <h4>What the hell is a chalupa grande?</h4>
+      <p>
+        Its a big fried taco.
       </p>
 
       <h4>What is your hidden talent?</h4>
