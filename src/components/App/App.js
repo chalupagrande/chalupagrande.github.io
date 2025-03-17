@@ -24,7 +24,7 @@ function App() {
           <Page.Contact path="/contact" />
           <Page.Legal path="/legal" />
           <Page.Work path="/work" />
-          <Page.BAM path="/work/bam" />
+          <Page.Bam path="/work/bam" />
           <Page.ShareGro path="/work/sharegro" />
           <Page.Tradeblock path="/work/tradeblock" />
           <Page.LoveLetters path="/work/love-letters" />

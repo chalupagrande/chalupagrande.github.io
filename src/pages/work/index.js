@@ -1,4 +1,4 @@
-export * from './BAM'
+export * from './Bam'
 export * from './Work'
 export * from './LoveLetters'
 export * from './IBMCloudPak'

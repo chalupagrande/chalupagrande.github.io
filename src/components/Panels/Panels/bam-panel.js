@@ -1,6 +1,6 @@
 import React from 'react'
 import { Panel } from '../Panel'
-import { BAM } from '../../../pages/work/BAM'
+import { Bam } from '../../../pages/work/Bam'
 import { random } from '../../../utils/math'
 
 function BAMPanel(props) {
@@ -19,7 +19,7 @@ function BAMPanel(props) {
       defaultPosition={pos}
       padding={"0.5rem"}
     >
-      <BAM />
+      <Bam />
     </Panel>
   )
 }

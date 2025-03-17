@@ -1,11 +1,10 @@
 import React from 'react'
 
-export function BAM(props) {
+export function Bam(props) {
   return (
     <>
       <div className="intro">
-        <h1 className="title">BAM</h1>
-        <h2 className="subtitle">Bluemix Availability Monitoring</h2>
+        <h2 className="title">Bluemix Availability Monitoring</h2>
       </div>
 
       <h3 className="highlight">
