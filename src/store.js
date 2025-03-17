@@ -37,6 +37,7 @@ export class Provider extends React.Component {
       togglePanel: (name, open) => {
         const store = this.state
         const panelName = name.toLowerCase()
+        console.log(panelName)
         if (open) {
           // check if it exists then add it
           if (store.panels.indexOf(panelName) >= 0) return
@@ -54,7 +55,6 @@ export class Provider extends React.Component {
       focusPanel: (name) => {
         const store = this.state
         const panelName = name.toLowerCase()
-        console.log("focusing", panelName)
         this.setState({ ...store, panelFocused: panelName })
       },
       clearPanels: () => {

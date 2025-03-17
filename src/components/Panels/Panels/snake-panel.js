@@ -4,9 +4,11 @@ import { random } from '../../../utils/math'
 import SnakeGame2 from '../../../assets/sketches/SnakeGame2'
 
 function SnakePanel(props) {
+  const randX = random(90, 250)
+  const randY = random(50, 500)
   const pos = {
-    x: 40,
-    y: 40,
+    x: randX,
+    y: randY
   }
   return (
     <Panel

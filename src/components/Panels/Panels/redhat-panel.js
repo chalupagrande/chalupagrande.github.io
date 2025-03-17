@@ -1,25 +1,27 @@
 import React from 'react'
 import { Panel } from '../Panel'
-import { Home } from '../../../pages/Home'
+import { RedhatMarketplace } from '../../../pages/work/RedhatMarketplace'
 import { random } from '../../../utils/math'
 
-function HomePanel(props) {
+function SPAPanel(props) {
+  const randX = random(90, 250)
+  const randY = random(50, 500)
   const pos = {
-    x: 30,
-    y: 10,
+    x: randX,
+    y: randY
   }
   return (
     <Panel
       key={props.index}
-      title={'Home'}
+      title={'Redhat Marketplace'}
       size={{ width: 500, height: 500 }}
       resizable={true}
       defaultPosition={pos}
       padding={"0.5rem"}
     >
-      <Home />
+      <RedhatMarketplace />
     </Panel>
   )
 }
 
-export default HomePanel
+export default SPAPanel

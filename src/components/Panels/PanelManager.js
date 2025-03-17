@@ -47,7 +47,7 @@ export function PanelManager() {
       })
       // if there were not promises already loaded set the panelList
       if (!promises) filterAndSet()
-      console.log(panelModules)
+
     } else {
       setPanelList([])
     }

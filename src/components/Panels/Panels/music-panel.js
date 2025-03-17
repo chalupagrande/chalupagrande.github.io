@@ -1,10 +1,13 @@
 import React from 'react'
 import { Panel } from '../Panel'
+import { random } from '../../../utils/math'
 
 function MusicPanel(props) {
+  const randX = random(90, 250)
+  const randY = random(50, 500)
   const pos = {
-    x: 80,
-    y: 80,
+    x: randX,
+    y: randY
   }
   return (
     <Panel

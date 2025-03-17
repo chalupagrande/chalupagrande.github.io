@@ -1,25 +1,27 @@
 import React from 'react'
 import { Panel } from '../Panel'
-import { Home } from '../../../pages/Home'
+import { Tradeblock } from '../../../pages/work/Tradeblock'
 import { random } from '../../../utils/math'
 
-function HomePanel(props) {
+function TradeblockPanel(props) {
+  const randX = random(90, 250)
+  const randY = random(50, 500)
   const pos = {
-    x: 30,
-    y: 10,
+    x: randX,
+    y: randY
   }
   return (
     <Panel
       key={props.index}
-      title={'Home'}
+      title={'Tradeblock'}
       size={{ width: 500, height: 500 }}
       resizable={true}
       defaultPosition={pos}
       padding={"0.5rem"}
     >
-      <Home />
+      <Tradeblock />
     </Panel>
   )
 }
 
-export default HomePanel
+export default TradeblockPanel

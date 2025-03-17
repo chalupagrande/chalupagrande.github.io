@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function Bam(props) {
+export function BAM(props) {
   return (
     <>
       <div className="intro">

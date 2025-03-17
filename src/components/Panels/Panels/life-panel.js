@@ -4,9 +4,11 @@ import { random } from '../../../utils/math'
 import GameOfLife from '../../../assets/sketches/GameOfLife'
 
 function DotsPanel(props) {
+  const randX = random(90, 250)
+  const randY = random(50, 500)
   const pos = {
-    x: 30,
-    y: 30,
+    x: randX,
+    y: randY
   }
   return (
     <Panel

@@ -65,6 +65,8 @@ export function ReelGolf(props) {
         <p>
           Part of my engineering initiatives, I built a suite of tools to pan, tilt and zoom the cameras where we needed as well as correct for image distortion. I spent many hours out in the field, installing, testing and refining our algorithms. In addition to the camera's own interface, we had to know the precise location of the cameras in order to accurately triangulate the ball position. I worked with other engineers to develop a cost effective GPS system that could be used at golf courses to determine the installation location of the cameras.
         </p>
+        <h4>General Flow</h4>
+        <img src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/rg-flow.png" />
       </div>
     </>
   )

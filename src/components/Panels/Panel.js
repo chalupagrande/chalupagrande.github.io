@@ -25,7 +25,7 @@ export function Panel(props) {
   }
 
   function onStop(e, a) {
-    console.log(a.x)
+    console.log(a.x, a.y)
   }
 
   function handleFocus() {

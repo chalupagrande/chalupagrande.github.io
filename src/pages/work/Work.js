@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from '@reach/router'
+import { StoreContext } from '../../store'
 
 export function Work(props) {
+  const {
+    updaters: { togglePanel },
+  } = useContext(StoreContext)
   return (
     <>
       <div className="intro">
@@ -9,14 +13,14 @@ export function Work(props) {
       </div>
       <ul>
         <li>
-          <Link to="/work/reelgolf">
+          <a onClick={() => togglePanel('ReelGolf', true)}>
             ReelGolf
-          </Link>
+          </a>
         </li>
         <li>
-          <Link to="/work/tradeblock">
+          <a onClick={() => togglePanel('Tradeblock', true)}>
             Tradeblock.us
-          </Link>
+          </a>
         </li>
         {/* <li>
           <a
@@ -39,7 +43,7 @@ export function Work(props) {
             FixFake
           </a>
         </li> */}
-        <li>
+        {/* <li>
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -48,8 +52,8 @@ export function Work(props) {
             Secret government contract I can't talk about
           </a>{' '}
           (seriously)
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -57,26 +61,30 @@ export function Work(props) {
           >
             JohnTrainum.com (producer)
           </a>
-        </li>
+        </li> */}
 
         <li>
-          <Link to="/work/bam">Bluemix Availability Monitoring</Link>
+          <a onClick={() => togglePanel('BAM', true)}>
+            Bluemix Availability Monitoring
+          </a>
         </li>
         <li>
-          <Link to="/work/icam">IBM Cloud Application Monitoring</Link>
+          <a onClick={() => togglePanel('icam', true)}>
+            IBM Cloud Application Monitoring
+          </a>
         </li>
         <li>
-          <Link to="/work/ibm-cloud-pak">IBM Cloud Pak</Link>
+          <a onClick={() => togglePanel('icp', true)}>IBM Cloud Pak</a>
         </li>
+        {/* <li>
+          <a onClick={() => togglePanel('spa', true)}>Smart Patient Academy</a>
+        </li> */}
         <li>
-          <Link to="/work/sparts">Smart Patient Academy</Link>
+          <a onClick={() => togglePanel('redhat', true)}>Redhat Marketplace</a>
         </li>
-        <li>
-          <Link to="/work/redhat-marketplace">Redhat Marketplace</Link>
-        </li>
-        <li>
+        {/* <li>
           <Link to="/work/underground">Underground Blueprint</Link>
-        </li>
+        </li> */}
       </ul>
 
       <h2 className="subtitle">Personal Projects</h2>

@@ -1,11 +1,14 @@
 import React from 'react'
 import { Panel } from '../Panel'
 import { Shop } from '../../../pages/shop/Shop'
+import { random } from '../../../utils/math'
 
 function ShopPanel(props) {
+  const randX = random(90, 250)
+  const randY = random(50, 500)
   const pos = {
-    x: 30,
-    y: 50,
+    x: randX,
+    y: randY
   }
   return (
     <Panel

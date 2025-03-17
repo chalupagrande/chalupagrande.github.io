@@ -4,8 +4,8 @@ import { About } from '../../../pages/About'
 
 function AboutPanel(props) {
   const pos = {
-    x: 40,
-    y: 60,
+    x: 90,
+    y: 45,
   }
   return (
     <Panel

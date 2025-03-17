@@ -1,9 +1,9 @@
 import React from 'react'
 import { Panel } from '../Panel'
-import { Work } from '../../../pages/work/Work'
+import { IBMCloudApplicationMonitoring } from '../../../pages/work/IBMCloudApplicationMonitoring'
 import { random } from '../../../utils/math'
 
-function WorkPanel(props) {
+function ICAMPanel(props) {
   const randX = random(90, 250)
   const randY = random(50, 500)
   const pos = {
@@ -13,15 +13,15 @@ function WorkPanel(props) {
   return (
     <Panel
       key={props.index}
-      title={'Work'}
+      title={'IBM Cloud Application Monitoring'}
       size={{ width: 500, height: 500 }}
       resizable={true}
       defaultPosition={pos}
       padding={"0.5rem"}
     >
-      <Work />
+      <IBMCloudApplicationMonitoring />
     </Panel>
   )
 }
 
-export default WorkPanel
+export default ICAMPanel

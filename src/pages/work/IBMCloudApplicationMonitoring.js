@@ -1,7 +1,10 @@
-import React from 'react'
-import { Link } from '@reach/router'
+import React, { useContext } from 'react'
+import { StoreContext } from '../../store'
 
 export function IBMCloudApplicationMonitoring() {
+  const {
+    updaters: { togglePanel },
+  } = useContext(StoreContext)
   return (
     <>
       <div className="intro">
@@ -62,7 +65,7 @@ export function IBMCloudApplicationMonitoring() {
         Rather than looking at monitoring from an application level, we designed
         a system for understanding the entire scope of your application
         infrastructure in the cloud. These tools, coupled with the insights from{' '}
-        <Link to="/work/bam">BAM</Link>, would give you a robust set of tools
+        <a onClick={() => togglePanel("BAM", true)}>BAM</a>, would give you a robust set of tools
         for application and infrastructure monitoring in a multi-cluster
         Kubernetes environment.
       </p>

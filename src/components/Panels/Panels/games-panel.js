@@ -5,9 +5,11 @@ import { mobileCheck } from '../../../utils/userAgent'
 
 function WordPanel(props) {
   const { togglePanel } = props
+  const randX = random(90, 250)
+  const randY = random(50, 500)
   const pos = {
-    x: window.innerWidth - 250,
-    y: 250,
+    x: randX,
+    y: randY
   }
 
   const isMobile = mobileCheck()

@@ -17,7 +17,8 @@ export function About(props) {
             So you're probably like -- "who is this dude?" And then you clicked on the <strong>"About"</strong> section, and here you are! Now you're reading this! Isn't that crazy that I knew that? I'm really intuitive.
           </p>
           <p>Well... since you were wondering, let me tell you a little bit about myself.</p>
-          <p>I am a creative solvem probler. Thats what I really love </p>
+          <p><strong>I am a creative solvem probler.</strong> Thats what I really love. And I'm good at it too.</p>
+          <p>I started as a </p>
         </div>
       </div>
 

@@ -1,11 +1,14 @@
 import React from 'react'
 import { Panel } from '../Panel'
 import { Contact } from '../../../pages/Contact'
+import { random } from '../../../utils/math'
 
 function ContactPanel(props) {
+  const randX = random(90, 250)
+  const randY = random(50, 500)
   const pos = {
-    x: 35,
-    y: 90,
+    x: randX,
+    y: randY
   }
   return (
     <Panel

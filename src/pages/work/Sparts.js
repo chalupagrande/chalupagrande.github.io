@@ -43,7 +43,7 @@ export function Sparts(props) {
         the Smart Patient Academy Patient Identity Profile will help you move
         through the steps to become a more empowered patient.
       </p>
-      <a href="https://thesparts.com">Prototype</a>
+      {/* <a href="https://thesparts.com">Prototype</a> */}
     </>
   )
 }

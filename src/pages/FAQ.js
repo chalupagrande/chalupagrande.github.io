@@ -1,7 +1,11 @@
 import { Link } from '@reach/router'
-import React from 'react'
+import React, { useContext } from 'react'
+import { StoreContext } from '../store'
 
 export function FAQ(props) {
+  const {
+    updaters: { togglePanel },
+  } = useContext(StoreContext)
   return (
     <>
       <div className="intro">
@@ -14,6 +18,7 @@ export function FAQ(props) {
         has a different nickname for me. The one I like the most is Chalupa
         Grande.
       </p>
+
       <h4>Something is broken. Why don't you fix it</h4>
       <p>
         I think we can both tell that this website is largely a joke. I don't
@@ -22,28 +27,16 @@ export function FAQ(props) {
         annoyingly minimalist 2 years ago... and you know what i dont need to
         explain myself. I'll get to it eventually.
       </p>
-      <h4>
-        Why does this site look so dumb if you're so good at all this stuff?
-      </h4>
-      <p>
-        Why spend more time on self promotion than necessary? Plus. I can spend
-        more time on your project! And also other more fun things.
-      </p>
 
-      <h4>What web technologies are you familiar with?</h4>
+      <h4>What technologies are you familiar with?</h4>
       <p>
-        typescript, javascript, html5, css3, babel, webpack, gulp, react, redux, carbon
-        components, vue, nextjs, git, mongoDB, neo4j,cypher, stripe, twilio,
-        apollo, grapql, tensorflowjs, lerna, node, express, mongoose, eslint,
-        prettier, jest, threejs, passport, antd design system, scss, yarn,
-        docker, kubernetes, d3, p5 <br /> and ... idk.... probably some others
-        too.{' '}
+        oh man... too many to list. I mostly write in Typescript, but im not too bad at Python. Here are some technologies you might be interested in: React, NextJS, React Native, GraphQL, Docker, BullMQ, Redis, Postgres, MongoDB, Stripe, d3, ThreeJS... I can keep going.
       </p>
 
       <h4>Are you available to work on my project?</h4>
       <p>
         Dunno! Shoot me an email using the{' '}
-        <Link to="/contact">contact</Link> form and I'll get back to you
+        <a onClick={() => togglePanel("Contact", true)}>contact</a> form and I'll get back to you
         as soon as I can!
       </p>
 
@@ -60,17 +53,15 @@ export function FAQ(props) {
 
       <h4>What the hell is a chalupa?</h4>
       <p>
-        Okay, so this one is kinda annoying. if you{' '}
-        <a href="https://lmgtfy.com/?q=chalupa+images">
-          Google Image search Chalupa
-        </a>
-        , you get a bunch of images that look like fried tacos... but here is
-        the thing. Growing up I always order Chalupas (from legit Tex-Mex
-        restraunts in South Central Texas) and I would receive a FLAT looking
-        taco. Basically, a hard shell with a bunch of meat and veggies on it.
-        Anyway, they're delicious and now I'm hungry and going to go make lunch.
-        This website is over-the-top enough anyway.
+        Its like a fried taco I guess.
       </p>
+
+      <h4>What is your hidden talent?</h4>
+      <p>
+        I've memorized over 100 digits of pi.
+      </p>
+
+      <h4>What is your favorite gif?</h4>
       <img src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/dance.gif" />
     </>
   )

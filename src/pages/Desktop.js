@@ -14,10 +14,10 @@ export function Desktop(props) {
         <img className="toolbar__icon" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/chalupa-bw.png" width="30" />
         <div>Chalupa.os</div>
       </div>
-      <div className="icon" onClick={() => togglePanel('Home', true)}>
+      {/* <div className="icon" onClick={() => togglePanel('Home', true)}>
         <img className="icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/world.png" width="50" />
         <div className="icon__text">Home</div>
-      </div>
+      </div> */}
       <div className="icon" onClick={() => togglePanel('About', true)}>
         <img className="icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/folder_closed.png" width="50" />
         <div className="icon__text">About</div>
@@ -46,6 +46,7 @@ export function Desktop(props) {
         <img className="icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/paint.png" width="50" />
         <div className="icon__text">Shop</div>
       </div>
+
     </div>
   )
 }
