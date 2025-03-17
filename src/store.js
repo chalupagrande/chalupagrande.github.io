@@ -1,15 +1,18 @@
 import React from 'react'
 // import { loadStripe } from '@stripe/stripe-js'
 import { mobileCheck } from './utils/userAgent'
+import ls from 'local-storage'
 
 const isMobile = mobileCheck()
+const desiredPanels = ls.get('panels') || ['about']
+const panelFocused = ls.get('panelFocused') || desiredPanels[0]
 // const isMobile = true
 const initialState = {
   cart: [],
   // stripePromise: loadStripe('pk_test_tZ1UTEHPHFd9dsZzi03UyKNB'),
-  isDesktopMode: !isMobile,
-  panels: [isMobile ? 'games' : "about"],
-  panelFocused: isMobile ? 'games' : "about"
+  isDesktopMode: true,
+  panels: desiredPanels,
+  panelFocused: panelFocused,
 }
 
 
@@ -37,24 +40,30 @@ export class Provider extends React.Component {
       togglePanel: (name, open) => {
         const store = this.state
         const panelName = name.toLowerCase()
+
         console.log(panelName)
         if (open) {
           // check if it exists then add it
           if (store.panels.indexOf(panelName) >= 0) return
-          this.setState({ ...store, panels: [...store.panels, panelName], panelFocused: panelName })
+          const desiredPanels = [...store.panels, panelName]
+          ls.set('panels', desiredPanels)
+          this.setState({ ...store, panels: desiredPanels, panelFocused: panelName })
         } else {
           // remove it from panels array
-          let temp = [...store.panels]
-          temp.splice(store.panels.indexOf(panelName), 1)
+          let desiredPanels = [...store.panels]
+          desiredPanels.splice(store.panels.indexOf(panelName), 1)
+          ls.set('panels', desiredPanels)
+          ls.set('panelFocused', desiredPanels[0])
           this.setState({
             ...store,
-            panels: temp,
+            panels: desiredPanels,
           })
         }
       },
       focusPanel: (name) => {
         const store = this.state
         const panelName = name.toLowerCase()
+        ls.set('panelFocused', panelName)
         this.setState({ ...store, panelFocused: panelName })
       },
       clearPanels: () => {
