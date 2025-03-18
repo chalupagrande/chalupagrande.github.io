@@ -4,17 +4,15 @@ import { Shop } from '../../../pages/shop/Shop'
 import { random } from '../../../utils/math'
 
 function ShopPanel(props) {
-  const randX = random(90, 250)
-  const randY = random(50, 500)
   const pos = {
-    x: randX,
-    y: randY
+    x: 20,
+    y: 38
   }
   return (
     <Panel
       key={props.index}
       title={'Shop'}
-      size={{ width: 320, height: 500 }}
+      size={{ width: 340, height: 662 }}
       resizable={true}
       defaultPosition={pos}
       padding={"0.5rem"}

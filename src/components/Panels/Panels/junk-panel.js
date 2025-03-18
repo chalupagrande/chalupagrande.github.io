@@ -5,11 +5,9 @@ import { mobileCheck } from '../../../utils/userAgent'
 
 function JunkPanel(props) {
   const { togglePanel } = props
-  const randX = random(90, 250)
-  const randY = random(50, 500)
   const pos = {
-    x: randX,
-    y: randY
+    x: 130,
+    y: 430
   }
 
   const isMobile = mobileCheck()

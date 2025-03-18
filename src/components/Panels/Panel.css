@@ -2,7 +2,7 @@
   position: absolute;
 
   border: 1px solid black;
-  box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.10);
+  box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.15);
   z-index: 1000;
   background-color: white;
 }
@@ -127,8 +127,9 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  cursor: default;
   transform-origin: right;
-  transform: rotate(90deg) translateY(-15px);
+  transform: rotate(90deg) translateY(-10px);
 }
 
 .panel__helper--drag {
@@ -137,8 +138,9 @@
   position: absolute;
   top: 0;
   right: 0;
+  cursor: default;
   transform-origin: right;
-  transform: rotate(90deg) translate(100%, -15px);
+  transform: rotate(90deg) translate(100%, -10px);
 }
 
 /**

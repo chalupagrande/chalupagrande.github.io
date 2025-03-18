@@ -4,17 +4,15 @@ import { FAQ } from '../../../pages/FAQ'
 import { random } from '../../../utils/math'
 
 function FAQPanel(props) {
-  const randX = random(90, 250)
-  const randY = random(50, 500)
   const pos = {
-    x: randX,
-    y: randY
+    x: 15,
+    y: 125
   }
   return (
     <Panel
       key={props.index}
       title={'FAQ'}
-      size={{ width: 320, height: 500 }}
+      size={{ width: 320, height: 518 }}
       resizable={true}
       defaultPosition={pos}
       padding={"0.5rem"}

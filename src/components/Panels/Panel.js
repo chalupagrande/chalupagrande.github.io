@@ -17,10 +17,9 @@ export function Panel(props) {
 
 
   const { defaultPosition, title, children, background, padding, size: defaultSize } = props
-  const [position, setPosition] = useState(isMobile ? initialMobilePosition : { x: defaultPosition.x, y: defaultPosition.y })
   const [isExpanded, setIsExpanded] = useState(false)
-
-  let [size, setSize] = useState(isMobile ? initialMobileSize : (defaultSize || { width: 200, height: 200 }))
+  const [position, setPosition] = useState({ x: defaultPosition.x, y: defaultPosition.y })
+  let [size, setSize] = useState(defaultSize || { width: 200, height: 200 })
 
   let bgColor = typeof background === 'boolean' ? '#ffffff' : background
   let pd = typeof padding === 'boolean' && !!padding ? '0.25rem' : padding
@@ -28,6 +27,7 @@ export function Panel(props) {
   function handleResize(e, { element, size, handle }) {
     setSize({ width: size.width, height: size.height })
     updateHasResized(true)
+    console.log(size)
   }
 
   function handleClose() {
@@ -40,6 +40,7 @@ export function Panel(props) {
 
   function onDragStop(e) {
     updateHasDragged(true)
+    console.log("pos", position)
   }
 
   function onControlledDrag(e, curpos) {

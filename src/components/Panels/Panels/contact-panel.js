@@ -4,11 +4,9 @@ import { Contact } from '../../../pages/Contact'
 import { random } from '../../../utils/math'
 
 function ContactPanel(props) {
-  const randX = random(90, 250)
-  const randY = random(50, 500)
   const pos = {
-    x: randX,
-    y: randY
+    x: 40,
+    y: 163
   }
   return (
     <Panel
