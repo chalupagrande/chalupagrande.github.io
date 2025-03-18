@@ -56,6 +56,7 @@ export function Panel(props) {
       setPosition({ x: 0, y: 30 })
     }
     setIsExpanded(!isExpanded)
+    handleFocus()
   }
 
   useEffect(() => {
@@ -73,6 +74,7 @@ export function Panel(props) {
           nodeRef={panelRef}
           position={position}
           onDrag={onControlledDrag}
+          onStart={handleFocus}
           onStop={onDragStop}
         >
           <Resizable
@@ -125,6 +127,7 @@ export function Panel(props) {
           handle=".panel__header__drag-area"
           position={position}
           onDrag={onControlledDrag}
+          onStart={handleFocus}
           onStop={onDragStop}
           {...size}
         >
