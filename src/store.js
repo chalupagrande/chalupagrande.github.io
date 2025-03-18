@@ -14,6 +14,8 @@ const initialState = {
   isDesktopMode: true,
   panels: desiredPanels,
   panelFocused: panelFocused,
+  hasResized: false,
+  hasDragged: false
 }
 
 
@@ -73,6 +75,14 @@ export class Provider extends React.Component {
           ...store,
           panels: [],
         })
+      },
+      updateHasResized: (val) => {
+        const store = this.state
+        this.setState({ ...store, hasResized: val })
+      },
+      updateHasDragged: (val) => {
+        const store = this.state
+        this.setState({ ...store, hasDragged: val })
       },
     }
   }

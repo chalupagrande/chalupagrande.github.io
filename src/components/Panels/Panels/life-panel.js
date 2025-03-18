@@ -14,7 +14,7 @@ function DotsPanel(props) {
     <Panel
       key={props.index}
       title={'Life'}
-      size={{ width: 500, height: 500 }}
+      size={{ width: 320, height: 500 }}
       padding={false}
       resizable={false}
       defaultPosition={pos}

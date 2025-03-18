@@ -57,7 +57,7 @@ export function About(props) {
       <blockquote>
         <p>Golden A'Design Award and Competition - 2018</p>
         <img
-          className="img small"
+          className="img xs"
           src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/adesign.jpg"
           alt="a'design award"
         />
@@ -65,7 +65,7 @@ export function About(props) {
       <blockquote>
         <p>Computex d&amp;i Specialty Award - 2018</p>
         <img
-          className="img small"
+          className="img xs"
           src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/computex.jpg"
           alt="computex award"
         />

@@ -17,7 +17,7 @@ function JunkPanel(props) {
     <Panel
       key={props.index}
       title={'Junk'}
-      size={{ width: 450, height: 300 }}
+      size={{ width: 350, height: 300 }}
       resizable={true}
       background={true}
       padding={true}

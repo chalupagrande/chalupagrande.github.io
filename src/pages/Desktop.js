@@ -22,41 +22,43 @@ export function Desktop(props) {
       <div className="desktop">
 
 
-        {/* <div className="icon" onClick={() => togglePanel('Home', true)}>
-        <img className="icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/world.png" width="50" />
-        <div className="icon__text">Home</div>
+        {/* <div className="desktop__icon" onClick={() => togglePanel('Home', true)}>
+        <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/world.png"/>
+        <div className="desktop__icon__text">Home</div>
       </div> */}
-        <div className="icon" onClick={() => togglePanel('About', true)}>
-          <img className="icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/folder_closed.png" width="50" />
-          <div className="icon__text">About</div>
-        </div>
-        <div className="icon" onClick={() => togglePanel('Work', true)}>
-          <img className="icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/workspace.png" width="50" />
-          <div className="icon__text">Work</div>
-        </div>
-        <div className="icon" onClick={() => togglePanel('FAQ', true)}>
-          <img className="icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/sticky_note.png" width="50" />
-          <div className="icon__text">FAQ</div>
-        </div>
-        <div className="icon" onClick={() => togglePanel('Contact', true)}>
-          <img className="icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/phone.png" width="50" />
-          <div className="icon__text">Contact</div>
-        </div>
-        <div className="icon" onClick={() => togglePanel('Snake', true)}>
-          <img className="icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/games.png" width="50" />
-          <div className="icon__text">Games</div>
-        </div>
-        <div className="icon" onClick={() => togglePanel('Music', true)}>
-          <img className="icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/music.png" width="50" />
-          <div className="icon__text">Music</div>
-        </div>
-        <div className="icon" onClick={() => togglePanel('Shop', true)}>
-          <img className="icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/paint.png" width="50" />
-          <div className="icon__text">Shop</div>
-        </div>
-        <div className="icon" onClick={() => togglePanel('Junk', true)}>
-          <img className="icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/recycle_bin_full.png" width="50" />
-          <div className="icon__text">Junk</div>
+        <div className="desktop__icon__bank">
+          <div className="desktop__icon" onClick={() => togglePanel('About', true)}>
+            <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/folder_closed.png" />
+            <div className="desktop__icon__text">About</div>
+          </div>
+          <div className="desktop__icon" onClick={() => togglePanel('Work', true)}>
+            <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/workspace.png" />
+            <div className="desktop__icon__text">Work</div>
+          </div>
+          <div className="desktop__icon" onClick={() => togglePanel('FAQ', true)}>
+            <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/sticky_note.png" />
+            <div className="desktop__icon__text">FAQ</div>
+          </div>
+          <div className="desktop__icon" onClick={() => togglePanel('Contact', true)}>
+            <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/phone.png" />
+            <div className="desktop__icon__text">Contact</div>
+          </div>
+          <div className="desktop__icon" onClick={() => togglePanel('Snake', true)}>
+            <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/games.png" />
+            <div className="desktop__icon__text">Games</div>
+          </div>
+          <div className="desktop__icon" onClick={() => togglePanel('Music', true)}>
+            <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/music.png" />
+            <div className="desktop__icon__text">Music</div>
+          </div>
+          <div className="desktop__icon" onClick={() => togglePanel('Shop', true)}>
+            <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/paint.png" />
+            <div className="desktop__icon__text">Shop</div>
+          </div>
+          <div className="desktop__icon" onClick={() => togglePanel('Junk', true)}>
+            <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/recycle_bin_full.png" />
+            <div className="desktop__icon__text">Junk</div>
+          </div>
         </div>
       </div>
     </>

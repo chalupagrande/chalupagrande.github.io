@@ -2,27 +2,32 @@ import React, { useState, useContext, useRef, useEffect } from 'react'
 import Draggable from 'react-draggable'
 import { Resizable } from 'react-resizable'
 import { StoreContext } from '../../store'
+import { mobileCheck } from '../../utils/userAgent'
 import './Panel.css'
 
+const isMobile = mobileCheck()
+const initialMobilePosition = { x: 30, y: 50 }
+const initialMobileSize = { width: 200, height: window.innerHeight - 50 }
 export function Panel(props) {
   const panelRef = useRef(null)
   const {
-    updaters: { togglePanel, focusPanel },
-    store: { panelFocused },
+    updaters: { togglePanel, focusPanel, updateHasResized, updateHasDragged },
+    store: { panelFocused, hasDragged, hasResized },
   } = useContext(StoreContext)
 
 
   const { defaultPosition, title, children, background, padding, size: defaultSize } = props
-  const [position, setPosition] = useState({ x: defaultPosition.x, y: defaultPosition.y })
+  const [position, setPosition] = useState(isMobile ? initialMobilePosition : { x: defaultPosition.x, y: defaultPosition.y })
   const [isExpanded, setIsExpanded] = useState(false)
 
-  let [size, setSize] = useState(defaultSize || { width: 200, height: 200 })
+  let [size, setSize] = useState(isMobile ? initialMobileSize : (defaultSize || { width: 200, height: 200 }))
 
   let bgColor = typeof background === 'boolean' ? '#ffffff' : background
   let pd = typeof padding === 'boolean' && !!padding ? '0.25rem' : padding
 
   function handleResize(e, { element, size, handle }) {
     setSize({ width: size.width, height: size.height })
+    updateHasResized(true)
   }
 
   function handleClose() {
@@ -31,6 +36,10 @@ export function Panel(props) {
 
   function handleFocus() {
     focusPanel(title)
+  }
+
+  function onDragStop(e) {
+    updateHasDragged(true)
   }
 
   function onControlledDrag(e, curpos) {
@@ -54,15 +63,17 @@ export function Panel(props) {
   }, [defaultSize])
 
 
+
+
   if (props.resizable) {
     return (
       <div className={`${panelFocused === title.toLowerCase() ? 'panel--focused' : ''}`}>
         <Draggable
           handle=".panel__header__drag-area"
-          bounds=".desktop"
           nodeRef={panelRef}
           position={position}
           onDrag={onControlledDrag}
+          onStop={onDragStop}
         >
           <Resizable
             resizeHandles={['se']}
@@ -95,7 +106,12 @@ export function Panel(props) {
               <div className="panel__content panel__content--resizeable" style={{ padding: pd }}>
                 {children}
               </div>
-              <div className="panel__footer" onClick={handleFocus} />
+              {!hasResized && <div className="panel__helper--resize" onClick={handleFocus}>
+                use this to resize ────┐
+              </div>}
+              {!hasDragged && <div className="panel__helper--drag" onClick={handleFocus}>
+                ┌──── click here to focus or drag
+              </div>}
             </div>
           </Resizable>
         </Draggable>
@@ -106,10 +122,10 @@ export function Panel(props) {
       <div className={`${panelFocused === title.toLowerCase() ? 'panel--focused' : ''}`}>
         <Draggable
           nodeRef={panelRef}
-          bounds=".desktop"
           handle=".panel__header__drag-area"
           position={position}
           onDrag={onControlledDrag}
+          onStop={onDragStop}
           {...size}
         >
           <div
@@ -133,7 +149,9 @@ export function Panel(props) {
             <div className="panel__content" style={{ padding: pd }}>
               {children}
             </div>
-            <div className="panel__footer" onClick={handleFocus} />
+            {!hasDragged && <div className="panel__helper--drag" onClick={handleFocus}>
+              ┌──── click here to focus or drag
+            </div>}
           </div>
         </Draggable>
       </div >

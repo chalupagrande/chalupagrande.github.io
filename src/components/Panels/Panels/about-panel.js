@@ -4,14 +4,14 @@ import { About } from '../../../pages/About'
 
 function AboutPanel(props) {
   const pos = {
-    x: 90,
-    y: 45,
+    x: 43,
+    y: 56,
   }
   return (
     <Panel
       key={props.index}
       title={'About'}
-      size={{ width: 500, height: 500 }}
+      size={{ width: 300, height: 500 }}
       resizable={true}
       defaultPosition={pos}
       padding={"0.5rem"}

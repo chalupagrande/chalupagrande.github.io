@@ -14,7 +14,7 @@ function WorkPanel(props) {
     <Panel
       key={props.index}
       title={'Work'}
-      size={{ width: 500, height: 500 }}
+      size={{ width: 315, height: 500 }}
       resizable={true}
       defaultPosition={pos}
       padding={"0.5rem"}

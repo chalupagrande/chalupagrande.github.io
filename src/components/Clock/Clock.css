@@ -1,5 +1,11 @@
 .clock {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
+}
+
+@media (min-width: 600px) {
+  .clock {
+    font-size: 0.8rem;
+  }
 }
 
 .clock .blink {

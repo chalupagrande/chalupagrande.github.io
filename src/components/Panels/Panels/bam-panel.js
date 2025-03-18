@@ -14,7 +14,7 @@ function BAMPanel(props) {
     <Panel
       key={props.index}
       title={'BAM'}
-      size={{ width: 500, height: 500 }}
+      size={{ width: 320, height: 500 }}
       resizable={true}
       defaultPosition={pos}
       padding={"0.5rem"}
