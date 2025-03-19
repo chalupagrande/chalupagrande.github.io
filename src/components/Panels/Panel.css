@@ -58,7 +58,7 @@
 
 .panel__content--resizeable::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 10px;
+  width: 5px;
 }
 
 .panel__content--resizeable::-webkit-scrollbar-thumb {
