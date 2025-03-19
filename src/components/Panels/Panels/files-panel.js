@@ -40,9 +40,8 @@ function AboutPanel(props) {
         <li className="panel-name" onClick={() => togglePanel('life', true)}>
           Game of Life.js
         </li>
-        <li className="panel-name" onClick={() => togglePanel('life', true)}>
+        <li className="panel-name">
           <a
-            target="_blank"
             rel="noopener noreferrer"
             href="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/other/ransomware.zip"
           >
