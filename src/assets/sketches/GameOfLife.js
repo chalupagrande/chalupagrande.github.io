@@ -2,12 +2,12 @@ import React from 'react'
 import Sketch from 'react-p5'
 
 export default function GameOfLife(props) {
-  let cols = 50
-  let rows = 50
-  let unitSize = 10
+  let cols = 100
+  let rows = 100
+  let unitSize = 5
   let grid
   let next
-  let percentOn = 0.08
+  let percentOn = 0.05
 
   function board(p5, rows, cols, empty) {
     let arr = [...Array(cols).keys()]
@@ -53,9 +53,9 @@ export default function GameOfLife(props) {
       for (let j = -1; j < 2; j++) {
         let xLoc = x + i
         let yLoc = y + j
-        if (!grid[xLoc]) xLoc = xLoc < 0 ? cols - 1 : 0
-        if (!grid[yLoc]) yLoc = yLoc < 0 ? rows - 1 : 0
-        sum += grid[xLoc][yLoc]
+        // if (!grid[xLoc]) xLoc = xLoc < 0 ? cols - 1 : 0
+        // if (!grid[yLoc]) yLoc = yLoc < 0 ? rows - 1 : 0
+        sum += grid?.[xLoc]?.[yLoc] || 0
       }
     }
     sum -= grid[x][y]

@@ -99,28 +99,6 @@ export function Work(props) {
           </a>{' '}
           - Noncooperative Behavior and Escalation Social Experiment
         </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/video/processing-kinect-demo.m4v"
-          >
-            Live 3D Pointcloud
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.youtube.com/watch?v=GtpZDYSYy5s"
-          >
-            An Augmented Reality Portrait - Documentary
-          </a>
-        </li>
-        {/* <li>
-          <Link to="/work/love-letters">Love Letters</Link>
-        </li> */}
-
       </ul>
       <p>Social Links</p>
       <ul>

@@ -28,7 +28,7 @@ export function Desktop(props) {
       </div> */}
         <div className="desktop__icon__bank">
           <div className="desktop__icon" onClick={() => togglePanel('About', true)}>
-            <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/folder_closed.png" />
+            <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/this_computer.png" />
             <div className="desktop__icon__text">About</div>
           </div>
           <div className="desktop__icon" onClick={() => togglePanel('Work', true)}>
@@ -38,6 +38,10 @@ export function Desktop(props) {
           <div className="desktop__icon" onClick={() => togglePanel('FAQ', true)}>
             <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/sticky_note.png" />
             <div className="desktop__icon__text">FAQ</div>
+          </div>
+          <div className="desktop__icon" onClick={() => togglePanel('Files', true)}>
+            <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/folder_closed.png" />
+            <div className="desktop__icon__text">Files</div>
           </div>
           <div className="desktop__icon" onClick={() => togglePanel('Contact', true)}>
             <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/phone.png" />
@@ -59,6 +63,7 @@ export function Desktop(props) {
             <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/recycle_bin_full.png" />
             <div className="desktop__icon__text">Junk</div>
           </div>
+
         </div>
       </div>
     </>

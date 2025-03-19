@@ -15,7 +15,7 @@ function JunkPanel(props) {
     <Panel
       key={props.index}
       title={'Junk'}
-      size={{ width: 350, height: 300 }}
+      size={{ width: 600, height: 400 }}
       resizable={true}
       background={true}
       padding={true}
@@ -23,12 +23,6 @@ function JunkPanel(props) {
     >
       <>
         <ul>
-          <li className="panel-name" onClick={() => togglePanel('dots', true)}>
-            Dots
-          </li>
-          <li className="panel-name" onClick={() => togglePanel('life', true)}>
-            Game of Life
-          </li>
           <li>
             <a
               target="_blank"

@@ -40,7 +40,6 @@ export function Panel(props) {
 
   function onDragStop(e) {
     updateHasDragged(true)
-    console.log("pos", position)
   }
 
   function onControlledDrag(e, curpos) {
