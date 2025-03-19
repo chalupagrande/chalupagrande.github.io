@@ -33,7 +33,7 @@ export function Bam(props) {
       <h3>Overview</h3>
       <p>
         Developers enjoy coding. Testing and monitoring their apps is tedious
-        and boring and often left too late in the lifecycle. Further, existing
+        and boring and often left too late in the lifecycle. Furthermore, existing
         IBM monitoring tools had a steep learning curve and focused on
         data-dumping and letting users figure things out.
       </p>
@@ -69,9 +69,6 @@ export function Bam(props) {
         />
         Your browser does not support the video tag.
       </video>
-      <p>
-        There is a lot more to talk about here, but I'll get to that later.{' '}
-      </p>
     </>
   )
 }

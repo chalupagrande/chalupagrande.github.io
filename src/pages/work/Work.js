@@ -13,6 +13,11 @@ export function Work(props) {
       </div>
       <ul>
         <li>
+          <a onClick={() => togglePanel('Inbanx', true)}>
+            Inbanx
+          </a>
+        </li>
+        <li>
           <a onClick={() => togglePanel('ReelGolf', true)}>
             ReelGolf
           </a>
