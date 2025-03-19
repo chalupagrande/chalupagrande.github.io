@@ -92,7 +92,7 @@ export function Work(props) {
         </li> */}
       </ul>
 
-      <h2 className="subtitle">Personal Projects</h2>
+      {/* <h2 className="subtitle">Personal Projects</h2>
       <ul>
         <li>
           <a
@@ -104,7 +104,7 @@ export function Work(props) {
           </a>{' '}
           - Noncooperative Behavior and Escalation Social Experiment
         </li>
-      </ul>
+      </ul> */}
       <p>Social Links</p>
       <ul>
         <li>

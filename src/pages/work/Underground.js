@@ -21,7 +21,7 @@ export function Underground(props) {
             A robust administrative dashboard, with an accompanying mobile app
             that allows users to plan and update projects, both in the field and
             from their desk. The system is also capable of generating reports in
-            Google’s own proprietary mapping format for easy sharing. The
+            Google's own proprietary mapping format for easy sharing. The
             primary benefit of this system is an administrative user can
             pre-plan any given project and invite team members to fill in the
             required fields as the admin sees fit. This eliminated ambiguity for

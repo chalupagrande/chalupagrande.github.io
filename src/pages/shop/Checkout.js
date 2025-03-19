@@ -3,7 +3,6 @@ import { Cart } from '../../components/Cart'
 import ReCAPTCHA from 'react-google-recaptcha'
 import axios from 'axios'
 import states from '../../assets/states.json'
-import { Link } from '@reach/router'
 import ls from 'local-storage'
 import { StoreContext } from '../../store'
 

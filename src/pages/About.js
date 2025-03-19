@@ -10,7 +10,30 @@ export function About(props) {
       </div>
 
       <div className="blurb">
-        <img className="blurb__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/me-amys.png" alt="Jamie" />
+        <p>Here is a picture of me.</p>
+        <div id="portrait" className="portrait">
+          <img
+            className="cmyk cmyk-c"
+            src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/c.png"
+            alt=""
+          />
+          <img
+            className="cmyk cmyk-m"
+            src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/m.png"
+            alt=""
+          />
+          <img
+            className="cmyk cmyk-y"
+            src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/y.png"
+            alt=""
+          />
+          <img
+            className="cmyk cmyk-k"
+            src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/k.png"
+            alt=""
+          />
+        </div>
+        <h6>Try hovering over/clicking it -- you: "oooooo"</h6>
         <div className="blurb__text">
           <h4>oh Hi!</h4>
           <p>
@@ -32,7 +55,8 @@ export function About(props) {
             After some schooling, I started working at IBM Design, which really codified this notion for me. There I worked with a number of diverse creative teams and built some really cool software. Even won awards for it. But, there was one thing that IBM wasn't so good at &mdash; figuring out what to say.
           </p>
           <p>So here I am. Out in the world now &mdash; helping people figure out what they want to say. So… </p>
-          <p>What do you wanna say?</p>
+          <p><strong>What do you wanna say?</strong></p>
+          <p>I for one wanna say: <strong>the web doesn't need to be a boring place.</strong> Let's make it fun again!</p>
         </div>
       </div>
 

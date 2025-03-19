@@ -228,31 +228,31 @@ blockquote {
 
 .portrait {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 }
 
 .portrait .cmyk {
   position: absolute;
   border-radius: 50%;
-  width: 300px;
+  width: 200px;
   mix-blend-mode: multiply;
   transition: margin-left 0.4s;
 }
 
 .portrait .cmyk.stretch.cmyk-m,
 .portrait:hover .cmyk.cmyk-m {
-  margin-left: 100px;
+  margin-left: 50px;
 }
 
 .portrait .cmyk.stretch.cmyk-y,
 .portrait:hover .cmyk.cmyk-y {
-  margin-left: 200px;
+  margin-left: 100px;
 }
 
 .portrait .cmyk.stretch.cmyk-k,
 .portrait:hover .cmyk.cmyk-k {
-  margin-left: 300px;
+  margin-left: 150px;
 }
 
 /* ABOUT */
