@@ -1,10 +1,8 @@
 import React from 'react'
 import { Panel } from '../Panel'
-import { random } from '../../../utils/math'
 import { mobileCheck } from '../../../utils/userAgent'
 
 function JunkPanel(props) {
-  const { togglePanel } = props
   const pos = {
     x: 130,
     y: 430
@@ -15,7 +13,7 @@ function JunkPanel(props) {
     <Panel
       key={props.index}
       title={'Junk'}
-      size={{ width: 600, height: 400 }}
+      size={{ width: 330, height: 400 }}
       resizable={true}
       background={true}
       padding={true}
