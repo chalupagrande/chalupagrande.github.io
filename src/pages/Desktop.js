@@ -1,7 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { StoreContext } from '../store'
 import Clock from '../components/Clock/Clock'
-import { Panel, PanelProvider } from '../components/Panels'
+import { PanelProvider } from '../components/Panels'
+import { useLocation } from '@reach/router'
 
 
 export function Desktop(props) {
@@ -9,6 +10,15 @@ export function Desktop(props) {
     store: { showNormalNavigation },
     updaters: { togglePanel, clearPanels },
   } = useContext(StoreContext)
+
+  const location = useLocation()
+  const pathname = location.pathname
+
+  useEffect(() => {
+    if (pathname.includes('shop')) {
+      togglePanel('Shop', true)
+    }
+  }, [pathname])
 
   return (
     <>
@@ -22,10 +32,6 @@ export function Desktop(props) {
         <Clock />
       </div>
       <div className="desktop">
-        {/* <div className="desktop__icon" onClick={() => togglePanel('Home', true)}>
-        <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/world.png"/>
-        <div className="desktop__icon__text">Home</div>
-      </div> */}
         <div className="desktop__icon__bank">
           <div className="desktop__icon" onClick={() => togglePanel('About', true)}>
             <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/this_computer.png" />
