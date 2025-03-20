@@ -44,7 +44,6 @@ export class Provider extends React.Component {
         const store = this.state
         const panelName = name.toLowerCase()
 
-        console.log(panelName)
         if (open) {
           // check if it exists then add it
           if (store.panels.indexOf(panelName) >= 0) return

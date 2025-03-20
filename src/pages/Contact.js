@@ -30,7 +30,6 @@ export function Contact() {
   async function handleSubmit(e) {
     e.preventDefault()
     try {
-      console.log(state)
       await axios({
         method: 'post',
         url: '/api/email',

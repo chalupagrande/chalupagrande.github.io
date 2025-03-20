@@ -27,7 +27,6 @@ export function Panel(props) {
   function handleResize(e, { element, size, handle }) {
     setSize({ width: size.width, height: size.height })
     updateHasResized(true)
-    console.log(size)
   }
 
   function handleClose() {
@@ -62,8 +61,6 @@ export function Panel(props) {
   useEffect(() => {
     setSize(defaultSize)
   }, [defaultSize])
-
-
 
 
   if (props.resizable) {

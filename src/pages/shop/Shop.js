@@ -12,6 +12,8 @@ export function Shop() {
     store: { cart },
     updaters: { togglePanel }
   } = useContext(StoreContext)
+
+
   const shopItems = products.map((e) => <Card key={e.sku} {...e} />)
 
   return (

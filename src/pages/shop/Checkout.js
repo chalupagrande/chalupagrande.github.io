@@ -31,17 +31,12 @@ export function Checkout(props) {
     setState({ ...state, agreement: e.target.checked })
   }
 
-  console.log(state)
   return (
     <>
       <div className="intro">
         <h1 className="title">Checkout</h1>
       </div>
       <Cart />
-
-      <p className="highlight">
-        <strong>This integration is still under construction. Thank you for your interest and check back later. If you'd like to make a purchase you can email me through the contact form.</strong>
-      </p>
 
       <pre>
         {JSON.stringify(checkout.lineItems, null, 2)}

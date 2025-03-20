@@ -92,22 +92,15 @@ app.post('/api/email', verifyCaptcha, async (req, res) => {
 
 app.post('/api/shop/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
+    mode: 'payment',
+    ui_mode: 'custom',
+    return_url: 'http://localhost:3000/shop/success',
     line_items: [
       {
-        price_data: {
-          currency: 'usd',
-          product_data: {
-            name: 'T-shirt',
-          },
-          unit_amount: 2000,
-        },
+        price: "price_1R4mYFEQG2PxITMFOkcYvk5J",
         quantity: 1,
       },
     ],
-    mode: 'payment',
-    ui_mode: 'custom',
-    // The URL of your payment completion page
-    return_url: 'http://localhost:3000/shop/success'
   });
 
   res.json({ checkoutSessionClientSecret: session.client_secret });

@@ -14,7 +14,7 @@ export function Cart() {
   return (
     <div className="cart">
       <h3>Cart</h3>
-      <ol>{items}</ol>
+      <ol className="cart__items">{items}</ol>
       <h4>Total: {(total / 100).toFixed(2)}</h4>
     </div>
   )

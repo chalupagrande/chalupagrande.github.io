@@ -1,3 +1,7 @@
+.cart__items {
+  padding: 0;
+}
+
 .cart-item {
   display: flex;
   max-height: 50px;
@@ -13,11 +17,7 @@
 
 .cart-item .remove {
   color: red;
-  opacity: 0;
   margin-right: 1rem;
   cursor: pointer;
-}
-
-.cart-item:hover .remove {
-  opacity: 1;
+  width: 18px;
 }

@@ -11,9 +11,7 @@ export function CartItem(props) {
 
   return (
     <li className="cart-item">
-      <p className="remove" onClick={remove}>
-        remove
-      </p>
+      <img className="remove" onClick={remove} src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/red-trash-can-icon.svg" alt="Remove" />
       <img src={props.images[0]} alt={props.name} />
       {props.name} -- ${(props.amount / 100).toFixed(2)}
     </li>

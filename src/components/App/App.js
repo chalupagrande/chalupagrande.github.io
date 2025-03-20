@@ -12,7 +12,7 @@ const stripe = loadStripe("pk_test_tZ1UTEHPHFd9dsZzi03UyKNB", {
 
 
 function App() {
-  function fetchStripeClientSecret() {
+  function fetchClientSecret() {
     return fetch('http://localhost:4000/api/shop/create-checkout-session', { method: 'POST' })
       .then((response) => response.json())
       .then((json) => json.checkoutSessionClientSecret)
@@ -22,7 +22,7 @@ function App() {
   return (
     <div id="wrapper">
       <Provider>
-        <CheckoutProvider stripe={stripe} options={{ fetchClientSecret: fetchStripeClientSecret }}>
+        <CheckoutProvider stripe={stripe} options={{ fetchClientSecret }}>
           {/* <Navigation /> */}
           <PanelManager />
           <Router>
