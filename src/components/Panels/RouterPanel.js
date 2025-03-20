@@ -16,7 +16,7 @@ export function RouterPanel(props) {
     >
       <Router basepath={`/${title.toLowerCase()}`}>
         {routes.map((RouteComponent, index) => (
-          <RouteComponent key={index} path={RouteComponent.path || "/"} />
+          <RouteComponent key={index} />
         ))}
       </Router>
     </Panel>
