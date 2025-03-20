@@ -107,7 +107,7 @@ app.post('/api/shop/create-checkout-session', async (req, res) => {
     mode: 'payment',
     ui_mode: 'custom',
     // The URL of your payment completion page
-    return_url: '{{RETURN_URL}}'
+    return_url: 'http://localhost:3000/shop/success'
   });
 
   res.json({ checkoutSessionClientSecret: session.client_secret });
