@@ -2,12 +2,8 @@ import React, { useState, useContext, useRef, useEffect } from 'react'
 import Draggable from 'react-draggable'
 import { Resizable } from 'react-resizable'
 import { StoreContext } from '../../store'
-import { mobileCheck } from '../../utils/userAgent'
 import './Panel.css'
 
-const isMobile = mobileCheck()
-const initialMobilePosition = { x: 30, y: 50 }
-const initialMobileSize = { width: 200, height: window.innerHeight - 50 }
 export function Panel(props) {
   const panelRef = useRef(null)
   const {
