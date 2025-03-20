@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, useContext } from 'react'
 import { StoreContext } from '../../store'
+import { RouterPanel } from './RouterPanel'
 
 /**
  *
@@ -48,6 +49,8 @@ export function PanelManager() {
                   defaultPosition={m.defaultPosition || { x: 50 + i * 30, y: 50 + i * 30 }}
                   size={m.size}
                   resizable={m.resizable !== false}
+                  background={m.background}
+                  padding={m.padding}
                   routes={m.routes}
                 />
               )

@@ -1,4 +1,5 @@
 import React, { useState, useContext, useRef } from 'react'
+import { Link } from '@reach/router'
 import { Cart } from '../../components/Cart'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useCheckout } from '@stripe/react-stripe-js'
@@ -35,6 +36,7 @@ export function Checkout(props) {
     <>
       <div className="intro">
         <h1 className="title">Checkout</h1>
+        <Link to="/shop">← Back to Shop</Link>
       </div>
       <Cart />
 

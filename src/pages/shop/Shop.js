@@ -1,16 +1,15 @@
 import React, { useContext } from 'react'
+import { Link } from '@reach/router'
 import Card from '../../components/Card'
 import { Cart } from '../../components/Cart'
 import Products from '../../assets/products.json'
 import '../../styles/shop.css'
 import { StoreContext } from '../../store'
-import { Router } from '@reach/router'
 
 export function Shop() {
   const { products } = Products
   const {
-    store: { cart },
-    updaters: { togglePanel }
+    store: { cart }
   } = useContext(StoreContext)
   const shopItems = products.map((e) => <Card key={e.sku} {...e} />)
 
@@ -24,9 +23,9 @@ export function Shop() {
       {!!cart.length && (
         <>
           <Cart />
-          <a onClick={() => togglePanel("Checkout", true)}>
+          <Link to="/shop/checkout">
             <button className="btn btn-primary">Checkout</button>
-          </a>
+          </Link>
         </>
       )}
     </>
