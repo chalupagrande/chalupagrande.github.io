@@ -28,6 +28,3 @@ yarn-error.log*
 dump.rdb
 redis.conf
 .aider*
-
-# TypeScript
-*.tsbuildinfo
