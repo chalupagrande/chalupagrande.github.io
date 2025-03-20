@@ -4,7 +4,6 @@ import { Cart } from '../../components/Cart'
 import Products from '../../assets/products.json'
 import '../../styles/shop.css'
 import { StoreContext } from '../../store'
-import { Link } from '@reach/router'
 
 export function Shop() {
   const { products } = Products
@@ -12,8 +11,6 @@ export function Shop() {
     store: { cart },
     updaters: { togglePanel }
   } = useContext(StoreContext)
-
-
   const shopItems = products.map((e) => <Card key={e.sku} {...e} />)
 
   return (
