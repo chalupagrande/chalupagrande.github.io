@@ -1,6 +1,4 @@
 import React from 'react'
-import Emoji from '../components/Emoji'
-import { Link } from '@reach/router'
 
 export function About(props) {
   return (

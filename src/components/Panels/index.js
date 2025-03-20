@@ -1,2 +1,2 @@
-export * from './PanelManager'
+export * from './PanelProvider'
 export * from './Panel'

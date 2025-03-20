@@ -8,7 +8,7 @@ import { RouterPanel } from './RouterPanel'
  */
 let panelModules = {}
 
-export function PanelManager() {
+export function PanelProvider() {
   const {
     store: { panels },
     updaters: { togglePanel },
@@ -75,5 +75,5 @@ export function PanelManager() {
     getModules()
   }, [panels, getModules])
 
-  return <div>{panelList}</div>
+  return <div className="panel__provider">{panelList}</div>
 }

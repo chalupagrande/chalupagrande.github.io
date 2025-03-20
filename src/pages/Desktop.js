@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../store'
 import Clock from '../components/Clock/Clock'
+import { Panel, PanelProvider } from '../components/Panels'
 
 
 export function Desktop(props) {
@@ -11,6 +12,7 @@ export function Desktop(props) {
 
   return (
     <>
+      <PanelProvider />
       <div className="toolbar">
         <div className="toolbar__section">
           <img className="toolbar__icon" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/chalupa-bw.png" width="30" />
@@ -20,8 +22,6 @@ export function Desktop(props) {
         <Clock />
       </div>
       <div className="desktop">
-
-
         {/* <div className="desktop__icon" onClick={() => togglePanel('Home', true)}>
         <img className="desktop__icon__image" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/icons/world.png"/>
         <div className="desktop__icon__text">Home</div>

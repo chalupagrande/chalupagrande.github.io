@@ -1,7 +1,6 @@
 import React from 'react'
 import { Router } from '@reach/router'
 import * as Page from '../../pages'
-import { PanelManager } from '../Panels'
 import { Provider } from '../../store'
 import { loadStripe } from '@stripe/stripe-js';
 import { CheckoutProvider } from '@stripe/react-stripe-js'
@@ -20,16 +19,15 @@ function App() {
 
   return (
     <div id="wrapper">
-      <Provider>
-        <CheckoutProvider stripe={stripe} options={{ fetchClientSecret }}>
-          {/* <Navigation /> */}
-          <PanelManager />
-          <Router>
+
+      <CheckoutProvider stripe={stripe} options={{ fetchClientSecret }}>
+        <Router>
+          <Provider path="/" default>
             <Page.Desktop path="/" default />
-          </Router>
-        </CheckoutProvider>
-      </Provider>
-    </div>
+          </Provider>
+        </Router>
+      </CheckoutProvider>
+    </div >
   )
 }
 
