@@ -26,6 +26,11 @@ export function Panel(props) {
   }
 
   function handleClose() {
+    // When closing a panel, navigate to the root URL if it's a RouterPanel
+    if (props.isRouterPanel && typeof window !== 'undefined') {
+      // Use history API to update URL without full page reload
+      window.history.pushState({}, '', '/')
+    }
     togglePanel(title, false)
   }
 

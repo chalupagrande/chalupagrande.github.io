@@ -55,10 +55,24 @@ export class Provider extends React.Component {
           let desiredPanels = [...store.panels]
           desiredPanels.splice(store.panels.indexOf(panelName), 1)
           ls.set('panels', desiredPanels)
-          ls.set('panelFocused', desiredPanels[0])
+          
+          // Update focused panel
+          const newFocusedPanel = desiredPanels[0] || ''
+          ls.set('panelFocused', newFocusedPanel)
+          
+          // Update URL to reflect the newly focused panel or root
+          if (typeof window !== 'undefined') {
+            if (newFocusedPanel) {
+              window.history.pushState({}, '', '/')
+            } else {
+              window.history.pushState({}, '', '/')
+            }
+          }
+          
           this.setState({
             ...store,
             panels: desiredPanels,
+            panelFocused: newFocusedPanel
           })
         }
       },
