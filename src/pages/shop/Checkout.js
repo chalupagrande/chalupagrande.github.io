@@ -13,7 +13,6 @@ export function Checkout(props) {
   } = useContext(StoreContext)
 
   const checkout = useCheckout()
-
   const [state, setState] = useState({
     agreement: false,
     recaptcha: false,

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Router } from '@reach/router'
 import * as Page from '../../pages'
-import Navigation from '../Navigation'
 import { PanelManager } from '../Panels'
 import { Provider } from '../../store'
 import { loadStripe } from '@stripe/stripe-js';
@@ -26,9 +25,7 @@ function App() {
           {/* <Navigation /> */}
           <PanelManager />
           <Router>
-            <Page.Desktop path="/" />
-
-            <Page.NotFound default />
+            <Page.Desktop path="/" default />
           </Router>
         </CheckoutProvider>
       </Provider>

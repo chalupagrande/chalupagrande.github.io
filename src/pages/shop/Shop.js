@@ -26,6 +26,9 @@ export function Shop() {
           <Link to="/shop/checkout">
             <button className="btn btn-primary">Checkout</button>
           </Link>
+          <Link to="/shop/cancel">
+            <button className="btn btn-primary">Cancel</button>
+          </Link>
         </>
       )}
     </>

@@ -3,7 +3,7 @@ import { Panel } from '../Panel'
 import { Checkout } from '../../../pages/shop/Checkout'
 import { random } from '../../../utils/math'
 
-function SPAPanel(props) {
+function CheckoutPanel(props) {
   const randX = random(90, 250)
   const randY = random(50, 500)
   const pos = {
@@ -24,4 +24,4 @@ function SPAPanel(props) {
   )
 }
 
-export default SPAPanel
+export default CheckoutPanel
