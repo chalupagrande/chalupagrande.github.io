@@ -23,10 +23,10 @@ export function Shop() {
       {!!cart.length && (
         <>
           <Cart />
-          <Link to="/shop/checkout">
+          <Link to="checkout">
             <button className="btn btn-primary">Checkout</button>
           </Link>
-          <Link to="/shop/cancel">
+          <Link to="cancel">
             <button className="btn btn-primary">Cancel</button>
           </Link>
         </>

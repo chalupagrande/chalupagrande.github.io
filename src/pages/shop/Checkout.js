@@ -35,7 +35,7 @@ export function Checkout(props) {
     <>
       <div className="intro">
         <h1 className="title">Checkout</h1>
-        <Link to="/shop">← Back to Shop</Link>
+        <Link to="/">← Back to Shop</Link>
       </div>
       <Cart />
 
