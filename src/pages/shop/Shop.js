@@ -4,6 +4,7 @@ import { Cart } from '../../components/Cart'
 import Products from '../../assets/products.json'
 import '../../styles/shop.css'
 import { StoreContext } from '../../store'
+import { Router } from '@reach/router'
 
 export function Shop() {
   const { products } = Products

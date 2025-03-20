@@ -1,6 +1,6 @@
 import React from 'react'
 import { Panel } from '../Panel'
-import { Shop } from '../../../pages/shop/Shop'
+import { ShopRouter } from '../../../pages/shop'
 import { random } from '../../../utils/math'
 
 function ShopPanel(props) {
@@ -17,7 +17,7 @@ function ShopPanel(props) {
       defaultPosition={pos}
       padding={"0.5rem"}
     >
-      <Shop />
+      <ShopRouter />
     </Panel>
   )
 }

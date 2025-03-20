@@ -21,6 +21,7 @@ export function PanelManager() {
     setPanelList(list)
   }
 
+  // Then modify the getModules function to handle router panels
   const getModules = useCallback(async () => {
     if (panels.length > 0) {
       let promises = []
@@ -35,19 +36,33 @@ export function PanelManager() {
       })
 
       Promise.all(promises).then((modules) => {
-        // call the panel function with props
         modules.forEach((m, i) => {
-          panelModules[names[i]] = {
-            name: names[i],
-            component: m.default({ index: names[i], togglePanel, panels }),
+          // Check if the panel has routes defined
+          if (m.routes) {
+            panelModules[names[i]] = {
+              name: names[i],
+              component: (
+                <RouterPanel
+                  key={names[i]}
+                  title={names[i].charAt(0).toUpperCase() + names[i].slice(1)}
+                  defaultPosition={m.defaultPosition || { x: 50 + i * 30, y: 50 + i * 30 }}
+                  size={m.size}
+                  resizable={m.resizable !== false}
+                  routes={m.routes}
+                />
+              )
+            }
+          } else {
+            // Regular panel without routing
+            panelModules[names[i]] = {
+              name: names[i],
+              component: m.default({ index: names[i], togglePanel, panels }),
+            }
           }
         })
-        // set panelList
         filterAndSet()
       })
-      // if there were not promises already loaded set the panelList
-      if (!promises) filterAndSet()
-
+      if (!promises.length) filterAndSet()
     } else {
       setPanelList([])
     }
