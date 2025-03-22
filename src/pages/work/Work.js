@@ -11,6 +11,7 @@ export function Work(props) {
       <div className="intro">
         <h1 className="title">Work</h1>
       </div>
+      <p>I collaborate.<br /> I research.<br /> I design.<br /> I build.<br /> I lead.</p>
       <ul>
         <li>
           <a onClick={() => togglePanel('Inbanx', true)}>
@@ -105,36 +106,6 @@ export function Work(props) {
           - Noncooperative Behavior and Escalation Social Experiment
         </li>
       </ul> */}
-      <p>Social Links</p>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/chalupagrande"
-          >
-            Github
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/chalupagrande/"
-          >
-            LinkedIn
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.instagram.com/sr.chalupagrande/"
-          >
-            Instagram
-          </a>
-        </li>
-      </ul>
     </>
   )
 }
