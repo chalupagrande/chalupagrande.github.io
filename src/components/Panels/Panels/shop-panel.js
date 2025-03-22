@@ -3,22 +3,31 @@ import { Shop } from '../../../pages/shop/Shop'
 import { Checkout } from '../../../pages/shop/Checkout'
 import { Success } from '../../../pages/shop/Success'
 import { Cancel } from '../../../pages/shop/Cancel'
+import { Router } from '@reach/router'
+import { Panel } from '../Panel'
 
-// Define the routes for the Shop panel
-export const routes = [
-  { path: "/", Component: ({ path, ...props }) => <Shop path="/" {...props} /> },
-  { path: "checkout", Component: ({ path, ...props }) => <Checkout path="checkout" {...props} /> },
-  { path: "success", Component: ({ path, ...props }) => <Success path="success" {...props} /> },
-  { path: "cancel", Component: ({ path, ...props }) => <Cancel path="cancel" {...props} /> }
-]
 
-// Define panel properties
-export const defaultPosition = { x: 20, y: 38 }
-export const size = { width: 340, height: 662 }
-export const resizable = true
-export const padding = "0.5rem"
 
 // We still need a default export for compatibility with your existing system
 export default function ShopPanel(props) {
-  return null // This won't be used when routes are defined
+
+  return (
+    <Panel
+      title={'Shop'}
+      size={{ width: 320, height: 500 }}
+      resizable={true}
+      defaultPosition={{ x: 20, y: 38 }}
+      padding={true}
+    >
+
+      <div>
+        <Router basepath="/shop" primary={false}>
+          <Shop path="/" default />
+          <Checkout path="/checkout" />
+          <Success path="/success" />
+          <Cancel path="/cancel" />
+        </Router>
+      </div>
+    </Panel>
+  )
 }

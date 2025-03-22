@@ -1,22 +1,46 @@
-import React, { useState, useContext, useRef } from 'react'
+import React, { useState, useContext, useRef, useEffect } from 'react'
 import { Link } from '@reach/router'
 import { Cart } from '../../components/Cart'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useCheckout } from '@stripe/react-stripe-js'
 import { StoreContext } from '../../store'
+import { loadStripe } from '@stripe/stripe-js';
+import { CheckoutProvider } from '@stripe/react-stripe-js'
+
+const stripe = loadStripe("pk_test_tZ1UTEHPHFd9dsZzi03UyKNB", {
+  betas: ['custom_checkout_beta_6'],
+});
+
+function fetchClientSecret() {
+  return fetch('/api/shop/client-secret', { method: 'GET' })
+    .then((response) => response.json())
+    .then((json) => json.checkoutSessionClientSecret)
+}
 
 export function Checkout(props) {
+  return (
+    <CheckoutProvider stripe={stripe} options={{ fetchClientSecret }}>
+      <CheckoutDetails />
+    </CheckoutProvider>
+  )
+}
+
+export function CheckoutDetails(props) {
   let recaptchaRef = useRef(null)
+
+  const [state, setState] = useState({
+    agreement: false,
+    recaptcha: false,
+  })
+
   const {
     store: { cart },
     updaters: { clearCart, togglePanel },
   } = useContext(StoreContext)
 
-  const checkout = useCheckout()
-  const [state, setState] = useState({
-    agreement: false,
-    recaptcha: false,
-  })
+  // const checkout = useCheckout()
+
+  const checkout = false
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -31,6 +55,10 @@ export function Checkout(props) {
     setState({ ...state, agreement: e.target.checked })
   }
 
+  useEffect(() => {
+    console.log("Checkout page loaded.")
+  })
+
   return (
     <>
       <div className="intro">
@@ -39,11 +67,11 @@ export function Checkout(props) {
       </div>
       <Cart />
 
-      <pre>
+      {checkout && <pre>
         {JSON.stringify(checkout.lineItems, null, 2)}
         Currency: {checkout.currency}
         Total: {checkout.total.total.amount}
-      </pre>
+      </pre>}
 
       <h3>Shipping Address.</h3>
       <form onSubmit={handleSubmit}>
@@ -77,3 +105,5 @@ export function Checkout(props) {
     </>
   )
 }
+
+

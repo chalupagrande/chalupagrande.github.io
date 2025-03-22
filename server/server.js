@@ -12,6 +12,7 @@ const {
 } = require('./mailer')
 const sgMail = require('@sendgrid/mail')
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+const products = require('./products')
 
 const cors = require('cors')
 const Stripe = require('stripe')
@@ -91,6 +92,7 @@ app.post('/api/email', verifyCaptcha, async (req, res) => {
 })
 
 app.post('/api/shop/create-checkout-session', async (req, res) => {
+  console.log("CREATING CHECKOUT SESSION")
   const session = await stripe.checkout.sessions.create({
     mode: 'payment',
     ui_mode: 'custom',
@@ -107,9 +109,14 @@ app.post('/api/shop/create-checkout-session', async (req, res) => {
 });
 
 
-/**
- * LISTEN
- */
+app.get('/api/shop/client-secret', async (req, res) => {
+  res.json({ clientSecret: process.env.STRIPE_SECRET_KEY_TEST });
+})
+
+app.get('/api/shop/products', async (req, res) => {
+  res.json({ products });
+});
+
 
 app.listen(port)
 console.log(`listening on ${port}`)
