@@ -109,9 +109,9 @@ app.post('/api/shop/create-checkout-session', async (req, res) => {
 });
 
 
-app.get('/api/shop/client-secret', async (req, res) => {
-  res.json({ clientSecret: process.env.STRIPE_SECRET_KEY_TEST });
-})
+// app.get('/api/shop/client-secret', async (req, res) => {
+//   res.json({ clientSecret: process.env.STRIPE_SECRET_KEY_TEST });
+// })
 
 app.get('/api/shop/products', async (req, res) => {
   res.json({ products });
