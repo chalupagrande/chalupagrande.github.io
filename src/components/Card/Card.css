@@ -39,7 +39,13 @@
 }
 
 .card__footer__action>.card-action--added {
-  margin-left: 1rem;
+  margin-left: 0.8rem;
   font-weight: bold;
   color: green;
+}
+
+.card__footer__action>.card-action--oos {
+  margin-left: 0.8rem;
+  font-weight: bold;
+  color: red;
 }

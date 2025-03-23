@@ -110,7 +110,7 @@ export function Panel(props) {
                 use this to resize ────┐
               </div>}
               {!hasDragged && <div className="panel__helper--drag" onClick={handleFocus}>
-                ┌──── click here to focus or drag
+                ┌──── click here to focus & drag
               </div>}
             </div>
           </Resizable>

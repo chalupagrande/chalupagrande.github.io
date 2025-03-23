@@ -14,6 +14,7 @@ export default function Card(props) {
   }
 
   const isInCart = store.cart.find((e) => e.sku === props.sku) || false
+  const isOutOfStock = props.quantity === 0
 
   return (
     <div className="card">
@@ -26,13 +27,14 @@ export default function Card(props) {
         </p>
         <div className="card__footer__action">
           <button
-            className={`btn btn-primary ${isInCart && 'btn-disabled'}`}
+            className={`btn btn-primary ${(isInCart || isOutOfStock) && 'btn-disabled'}`}
             onClick={handleClick}
-            disabled={isInCart}
+            disabled={(isInCart || isOutOfStock)}
           >
             Add To Cart
           </button>
           {isInCart && <span className="card-action--added">Added</span>}
+          {isOutOfStock && <span className="card-action--oos">Out of Stock</span>}
         </div>
       </div>
     </div>

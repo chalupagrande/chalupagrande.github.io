@@ -285,7 +285,7 @@ blockquote {
 /* BAM */
 .btn {
   font-style: bold;
-  font-size: 18px;
+  font-size: 1rem;
   padding: 0.5em;
   cursor: pointer;
 }

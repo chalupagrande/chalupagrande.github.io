@@ -56,7 +56,7 @@ export function Contact() {
           id="name"
           type="text"
           name="name"
-          placeholder="Jeff Bezos"
+          placeholder="Inigo Montoya"
           onChange={handleChange}
           value={state.name}
           disabled={state.submitted}
@@ -66,7 +66,7 @@ export function Contact() {
           id="email"
           type="email"
           name="_replyto"
-          placeholder="jeff@amazon.com"
+          placeholder="imontoya@brutesquad.com"
           onChange={handleChange}
           value={state.email}
           disabled={state.submitted}
@@ -76,7 +76,7 @@ export function Contact() {
           id="subject"
           type="subject"
           name="_replyto"
-          placeholder="Help!"
+          placeholder="You killed my father."
           onChange={handleChange}
           value={state.subject}
           disabled={state.submitted}
@@ -85,7 +85,7 @@ export function Contact() {
         <textarea
           id="message"
           name="message"
-          placeholder="Please Jamie! We need you"
+          placeholder="Prepare to die."
           onChange={handleChange}
           value={state.message}
           disabled={state.submitted}
