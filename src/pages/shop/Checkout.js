@@ -2,35 +2,36 @@ import React, { useState, useContext, useRef, useEffect } from 'react'
 import { Link } from '@reach/router'
 import { Cart } from '../../components/Cart'
 import ReCAPTCHA from 'react-google-recaptcha'
-import { useCheckout } from '@stripe/react-stripe-js'
+// import { useCheckout } from '@stripe/react-stripe-js'
 import { StoreContext } from '../../store'
-import { loadStripe } from '@stripe/stripe-js';
+// import { loadStripe } from '@stripe/stripe-js';
 import { CheckoutProvider } from '@stripe/react-stripe-js'
 
-const stripe = loadStripe("pk_test_tZ1UTEHPHFd9dsZzi03UyKNB", {
-  betas: ['custom_checkout_beta_6'],
-});
+// const stripe = loadStripe("pk_test_tZ1UTEHPHFd9dsZzi03UyKNB", {
+//   betas: ['custom_checkout_beta_6'],
+// });
 
-function fetchClientSecret() {
-  return fetch('/api/shop/client-secret', { method: 'GET' })
-    .then((response) => response.json())
-    .then((json) => json.checkoutSessionClientSecret)
-}
+// function fetchClientSecret() {
+//   return fetch('/api/shop/create-checkout-session', { method: 'GET' })
+//     .then((response) => response.json())
+//     .then((json) => json.checkoutSessionClientSecret)
+// }
+
+// export function CheckoutWrapper(props) {
+//   return (
+//     <CheckoutProvider stripe={stripe} options={{ fetchClientSecret }}>
+//       <CheckoutDetails />
+//     </CheckoutProvider>
+//   )
+// }
 
 export function Checkout(props) {
-  return (
-    <CheckoutProvider stripe={stripe} options={{ fetchClientSecret }}>
-      <CheckoutDetails />
-    </CheckoutProvider>
-  )
-}
-
-export function CheckoutDetails(props) {
   let recaptchaRef = useRef(null)
 
   const [state, setState] = useState({
     agreement: false,
     recaptcha: false,
+    email: ''
   })
 
   const {
@@ -41,6 +42,10 @@ export function CheckoutDetails(props) {
   // const checkout = useCheckout()
 
   const checkout = false
+
+  function handleChangeEmail(e) {
+    setState({ ...state, email: e.target.value })
+  }
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -67,14 +72,23 @@ export function CheckoutDetails(props) {
       </div>
       <Cart />
 
-      {checkout && <pre>
+      {/* {checkout && <pre>
         {JSON.stringify(checkout.lineItems, null, 2)}
         Currency: {checkout.currency}
         Total: {checkout.total.total.amount}
-      </pre>}
+      </pre>} */}
 
-      <h3>Shipping Address.</h3>
-      <form onSubmit={handleSubmit}>
+      <p>Please fill out the following information</p>
+      <form className="form" onSubmit={handleSubmit}>
+        <div className="form__item">
+          <label htmlFor='email'>Email:</label>
+          <input
+            id="email"
+            type="email"
+            required
+            onChange={handleChangeEmail}
+          />
+        </div>
         <div className="form__item">
           <label className="checkbox">
             <input
@@ -84,8 +98,10 @@ export function CheckoutDetails(props) {
               checked={state.agreement}
               onChange={handleCheckAgreement}
             />
-            I have read and agree to the things in:{' '}
-            <a onClick={() => togglePanel("Legal", true)}>Legal</a>
+            <span className="small">
+              I have read and agree provisions in:{' '}
+              <a onClick={() => togglePanel("Legal", true)}>Legal</a>
+            </span>
           </label>
         </div>
         <ReCAPTCHA

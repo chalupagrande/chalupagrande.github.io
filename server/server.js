@@ -93,22 +93,22 @@ app.post('/api/email', verifyCaptcha, async (req, res) => {
   }
 })
 
-app.post('/api/shop/create-checkout-session', async (req, res) => {
-  console.log("CREATING CHECKOUT SESSION")
-  const session = await stripe.checkout.sessions.create({
-    mode: 'payment',
-    ui_mode: 'custom',
-    return_url: 'https://chalupagrande.com/shop/success',
-    line_items: [
-      {
-        price: "price_1R4mYFEQG2PxITMFOkcYvk5J",
-        quantity: 1,
-      },
-    ],
-  });
+// app.post('/api/shop/create-checkout-session', async (req, res) => {
+//   console.log("CREATING CHECKOUT SESSION")
+//   const session = await stripe.checkout.sessions.create({
+//     mode: 'payment',
+//     ui_mode: 'custom',
+//     return_url: 'https://chalupagrande.com/shop/success',
+//     line_items: [
+//       {
+//         price: "price_1R4mYFEQG2PxITMFOkcYvk5J",
+//         quantity: 1,
+//       },
+//     ],
+//   });
 
-  res.json({ checkoutSessionClientSecret: session.client_secret });
-});
+//   res.json({ checkoutSessionClientSecret: session.client_secret });
+// });
 
 
 // app.get('/api/shop/client-secret', async (req, res) => {
