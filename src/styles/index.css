@@ -66,6 +66,10 @@ h6 {
   font-size: 1.5rem;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 p {
   max-width: 600px;
 }
