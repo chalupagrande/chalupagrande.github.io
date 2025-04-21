@@ -33,5 +33,6 @@ module.exports = {
     "no-unused-vars": "off",
     "react/no-unescaped-entities": "off",
     "no-unreachable": "warn",
+    "no-debugger": "warn",
   }
 }

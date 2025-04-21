@@ -42,17 +42,17 @@ export function Provider(props) {
     togglePanel: (name, open) => {
       const store = state
       const panelName = name.toLowerCase()
-
       if (open) {
         // check if it exists then add it
         if (store.panels.indexOf(panelName) >= 0) return
         const desiredPanels = [...store.panels, panelName]
+        console.log("DESIRED PANELS", desiredPanels)
         ls.set('panels', desiredPanels)
-        setState({ ...store, panels: desiredPanels, panelFocused: panelName })
+        setState({ panels: desiredPanels, panelFocused: panelName })
         navigate(`/${panelName}`)
       } else {
         // remove it from panels array
-        let desiredPanels = [...store.panels]
+        const desiredPanels = [...store.panels]
         desiredPanels.splice(store.panels.indexOf(panelName), 1)
         ls.set('panels', desiredPanels)
 
@@ -68,7 +68,6 @@ export function Provider(props) {
         }
 
         setState({
-          ...store,
           panels: desiredPanels,
           panelFocused: newFocusedPanel
         })

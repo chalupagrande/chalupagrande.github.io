@@ -1,6 +1,5 @@
 import React from 'react'
 import { Panel } from '../Panel'
-import Dots from '../../../assets/sketches/Dots'
 import { random } from '../../../utils/math'
 
 function PointCloudPanel(props) {

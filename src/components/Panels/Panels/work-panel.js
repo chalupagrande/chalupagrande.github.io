@@ -1,7 +1,6 @@
 import React from 'react'
 import { Panel } from '../Panel'
 import { Work } from '../../../pages/work/Work'
-import { random } from '../../../utils/math'
 
 function WorkPanel(props) {
   const pos = {

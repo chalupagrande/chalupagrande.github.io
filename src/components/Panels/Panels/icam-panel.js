@@ -13,7 +13,7 @@ function ICAMPanel(props) {
   return (
     <Panel
       key={props.index}
-      title={'IBM Cloud Application Monitoring'}
+      title={'ICAM'}
       size={{ width: 320, height: 500 }}
       resizable={true}
       defaultPosition={pos}
