@@ -1,6 +1,20 @@
+.music-player-container {
+  display: grid;
+  justify-content: stretch;
+  align-content: stretch;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-gap: 10px;
+  height: 100%
+}
+
 .music-player {
-  min-height: 330px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 1rem;
   color: #fff;
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
 }
 
 .hidden {
@@ -19,24 +33,43 @@
   z-index: -1;
 }
 
+.nowplaying {
 
-.controls-container {
-  display: grid;
-  justify-content: stretch;
-  align-content: stretch;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 1fr 3fr 1fr;
-  grid-gap: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.track-info {
+  margin-left: 1rem;
+}
+
+.track-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.artist {
+  margin: 0;
+  padding: 0;
 }
 
 .controls {
   grid-column: 2 / span 1;
-  grid-row: 2 / span 1;
+  grid-row: 3 / span 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  border-radius: 10px;
 }
+
+.curTime,
+.duration {
+  padding: 5px;
+}
+
 
 .playpause {
   width: 24px;

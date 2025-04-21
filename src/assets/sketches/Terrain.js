@@ -15,7 +15,7 @@ export function Terrain({ width, height, paused }) {
   let maxHeight = 500
   let roadHeight = -200
   let cameraRotation = Math.PI / 2.5
-  let roadWidth = 2
+  let roadWidth = 0
   // flying speed
   let speed = 0.01
   // 'turbulence' of mountains

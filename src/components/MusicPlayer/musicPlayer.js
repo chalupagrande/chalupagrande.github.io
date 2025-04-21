@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react"
 import "./musicPlayer.css"
-import { Terrain } from "../../assets/sketches/Terrain"
 
 
 export function MusicPlayer() {
@@ -63,21 +62,32 @@ export function MusicPlayer() {
   }, [player])
 
   return (
-    <div className="music-player">
+    <div className="music-player-container">
       <audio className="hidden" controls ref={player} loop>
         <source
-          src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/audio/neon-echos-1.mp3"
+          src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/audio/neon-echos-2.mp3"
           type="audio/mpeg"
         />
         Your browser does not support the audio element.
       </audio>
 
-      <div className="controls-container">
-        <div className="controls">
-          <span className={`playpause${isPaused ? " paused" : ""}`} onClick={handlePlayPause} />
-          <span>{curTime}</span>
-          <input type="range" id="seek-slider" max="100" value={seek} onChange={handleSeek} />
-          <span>{duration}</span>
+      <div className="music-player">
+        <div className="track-">
+          <div className="nowplaying">
+            <div className="cover">
+              <img width="60" src="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/neon-echos-cover.png" alt="Album Cover" />
+            </div>
+            <div className="track-info">
+              <p className="track-title">Neon Chalupa</p>
+              <p className="artist">by chalupagrande</p>
+            </div>
+          </div>
+          <div className="controls">
+            <span className={`playpause${isPaused ? " paused" : ""}`} onClick={handlePlayPause} />
+            <span className="curTime">{curTime}</span>
+            <input type="range" id="seek-slider" max="100" value={seek} onChange={handleSeek} />
+            <span className="duration">{duration}</span>
+          </div>
         </div>
       </div>
     </div>
