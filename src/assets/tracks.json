@@ -1,0 +1,18 @@
+[
+  {
+    "id": 0,
+    "name": "Chalupas and Coffee",
+    "artist": "chalupagrande",
+    "genre": "lofi hiphop",
+    "source": "https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/audio/chalupas-and-coffee.mp3",
+    "cover": "https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/chalupas-and-coffee-cover.png"
+  },
+  {
+    "id": 1,
+    "name": "Midnight Chalupa",
+    "artist": "chalupagrande",
+    "genre": "lofi hiphop",
+    "source": "https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/audio/midnight-chalupa.mp3",
+    "cover": "https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/images/midnight-chalupa-cover.png"
+  }
+]
