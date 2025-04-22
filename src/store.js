@@ -1,21 +1,30 @@
 import React from 'react'
-// import { loadStripe } from '@stripe/stripe-js'
 import { mobileCheck } from './utils/userAgent'
 import ls from 'local-storage'
 import { useNavigate } from '@reach/router'
 
 const isMobile = mobileCheck()
 const lastLoadedPanels = ls.get('panels')
-const desiredPanels = !lastLoadedPanels || Array.isArray(lastLoadedPanels) && lastLoadedPanels.length === 0 ? ['about'] : lastLoadedPanels
-const panelFocused = ls.get('panelFocused') || desiredPanels[0]
+const path = window.location.pathname.slice(1)
+let desiredPanels = !lastLoadedPanels || Array.isArray(lastLoadedPanels) && lastLoadedPanels.length === 0 ? ['about'] : lastLoadedPanels
+let panelFocused = ls.get('panelFocused') || desiredPanels[0]
+const lsLastResized = ls.get('hasResized')
+const lsLastDragged = ls.get('hasDragged')
+const lastResize = lsLastResized ? parseInt(lsLastResized) : 0
+const lastDrag = lsLastDragged ? parseInt(lsLastDragged) : 0
+
+if (desiredPanels.indexOf(path) === -1 && path !== '') {
+  desiredPanels.push(path)
+  panelFocused = path
+}
 
 const initialState = {
   cart: [],
   isDesktopMode: true,
   panels: desiredPanels,
   panelFocused: panelFocused,
-  hasResized: false,
-  hasDragged: false
+  hasResized: new Date().getTime() - lastResize <= 1000 * 60 * 30,
+  hasDragged: new Date().getTime() - lastDrag <= 1000 * 60 * 30,
 }
 
 export const StoreContext = React.createContext(initialState)
@@ -89,10 +98,12 @@ export function Provider(props) {
     },
     updateHasResized: (val) => {
       const store = state
+      ls.set('hasResized', new Date().getTime().toString())
       setState({ ...store, hasResized: val })
     },
     updateHasDragged: (val) => {
       const store = state
+      ls.set('hasDragged', new Date().getTime().toString())
       setState({ ...store, hasDragged: val })
     },
   }
