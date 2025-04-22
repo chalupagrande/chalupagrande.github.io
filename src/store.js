@@ -5,7 +5,7 @@ import { useNavigate } from '@reach/router'
 
 const isMobile = mobileCheck()
 const lastLoadedPanels = ls.get('panels')
-const path = window.location.pathname.slice(1)
+const path = window.location.pathname.replaceAll("/", "")
 let desiredPanels = !lastLoadedPanels || Array.isArray(lastLoadedPanels) && lastLoadedPanels.length === 0 ? ['about'] : lastLoadedPanels
 let panelFocused = ls.get('panelFocused') || desiredPanels[0]
 const lsLastResized = ls.get('hasResized')
@@ -26,6 +26,7 @@ const initialState = {
   hasResized: new Date().getTime() - lastResize <= 1000 * 60 * 30,
   hasDragged: new Date().getTime() - lastDrag <= 1000 * 60 * 30,
 }
+
 
 export const StoreContext = React.createContext(initialState)
 

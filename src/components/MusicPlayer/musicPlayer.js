@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react"
+import React, { useRef, useState } from "react"
 import tracks from "../../assets/tracks"
 import "./musicPlayer.css"
 
@@ -36,6 +36,7 @@ export function MusicPlayer() {
 
   function handleSeek(e) {
     e.stopPropagation()
+    if (player.current === null) return
     const seekValue = e.target.value
     setSeek(seekValue)
     const duration = player.current.duration
@@ -51,34 +52,28 @@ export function MusicPlayer() {
   }
 
   function updateTimes() {
+    if (player.current === null) return
     const currentTimeInSecs = player.current.currentTime
     const durationInSecs = player.current.duration
     setCurTime(calculateTime(currentTimeInSecs))
     setDuration(calculateTime(durationInSecs))
   }
 
-  useEffect(() => {
-    if (player) {
-      player.current.addEventListener("timeupdate", () => {
-        const currentTimeInSecs = player.current.currentTime
-        const durationInSecs = player.current.duration
-        const seekValue = (currentTimeInSecs / durationInSecs) * 100
-        setSeek(seekValue)
-        setCurTime(calculateTime(currentTimeInSecs))
-        if (currentTimeInSecs === durationInSecs) {
-          nextTrack()
-        }
-      })
-
-      player.current.addEventListener('loadedmetadata', () => {
-        updateTimes()
-      });
+  function onTimeUpdate() {
+    if (player.current === null) return
+    const currentTimeInSecs = player.current.currentTime
+    const durationInSecs = player.current.duration
+    const seekValue = (currentTimeInSecs / durationInSecs) * 100
+    setSeek(seekValue)
+    setCurTime(calculateTime(currentTimeInSecs))
+    if (currentTimeInSecs === durationInSecs) {
+      nextTrack()
     }
-  }, [player])
+  }
 
   return (
     <div className="music-player-container">
-      <audio className="hidden" controls ref={player}>
+      <audio className="hidden" controls ref={player} onTimeUpdate={onTimeUpdate} onLoadedMetadata={updateTimes}>
         <source
           src={tracks[curTrackId].source}
           type="audio/mpeg"
