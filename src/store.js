@@ -37,7 +37,7 @@ export function Provider(props) {
     },
     clearCart: () => {
       const store = state
-      setState({ ...store, cart: [] })
+      setState({ cart: [] })
     },
     togglePanel: (name, open) => {
       const store = state
@@ -46,9 +46,8 @@ export function Provider(props) {
         // check if it exists then add it
         if (store.panels.indexOf(panelName) >= 0) return
         const desiredPanels = [...store.panels, panelName]
-        console.log("DESIRED PANELS", desiredPanels)
         ls.set('panels', desiredPanels)
-        setState({ panels: desiredPanels, panelFocused: panelName })
+        setState({ ...store, panels: desiredPanels, panelFocused: panelName })
         navigate(`/${panelName}`)
       } else {
         // remove it from panels array
@@ -68,6 +67,7 @@ export function Provider(props) {
         }
 
         setState({
+          ...store,
           panels: desiredPanels,
           panelFocused: newFocusedPanel
         })

@@ -12,8 +12,8 @@ export default function Card(props) {
   function handleClick() {
     addToCart(props)
   }
-
-  const isInCart = store.cart.find((e) => e.sku === props.sku) || false
+  const cart = store?.cart || []
+  const isInCart = cart.find((e) => e.sku === props.sku) || false
   const isOutOfStock = props.quantity === 0
 
   return (

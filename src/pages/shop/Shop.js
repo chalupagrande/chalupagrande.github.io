@@ -31,7 +31,7 @@ export function Shop() {
         <p>Buy cool Jamie Skinner merchandise for you and your family!</p>
       </div>
       {loading ? <div>loading...</div> : <div className="shop-items">{shopItems}</div>}
-      {!!cart.length && (
+      {!!cart?.length && !loading && (
         <>
           <Cart />
           <Link to="checkout">
