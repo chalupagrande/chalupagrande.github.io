@@ -24,6 +24,9 @@ export default function FilesPage() {
       </ul>
       <h5>Scripts</h5>
       <ul>
+        <li className="panel-name" onClick={function () { togglePanel('wavecube', true) }}>
+          WaveCube.js
+        </li>
         <li className="panel-name" onClick={function () { togglePanel('dots', true) }}>
           Dots.js
         </li>
