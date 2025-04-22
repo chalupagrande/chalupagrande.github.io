@@ -67,7 +67,8 @@ const frontEndRoutes = [
   '/rhonda',
   "/legal",
   "/junk",
-  "/music"
+  "/music",
+  "/files"
 ]
 frontEndRoutes.forEach((r) => {
   app.use(r, express.static(buildPath))
