@@ -1,7 +1,7 @@
 import React from 'react'
 import { Panel } from '../Panel'
 import { random } from '../../../utils/math'
-import SnakeGame2 from '../../../assets/sketches/SnakeGame2'
+import { SnakeGame } from '../../../assets/sketches/SnakeGame2'
 
 function SnakePanel(props) {
   const randX = random(90, 250)
@@ -19,7 +19,7 @@ function SnakePanel(props) {
       padding={false}
       defaultPosition={pos}
     >
-      <SnakeGame2 />
+      <SnakeGame />
     </Panel>
   )
 }

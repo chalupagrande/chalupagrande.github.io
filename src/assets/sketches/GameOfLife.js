@@ -1,7 +1,7 @@
 import React from 'react'
 import Sketch from 'react-p5'
 
-export default function GameOfLife(props) {
+export const GameOfLife = React.memo(function GameOfLife() {
   let cols = 100
   let rows = 100
   let unitSize = 5
@@ -92,4 +92,4 @@ export default function GameOfLife(props) {
   }
 
   return <Sketch setup={setup} draw={draw} />
-}
+})

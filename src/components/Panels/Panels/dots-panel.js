@@ -1,6 +1,6 @@
 import React from 'react'
 import { Panel } from '../Panel'
-import Dots from '../../../assets/sketches/Dots'
+import { Dots } from '../../../assets/sketches/Dots'
 import { random } from '../../../utils/math'
 
 function DotsPanel(props) {

@@ -2,7 +2,7 @@ import React from 'react'
 import Sketch from 'react-p5'
 import { random } from '../../utils/math'
 
-export default function SnakeGame2(props) {
+export const SnakeGame = React.memo(function SnakeGame(props) {
   const canvasSize = props.boardSize || 400
   // game set later
   let boardSize = props.tileSize || 10
@@ -214,4 +214,4 @@ export default function SnakeGame2(props) {
       <Sketch setup={setup} draw={draw} />
     </>
   )
-}
+})

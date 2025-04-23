@@ -1,7 +1,7 @@
 import React from 'react'
 import Sketch from 'react-p5'
 
-export function Dots({ width, height }) {
+export const Dots = React.memo(function Dots({ width, height }) {
   const numCircles = 20
   const w = width || 300,
     h = height || 300
@@ -88,10 +88,6 @@ export function Dots({ width, height }) {
   }
 
   return (
-    <>
-      <Sketch setup={setup} draw={draw} />
-    </>
+    <Sketch setup={setup} draw={draw} />
   )
-}
-
-export default Dots
+})

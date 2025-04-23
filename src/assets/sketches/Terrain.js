@@ -1,7 +1,7 @@
 import React from 'react'
 import Sketch from 'react-p5'
 
-export function Terrain({ width, height, paused }) {
+export const Terrain = React.memo(function Terrain({ width, height }) {
   // options
   let canvasHeight = height
   let canvasWidth = width
@@ -84,4 +84,4 @@ export function Terrain({ width, height, paused }) {
   }
 
   return <Sketch setup={setup} draw={draw} />
-}
+})

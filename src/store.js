@@ -27,7 +27,6 @@ const initialState = {
   hasDragged: new Date().getTime() - lastDrag <= 1000 * 60 * 30,
 }
 
-
 export const StoreContext = React.createContext(initialState)
 
 export function Provider(props) {

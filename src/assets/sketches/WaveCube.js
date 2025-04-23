@@ -1,7 +1,8 @@
 import React from 'react'
 import Sketch from 'react-p5'
 
-export function WaveCube() {
+export const WaveCube = React.memo(function WaveCube() {
+  console.log("RERENDERING WAVE CUBE")
   let width = 300
   let height = 300
   let boxWidth = 15
@@ -47,4 +48,4 @@ export function WaveCube() {
     />
   )
 
-}
+})
