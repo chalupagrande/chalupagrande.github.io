@@ -68,7 +68,7 @@ export function About(props) {
       <p className="small">Here are a couple links you can use to get to know me</p>
       <ul>
         <li>
-          <a href="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/docs/jamie-skinner-resume-2025.pdf">Curriculum Vitae</a>
+          <a href="https://chalupagrande.nyc3.cdn.digitaloceanspaces.com/portfolio/docs/jamie-skinner-resume-2025-no-projects.pdf">Curriculum Vitae</a>
         </li>
         <li>
           <a href="https://github.com/chalupagrande">Github</a>
